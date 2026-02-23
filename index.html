@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inculator Dashboard</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            dark: { 50: '#f8fafc', 100: '#1e293b', 200: '#0f172a', 300: '#020617' }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+    body { font-family: 'Inter', sans-serif; }
+    .bar-fill { transition: width 0.6s ease; }
+    .idea-row { transition: all 0.2s ease; }
+    .idea-row:hover { transform: translateX(4px); }
+    .detail-panel { transition: all 0.3s ease; }
+    .status-go { background: #10b981; color: white; }
+    .status-wip { background: #f59e0b; color: white; }
+    .status-parked { background: #64748b; color: white; }
+    .priority-H { background: #ef4444; color: white; }
+    .priority-L { background: #94a3b8; color: white; }
+  </style>
+</head>
+<body class="bg-dark-300 text-gray-200 min-h-screen">
+
+  <div id="app" class="max-w-6xl mx-auto px-4 py-8">
+    <!-- Header -->
+    <div class="flex items-center justify-between mb-8">
+      <div>
+        <h1 class="text-3xl font-bold text-white">🧪 Inculator</h1>
+        <p class="text-gray-400 mt-1">Idea incubation dashboard</p>
+      </div>
+      <div class="flex gap-3">
+        <div id="stats-go" class="text-center px-4 py-2 rounded-lg bg-emerald-900/40 border border-emerald-700/50">
+          <div class="text-2xl font-bold text-emerald-400">-</div>
+          <div class="text-xs text-emerald-400/70">GO</div>
+        </div>
+        <div id="stats-wip" class="text-center px-4 py-2 rounded-lg bg-amber-900/40 border border-amber-700/50">
+          <div class="text-2xl font-bold text-amber-400">-</div>
+          <div class="text-xs text-amber-400/70">WIP</div>
+        </div>
+        <div id="stats-parked" class="text-center px-4 py-2 rounded-lg bg-slate-800 border border-slate-600/50">
+          <div class="text-2xl font-bold text-slate-400">-</div>
+          <div class="text-xs text-slate-400/70">PARKED</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Filter bar -->
+    <div class="flex gap-2 mb-6">
+      <button onclick="filterBy('all')" class="filter-btn px-3 py-1.5 rounded-md text-sm bg-slate-700 hover:bg-slate-600 transition" data-filter="all">Tutte</button>
+      <button onclick="filterBy('go')" class="filter-btn px-3 py-1.5 rounded-md text-sm bg-slate-800 hover:bg-emerald-800 transition" data-filter="go">GO</button>
+      <button onclick="filterBy('wip')" class="filter-btn px-3 py-1.5 rounded-md text-sm bg-slate-800 hover:bg-amber-800 transition" data-filter="wip">WIP</button>
+      <button onclick="filterBy('parked')" class="filter-btn px-3 py-1.5 rounded-md text-sm bg-slate-800 hover:bg-slate-700 transition" data-filter="parked">Parked</button>
+      <div class="flex-1"></div>
+      <button onclick="sortBy('media')" class="px-3 py-1.5 rounded-md text-sm bg-slate-800 hover:bg-slate-700 transition">↕ Rating</button>
+      <button onclick="sortBy('priority')" class="px-3 py-1.5 rounded-md text-sm bg-slate-800 hover:bg-slate-700 transition">↕ Priorità</button>
+    </div>
+
+    <!-- Ideas list -->
+    <div id="ideas-list" class="space-y-2"></div>
+
+    <!-- Detail panel (hidden by default) -->
+    <div id="detail-panel" class="fixed inset-0 bg-black/60 backdrop-blur-sm hidden z-50" onclick="closeDetail(event)">
+      <div class="absolute right-0 top-0 h-full w-full max-w-2xl bg-dark-200 shadow-2xl overflow-y-auto" onclick="event.stopPropagation()">
+        <div id="detail-content" class="p-8"></div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    let ideas = [];
+    let currentFilter = 'all';
+    let currentSort = 'media';
+    let sortAsc = false;
+
+    const SCORE_LABELS = {
+      domanda_mercato: 'Domanda',
+      differenziazione: 'Differenziazione',
+      fattibilita_tecnica: 'Fattibilità',
+      costo_infrastruttura: 'Costo Infra',
+      manutenzione: 'Manutenzione',
+      monetizzabilita: 'Monetizzabilità',
+      rischio_legale: 'Rischio Legale'
+    };
+
+    const SCORE_KEYS = Object.keys(SCORE_LABELS);
+
+    function barColor(val) {
+      if (val >= 8) return 'bg-emerald-500';
+      if (val >= 6) return 'bg-sky-500';
+      if (val >= 5) return 'bg-amber-500';
+      return 'bg-red-500';
+    }
+
+    function mediaColor(val) {
+      if (val >= 7) return 'text-emerald-400';
+      if (val >= 6) return 'text-sky-400';
+      if (val >= 5) return 'text-amber-400';
+      return 'text-red-400';
+    }
+
+    function renderList() {
+      let filtered = currentFilter === 'all' ? [...ideas] : ideas.filter(i => i.status === currentFilter);
+
+      if (currentSort === 'media') {
+        filtered.sort((a, b) => sortAsc
+          ? a.scorecard.media - b.scorecard.media
+          : b.scorecard.media - a.scorecard.media);
+      } else if (currentSort === 'priority') {
+        filtered.sort((a, b) => {
+          const pa = a.priority === 'H' ? 0 : 1;
+          const pb = b.priority === 'H' ? 0 : 1;
+          return sortAsc ? pa - pb : pb - pa;
+        });
+      }
+
+      const container = document.getElementById('ideas-list');
+      container.innerHTML = filtered.map(idea => {
+        const sc = idea.scorecard;
+        const miniBar = SCORE_KEYS.map(k => {
+          const v = sc[k] || 0;
+          return `<div class="w-full bg-slate-700 rounded-full h-1.5">
+            <div class="bar-fill ${barColor(v)} h-1.5 rounded-full" style="width:${v*10}%"></div>
+          </div>`;
+        }).join('');
+
+        return `
+          <div class="idea-row bg-dark-100 rounded-xl p-4 cursor-pointer border border-slate-700/50 hover:border-slate-500/50"
+               onclick="showDetail('${idea.id}')">
+            <div class="flex items-center gap-4">
+              <div class="flex flex-col items-center min-w-[60px]">
+                <span class="text-2xl font-bold ${mediaColor(sc.media)}">${sc.media.toFixed(1)}</span>
+                <span class="text-[10px] text-gray-500 uppercase">${sc.verdetto || ''}</span>
+              </div>
+              <div class="flex-1 min-w-0">
+                <div class="flex items-center gap-2 mb-1">
+                  <h3 class="font-semibold text-white truncate">${idea.title}</h3>
+                  <span class="status-${idea.status} text-[10px] px-2 py-0.5 rounded-full font-medium uppercase">${idea.status}</span>
+                  <span class="priority-${idea.priority} text-[10px] px-2 py-0.5 rounded-full font-medium">${idea.priority}</span>
+                </div>
+                <p class="text-sm text-gray-400 truncate">${idea.tagline || ''}</p>
+                <div class="grid grid-cols-7 gap-1 mt-2">${miniBar}</div>
+              </div>
+              <svg class="w-5 h-5 text-gray-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+              </svg>
+            </div>
+          </div>`;
+      }).join('');
+
+      // Update stats
+      const goCount = ideas.filter(i => i.status === 'go').length;
+      const wipCount = ideas.filter(i => i.status === 'wip').length;
+      const parkedCount = ideas.filter(i => i.status === 'parked').length;
+      document.querySelector('#stats-go .text-2xl').textContent = goCount;
+      document.querySelector('#stats-wip .text-2xl').textContent = wipCount;
+      document.querySelector('#stats-parked .text-2xl').textContent = parkedCount;
+    }
+
+    function showDetail(id) {
+      const idea = ideas.find(i => i.id === id);
+      if (!idea) return;
+
+      const sc = idea.scorecard;
+      const mr = idea.market_research || {};
+      const notes = idea.injection_notes || [];
+
+      const scoreRows = SCORE_KEYS.map(k => {
+        const v = sc[k] || 0;
+        return `
+          <div class="flex items-center gap-3 py-1.5">
+            <span class="text-sm text-gray-400 w-36">${SCORE_LABELS[k]}</span>
+            <div class="flex-1 bg-slate-700 rounded-full h-2.5">
+              <div class="bar-fill ${barColor(v)} h-2.5 rounded-full" style="width:${v*10}%"></div>
+            </div>
+            <span class="text-sm font-mono font-semibold w-8 text-right ${mediaColor(v)}">${v}</span>
+          </div>`;
+      }).join('');
+
+      const mrHtml = Object.keys(mr).length > 0
+        ? `<div class="mt-6">
+            <h4 class="text-sm font-semibold text-gray-300 uppercase tracking-wider mb-3">Ricerca di Mercato</h4>
+            <div class="bg-slate-800/50 rounded-lg p-4 space-y-2">
+              ${Object.entries(mr).map(([k, v]) => {
+                const val = Array.isArray(v) ? v.join(', ') : v;
+                return `<div class="flex gap-2 text-sm">
+                  <span class="text-gray-500 min-w-[140px]">${k.replace(/_/g, ' ')}</span>
+                  <span class="text-gray-300">${val}</span>
+                </div>`;
+              }).join('')}
+            </div>
+          </div>`
+        : '';
+
+      const notesHtml = notes.length > 0
+        ? `<div class="mt-6">
+            <h4 class="text-sm font-semibold text-gray-300 uppercase tracking-wider mb-3">Note & Decisioni</h4>
+            <ul class="space-y-1.5">
+              ${notes.map(n => `<li class="text-sm text-gray-400 flex gap-2"><span class="text-gray-600">•</span>${n}</li>`).join('')}
+            </ul>
+          </div>`
+        : '';
+
+      document.getElementById('detail-content').innerHTML = `
+        <button onclick="closeDetail()" class="absolute top-4 right-4 text-gray-500 hover:text-white transition">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+          </svg>
+        </button>
+
+        <div class="flex items-center gap-3 mb-2">
+          <span class="status-${idea.status} text-xs px-2.5 py-1 rounded-full font-medium uppercase">${idea.status}</span>
+          <span class="priority-${idea.priority} text-xs px-2.5 py-1 rounded-full font-medium">Priority ${idea.priority}</span>
+          <span class="text-xs text-gray-500">${idea.category || ''}</span>
+        </div>
+
+        <h2 class="text-2xl font-bold text-white mb-1">${idea.title}</h2>
+        <p class="text-gray-400 mb-1">${idea.tagline || ''}</p>
+        <p class="text-sm text-gray-500 mb-6">${idea.abstract || ''}</p>
+
+        <div class="flex items-center gap-4 mb-6 p-4 rounded-xl bg-slate-800/50">
+          <div class="text-center">
+            <div class="text-4xl font-bold ${mediaColor(sc.media)}">${sc.media.toFixed(1)}</div>
+            <div class="text-xs text-gray-500 mt-1">MEDIA</div>
+          </div>
+          <div class="text-center">
+            <div class="text-4xl font-bold text-gray-400">${sc.totale}</div>
+            <div class="text-xs text-gray-500 mt-1">TOTALE /70</div>
+          </div>
+          <div class="flex-1 text-right">
+            <span class="text-sm font-semibold px-3 py-1.5 rounded-lg ${
+              sc.verdetto === 'GO' ? 'bg-emerald-900/60 text-emerald-400' :
+              sc.verdetto === 'PIVOT_NEEDED' ? 'bg-amber-900/60 text-amber-400' :
+              sc.verdetto === 'PARK' ? 'bg-slate-700 text-slate-300' :
+              'bg-red-900/60 text-red-400'
+            }">${sc.verdetto || '-'}</span>
+          </div>
+        </div>
+
+        <h4 class="text-sm font-semibold text-gray-300 uppercase tracking-wider mb-3">Scorecard</h4>
+        ${scoreRows}
+
+        ${sc.note ? `<p class="mt-4 text-sm text-gray-400 italic border-l-2 border-slate-600 pl-3">${sc.note}</p>` : ''}
+
+        ${mrHtml}
+        ${notesHtml}
+
+        <div class="mt-6 pt-4 border-t border-slate-700/50 flex justify-between text-xs text-gray-600">
+          <span>Creata: ${idea.created || '-'}</span>
+          <span>Aggiornata: ${idea.updated || '-'}</span>
+        </div>
+      `;
+
+      document.getElementById('detail-panel').classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeDetail(e) {
+      if (e && e.target !== e.currentTarget) return;
+      document.getElementById('detail-panel').classList.add('hidden');
+      document.body.style.overflow = '';
+    }
+
+    function filterBy(status) {
+      currentFilter = status;
+      document.querySelectorAll('.filter-btn').forEach(b => {
+        b.classList.toggle('bg-slate-700', b.dataset.filter === status);
+        b.classList.toggle('bg-slate-800', b.dataset.filter !== status);
+      });
+      renderList();
+    }
+
+    function sortBy(field) {
+      if (currentSort === field) {
+        sortAsc = !sortAsc;
+      } else {
+        currentSort = field;
+        sortAsc = false;
+      }
+      renderList();
+    }
+
+    // Load data
+    async function init() {
+      try {
+        const resp = await fetch('./ideas.json');
+        ideas = await resp.json();
+        renderList();
+      } catch (e) {
+        document.getElementById('ideas-list').innerHTML =
+          '<p class="text-red-400 text-center py-8">Errore caricamento ideas.json</p>';
+      }
+    }
+
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape') closeDetail();
+    });
+
+    init();
+  </script>
+</body>
+</html>

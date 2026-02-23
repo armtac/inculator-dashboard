@@ -1,0 +1,295 @@
+[
+  {
+    "id": "1a2b3c4d-5e6f-7g8h-9i0j-1k2l3m4n5o6p",
+    "title": "Tonight Social",
+    "tagline": "App real-time per incontri social spontanei",
+    "abstract": "Piattaforma che facilita incontri sociali spontanei in aree geografiche definite, con focus su sicurezza e verifica. Pivot low-risk di concept adult.",
+    "category": "Social/Consumer",
+    "status": "parked",
+    "created": "2026-02-21",
+    "updated": "2026-02-23",
+    "scorecard": {
+      "domanda_mercato": 6,
+      "differenziazione": 5,
+      "fattibilita_tecnica": 7,
+      "costo_infrastruttura": 6,
+      "manutenzione": 5,
+      "monetizzabilita": 7,
+      "rischio_legale": 4,
+      "totale": 40,
+      "media": 5.71,
+      "verdetto": "PIVOT_NEEDED",
+      "note": "Mercato esistente ma saturo (Tinder, Bumble, Hinge). Necessario differenziatore forte. Rischio moderato-alto per compliance."
+    },
+    "market_research": {
+      "competitor_major": [
+        "Tinder",
+        "Bumble",
+        "Hinge",
+        "Happn"
+      ],
+      "tam": "$8.2B (dating apps 2024)",
+      "cagr": "7.2%",
+      "barriers": "alte - acquisizione utenti costosa"
+    },
+    "injection_notes": [
+      "Concept ricalibrato da idea adult a social generalista",
+      "Verifica identità e safety features cruciale"
+    ],
+    "priority": "L"
+  },
+  {
+    "id": "2b3c4d5e-6f7g-8h9i-0j1k-2l3m4n5o6p7q",
+    "title": "Screenshot Redactor",
+    "tagline": "Redazione automatica info sensibili negli screenshot",
+    "abstract": "App mobile che rileva e oscura automaticamente dati personali, credential, screenshot sharing prima del salvataggio o condivisione.",
+    "category": "Privacy/Security",
+    "status": "go",
+    "created": "2026-02-21",
+    "updated": "2026-02-23",
+    "scorecard": {
+      "domanda_mercato": 7,
+      "differenziazione": 6,
+      "fattibilita_tecnica": 7,
+      "costo_infrastruttura": 8,
+      "manutenzione": 7,
+      "monetizzabilita": 5,
+      "rischio_legale": 8,
+      "totale": 48,
+      "media": 6.86,
+      "verdetto": "GO",
+      "note": "Bisogno reale postura GDPR/privacy. POC semplice (ML on-device). Domanda enterprise + consumer. Basso rischio legale."
+    },
+    "market_research": {
+      "competitor_major": [
+        "Blurmatic"
+      ],
+      "trending": "enterprise data loss prevention",
+      "compliance_driver": "GDPR, CCPA"
+    },
+    "injection_notes": [
+      "Focus su enterprise DLP",
+      "Freemium model"
+    ],
+    "priority": "H"
+  },
+  {
+    "id": "3c4d5e6f-7g8h-9i0j-1k2l-3m4n5o6p7q8r",
+    "title": "Meeting Cost Meter",
+    "tagline": "Calcolatore costo reale delle riunioni",
+    "abstract": "Integrazione calendar che calcola in tempo reale il costo aggregato delle riunioni (stakeholder × hourly rate × durata).",
+    "category": "Productivity/B2B",
+    "status": "parked",
+    "created": "2026-02-21",
+    "updated": "2026-02-23",
+    "scorecard": {
+      "domanda_mercato": 5,
+      "differenziazione": 4,
+      "fattibilita_tecnica": 9,
+      "costo_infrastruttura": 9,
+      "manutenzione": 8,
+      "monetizzabilita": 3,
+      "rischio_legale": 9,
+      "totale": 47,
+      "media": 6.71,
+      "verdetto": "PIVOT_NEEDED",
+      "note": "Feature forte ma non prodotto standalone. Meglio come plugin integrato (Notion, Slack, Calendar). Monetizzazione debole."
+    },
+    "market_research": {
+      "competitor_minor": [
+        "Meeting Calculator",
+        "PayScale Meeting Cost"
+      ],
+      "integration_target": [
+        "Google Calendar",
+        "Outlook",
+        "Slack",
+        "Notion"
+      ]
+    },
+    "injection_notes": [
+      "Non prodotto standalone",
+      "Feature per player esistenti"
+    ],
+    "priority": "L"
+  },
+  {
+    "id": "4d5e6f7g-8h9i-0j1k-2l3m-4n5o6p7q8r9s",
+    "title": "Terms Simplifier",
+    "tagline": "TL;DR intelligente per Termini di Servizio",
+    "abstract": "Browser extension che riassume e evidenzia punti critici dei ToS usando LLM. Grading system per rischio contrattuale.",
+    "category": "Legal/Privacy",
+    "status": "parked",
+    "created": "2026-02-21",
+    "updated": "2026-02-23",
+    "scorecard": {
+      "domanda_mercato": 7,
+      "differenziazione": 6,
+      "fattibilita_tecnica": 7,
+      "costo_infrastruttura": 6,
+      "manutenzione": 5,
+      "monetizzabilita": 6,
+      "rischio_legale": 6,
+      "totale": 43,
+      "media": 6.14,
+      "verdetto": "PIVOT_NEEDED",
+      "note": "Concetto ToS;DR esiste. Necessario differentiator (visual, grading, enterprise API). Modello SaaS B2B più promettente."
+    },
+    "market_research": {
+      "competitor_major": [
+        "ToS;DR",
+        "Clairity"
+      ],
+      "regulatory_driver": "EU Digital Services Act"
+    },
+    "injection_notes": [
+      "Distingui con UX/Grading",
+      "Target enterprise compliance"
+    ],
+    "priority": "L"
+  },
+  {
+    "id": "5e6f7g8h-9i0j-1k2l-3m4n-5o6p7q8r9s0t",
+    "title": "PhotoVoice",
+    "tagline": "Tag vocali per foto → ricerca per voce",
+    "abstract": "App mobile che permette di aggiungere note audio alle foto per ricerca semantica vocale. Utile per archivi personali.",
+    "category": "Consumer/Photo",
+    "status": "parked",
+    "created": "2026-02-21",
+    "updated": "2026-02-23",
+    "scorecard": {
+      "domanda_mercato": 5,
+      "differenziazione": 7,
+      "fattibilita_tecnica": 7,
+      "costo_infrastruttura": 6,
+      "manutenzione": 6,
+      "monetizzabilita": 4,
+      "rischio_legale": 8,
+      "totale": 43,
+      "media": 6.14,
+      "verdetto": "PIVOT_NEEDED",
+      "note": "Niché. Photo management già coperto da Google/Apple. Differenziatore voice insufficiente per mercato consumer."
+    },
+    "market_research": {
+      "incumbents": [
+        "Google Photos",
+        "Apple Photos"
+      ],
+      "niche_risk": "alto - mercato consumer già coperto"
+    },
+    "injection_notes": [
+      "Pivot su vertical specifica? (medical photography, field inspection)"
+    ],
+    "priority": "L"
+  },
+  {
+    "id": "6f7g8h9i-0j1k-2l3m-4n5o-6p7q8r9s0t1u",
+    "title": "ChronicleForge",
+    "tagline": "Piattaforma audio → racconto RPG strutturato",
+    "abstract": "Sessioni di gioco di ruolo vengono registrate, trascritte e trasformate in racconto narrativo strutturato con personaggi e arco.",
+    "category": "Gaming/Creative",
+    "status": "go",
+    "created": "2026-02-21",
+    "updated": "2026-02-23",
+    "scorecard": {
+      "domanda_mercato": 6,
+      "differenziazione": 8,
+      "fattibilita_tecnica": 6,
+      "costo_infrastruttura": 5,
+      "manutenzione": 5,
+      "monetizzabilita": 6,
+      "rischio_legale": 7,
+      "totale": 43,
+      "media": 6.14,
+      "verdetto": "GO",
+      "note": "Niché RPG ma passionale. DALL-E/LLM abbassano barriera tecnica. Modello freemium + templates. Community forte."
+    },
+    "market_research": {
+      "trending": "Actual Play podcasts/streaming (Critical Role)",
+      "tam_niche": "~50M tabletop RPG players",
+      "similar": [
+        "Obsidian",
+        "Notion templates",
+        "NovelAI"
+      ]
+    },
+    "injection_notes": [
+      "Focus su Actual Play content creator",
+      "Integrazione con streaming"
+    ],
+    "priority": "H"
+  },
+  {
+    "id": "7g8h9i0j-1k2l-3m4n-5o6p-7q8r9s0t1u2v",
+    "title": "AlertMap",
+    "tagline": "Mappa sicurezza quartiere con alert realtime",
+    "abstract": "App community-driven per report incidenti sicurezza locali, mappe calore per quartiere con alert push geolocalizzati.",
+    "category": "Safety/Community",
+    "status": "parked",
+    "created": "2026-02-21",
+    "updated": "2026-02-23",
+    "scorecard": {
+      "domanda_mercato": 6,
+      "differenziazione": 5,
+      "fattibilita_tecnica": 7,
+      "costo_infrastruttura": 6,
+      "manutenzione": 7,
+      "monetizzabilita": 4,
+      "rischio_legale": 5,
+      "totale": 40,
+      "media": 5.71,
+      "verdetto": "PIVOT_NEEDED",
+      "note": "Esiste: Citizen (US), Neighbourhood (UK). Problem: moderation, fake reports, privacy. Network effect difficile."
+    },
+    "market_research": {
+      "competitor_major": [
+        "Citizen",
+        "Nextdoor",
+        "Ring Neighbors"
+      ],
+      "challenges": "moderation, verification, panic amplification"
+    },
+    "injection_notes": [
+      "Differenziatore: hyper-local community only?",
+      "Focus su specific vertical (natural disasters, school safety)"
+    ],
+    "priority": "L"
+  },
+  {
+    "id": "8h9i0j1k-2l3m-4n5o-6p7q-8r9s0t1u2v3w",
+    "title": "PanicMacro",
+    "tagline": "Pulsante emergenza con protocolli automatici",
+    "abstract": "Discreet emergency button con azioni automatizzate: notify contacts, share location, start recording, contact emergency.",
+    "category": "Safety/Security",
+    "status": "parked",
+    "created": "2026-02-21",
+    "updated": "2026-02-23",
+    "scorecard": {
+      "domanda_mercato": 6,
+      "differenziazione": 6,
+      "fattibilita_tecnica": 7,
+      "costo_infrastruttura": 6,
+      "manutenzione": 7,
+      "monetizzabilita": 4,
+      "rischio_legale": 6,
+      "totale": 42,
+      "media": 6.0,
+      "verdetto": "PIVOT_NEEDED",
+      "note": "Esistono app simili (bSafe, Life360). Hard to monetize. Feature per device integrato (smartwatch) più valida."
+    },
+    "market_research": {
+      "competitor_major": [
+        "bSafe",
+        "Life360",
+        "Noonlight"
+      ],
+      "hardware_trend": "Apple Watch Emergency SOS, Google Pixel Car Crash"
+    },
+    "injection_notes": [
+      "Merger con AlertMap?",
+      "Focus su IoT integration (smart home)",
+      "Enterprise: lone worker safety"
+    ],
+    "priority": "L"
+  }
+]
