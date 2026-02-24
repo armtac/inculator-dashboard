@@ -624,5 +624,170 @@
       "infra": "Fly.io per edge presence",
       "effort": "8-10 settimane MVP"
     }
+  },
+  {
+    "id": "c244080f-1f04-42e9-98bc-bb02f66cdd38",
+    "title": "DailyMotivation",
+    "tagline": "Quote motivazionale giornaliero via email/Telegram",
+    "abstract": "Servizio che invia ogni mattina una citazione motivazionale + link affiliati a libri Amazon. Infrastruttura quasi zero (cron + SMTP free). Monetizzazione diretta tramite commissioni.",
+    "category": "Utility/Consumer",
+    "status": "parked",
+    "created": "2026-02-24",
+    "updated": "2026-02-24",
+    "scorecard": {
+      "domanda_mercato": 7,
+      "differenziazione": 6,
+      "fattibilita_tecnica": 9,
+      "costo_infrastruttura": 9,
+      "manutenzione": 8,
+      "monetizzabilita": 8,
+      "rischio_legale": 2,
+      "totale": 49,
+      "media": 7.0,
+      "verdetto": "GO",
+      "note": "Mercato ampio, monetizzazione chiara. Rischio legale basso."
+    },
+    "market_research": {
+      "competitor_major": [
+        "Daily Inspire",
+        "Motivational Quotes App"
+      ],
+      "tam": "$500M (self‑help apps)",
+      "cagr": "8%",
+      "barriers": "bassi"
+    },
+    "injection_notes": [
+      "Testare con lista email personale",
+      "Usare affiliate Amazon easy"
+    ],
+    "priority": "L",
+    "strengths": [
+      "Infrastruttura gratis (cron, SMTP free tier)",
+      "Monetizzazione immediata tramite affiliate",
+      "Manutenzione minima dopo setup"
+    ],
+    "weaknesses": [
+      "Engagement potrebbe calare nel tempo",
+      "Spam detection risk se invio troppo frequente"
+    ],
+    "direction": "Fare MVP in 2 giorni. Variare orario invio, A/B copy. Monetizza con Amazon Associates.",
+    "architecture": {
+      "frontend": "Landing page statica su Vercel",
+      "backend": "GitHub Actions o cron‑job.org per invio email via SendGrid free tier",
+      "database": "Nessuno, lista contatti in CSV",
+      "auth": "Nessuno",
+      "infra": "Vercel + SendGrid free",
+      "effort": "1-2 giorni"
+    }
+  },
+  {
+    "id": "a7ceb5c6-6d52-40af-8ea2-bdd07bf026e6",
+    "title": "LocalDealsAlert",
+    "tagline": "Alert prezzi supermercati locali via Telegram",
+    "abstract": "Bot Telegram che scrapa volantini digitali di supermercati (Carrefour, Esselunga, etc.) e notifica offerte migliori nella propria città. Monetizzazione: affiliazione o abbonamento premium per alert in tempo reale.",
+    "category": "Utility/Consumer",
+    "status": "parked",
+    "created": "2026-02-24",
+    "updated": "2026-02-24",
+    "scorecard": {
+      "domanda_mercato": 8,
+      "differenziazione": 5,
+      "fattibilita_tecnica": 7,
+      "costo_infrastruttura": 8,
+      "manutenzione": 5,
+      "monetizzabilita": 7,
+      "rischio_legale": 3,
+      "totale": 43,
+      "media": 6.14,
+      "verdetto": "PIVOT_NEEDED",
+      "note": "Alta domanda (risparmio), manutenzione alta per gestire cambi layout volantini. Rischio copyright basso."
+    },
+    "market_research": {
+      "competitor_major": [
+        "Trovaprezzi",
+        "Prezzialimentari"
+      ],
+      "tam": "$200M (price comparison Italy)",
+      "cagr": "4%",
+      "barriers": "media – scraping e aggiornamenti"
+    },
+    "injection_notes": [
+      "Partire con 2-3 catene",
+      "Usare Telegram bot per semplicità"
+    ],
+    "priority": "L",
+    "strengths": [
+      "Domanda reale e alta",
+      "Monetizzazione tramite affiliazione/abbonamenti",
+      "Costo hosting basso"
+    ],
+    "weaknesses": [
+      "Manutenzione costante per adattarsi a nuovi layout dei volantini",
+      "Aggiornamento manuale necessario"
+    ],
+    "direction": "Limitare a poche catene e automatizzare parsing con AI. Offrire premium per notifiche in tempo reale.",
+    "architecture": {
+      "frontend": "Bot Telegram",
+      "backend": "Python script su server a pagamento (Railway/Render free tier) oppure GitHub Actions schedulato",
+      "database": "SQLite semplice",
+      "auth": "Nessuno",
+      "infra": "Free tier, costo < $5/mese se upgrade",
+      "effort": "2-3 settimane"
+    }
+  },
+  {
+    "id": "9e3c4b6b-281c-41dd-bc17-62ce55b0912c",
+    "title": "ResumeMatch AI",
+    "tagline": "Match CV e job description con punteggio e suggerimenti",
+    "abstract": "Semplice web app: incolli JD e CV, l'AI valuta compatibilità e consente download di versione ottimizzata. Pagamento una tantum $5. Hosting Vercel gratis. API LLM free tier (OpenRouter).",
+    "category": "Utility/Consumer",
+    "status": "parked",
+    "created": "2026-02-24",
+    "updated": "2026-02-24",
+    "scorecard": {
+      "domanda_mercato": 9,
+      "differenziazione": 7,
+      "fattibilita_tecnica": 8,
+      "costo_infrastruttura": 9,
+      "manutenzione": 8,
+      "monetizzabilita": 8,
+      "rischio_legale": 2,
+      "totale": 51,
+      "media": 7.29,
+      "verdetto": "GO",
+      "note": "Alta domanda, monetizzazione chiara, rischio basso."
+    },
+    "market_research": {
+      "competitor_major": [
+        "ResumeWorded",
+        "Jobscan"
+      ],
+      "tam": "$1B (career tools)",
+      "cagr": "10%",
+      "barriers": "bassi"
+    },
+    "injection_notes": [
+      "Usare modello piccolo ma efficace (GPT‑4o mini)",
+      "Fatturare con Stripe Checkout"
+    ],
+    "priority": "L",
+    "strengths": [
+      "Problema reale per job seeker",
+      "Costo hosting zero (Vercel)",
+      "Monetizzazione one‑click con Stripe"
+    ],
+    "weaknesses": [
+      "Concorrenza di tool più avanzati",
+      "Dipendenza da API LLM (costi se usage explode)"
+    ],
+    "direction": "MVP in 3 giorni. Pricing $5 per analysis. Offrire rimborso se score < 60%.",
+    "architecture": {
+      "frontend": "Next.js su Vercel",
+      "backend": "API route Vercel (serverless)",
+      "database": "None o KV per audit",
+      "auth": "None, pagamento Stripe senza account",
+      "infra": "Vercel + OpenRouter free tier",
+      "effort": "3-5 giorni"
+    }
   }
 ]
