@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <title>Inculator</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            surface: { 0: '#020617', 1: '#0f172a', 2: '#1e293b', 3: '#334155' }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+    * { -webkit-tap-highlight-color: transparent; box-sizing: border-box; }
+    body { font-family: 'Inter', sans-serif; overscroll-behavior: none; }
+    .bar-fill { transition: width 0.5s cubic-bezier(.4,0,.2,1); }
+    .card { transition: transform 0.15s ease, box-shadow 0.15s ease; }
+    .card:active { transform: scale(0.98); }
+    .slide-in { animation: slideIn 0.25s cubic-bezier(.4,0,.2,1); }
+    @keyframes slideIn { from { transform: translateY(100%); } to { transform: translateY(0); } }
+    .fade-in { animation: fadeIn 0.2s ease; }
+    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+    .section-card { background: linear-gradient(135deg, rgba(30,41,59,0.8), rgba(15,23,42,0.9)); }
+    ::-webkit-scrollbar { width: 0; }
+    .safe-bottom { padding-bottom: env(safe-area-inset-bottom, 16px); }
+  </style>
+</head>
+<body class="bg-surface-0 text-gray-200 min-h-screen safe-bottom">
+
+  <!-- LIST VIEW -->
+  <div id="list-view">
+    <!-- Header -->
+    <div class="sticky top-0 z-40 bg-surface-0/90 backdrop-blur-lg border-b border-white/5">
+      <div class="px-4 pt-4 pb-3">
+        <div class="flex items-center justify-between">
+          <h1 class="text-xl font-bold text-white">🧪 Inculator</h1>
+          <div class="flex gap-2">
+            <div id="stats-go" class="flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-emerald-950/60 border border-emerald-800/40">
+              <span class="text-sm font-bold text-emerald-400">-</span>
+              <span class="text-[10px] text-emerald-500/70 uppercase">go</span>
+            </div>
+            <div id="stats-wip" class="flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-amber-950/60 border border-amber-800/40">
+              <span class="text-sm font-bold text-amber-400">-</span>
+              <span class="text-[10px] text-amber-500/70 uppercase">wip</span>
+            </div>
+            <div id="stats-parked" class="flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-slate-800/60 border border-slate-700/40">
+              <span class="text-sm font-bold text-slate-400">-</span>
+              <span class="text-[10px] text-slate-500/70 uppercase">park</span>
+            </div>
+          </div>
+        </div>
+        <!-- Filters -->
+        <div class="flex gap-1.5 mt-3 overflow-x-auto pb-1 -mx-1 px-1">
+          <button onclick="filterBy('all')" class="filter-btn shrink-0 px-3 py-1.5 rounded-full text-xs font-medium bg-white/10 text-white" data-filter="all">Tutte</button>
+          <button onclick="filterBy('go')" class="filter-btn shrink-0 px-3 py-1.5 rounded-full text-xs font-medium bg-white/5 text-gray-400" data-filter="go">GO</button>
+          <button onclick="filterBy('wip')" class="filter-btn shrink-0 px-3 py-1.5 rounded-full text-xs font-medium bg-white/5 text-gray-400" data-filter="wip">WIP</button>
+          <button onclick="filterBy('parked')" class="filter-btn shrink-0 px-3 py-1.5 rounded-full text-xs font-medium bg-white/5 text-gray-400" data-filter="parked">Parked</button>
+          <div class="shrink-0 w-px bg-white/10 mx-1"></div>
+          <button onclick="sortBy('media')" class="shrink-0 px-3 py-1.5 rounded-full text-xs font-medium bg-white/5 text-gray-400" id="sort-media">↕ Rating</button>
+          <button onclick="sortBy('priority')" class="shrink-0 px-3 py-1.5 rounded-full text-xs font-medium bg-white/5 text-gray-400" id="sort-priority">↕ Priorita</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Ideas list -->
+    <div id="ideas-list" class="px-4 py-3 space-y-3"></div>
+  </div>
+
+  <!-- DETAIL VIEW (full screen overlay) -->
+  <div id="detail-view" class="fixed inset-0 z-50 bg-surface-0 overflow-y-auto hidden">
+    <div id="detail-content"></div>
+  </div>
+
+  <script>
+    let ideas = [];
+    let currentFilter = 'all';
+    let currentSort = 'media';
+    let sortAsc = false;
+
+    const SCORE_LABELS = {
+      domanda_mercato: { label: 'Domanda', icon: '📊' },
+      differenziazione: { label: 'Differenziazione', icon: '💎' },
+      fattibilita_tecnica: { label: 'Fattibilita', icon: '⚙️' },
+      costo_infrastruttura: { label: 'Costo Infra', icon: '💰' },
+      manutenzione: { label: 'Manutenzione', icon: '🔧' },
+      monetizzabilita: { label: 'Monetizzabilita', icon: '💵' },
+      rischio_legale: { label: 'Rischio Legale', icon: '⚖️' }
+    };
+    const SCORE_KEYS = Object.keys(SCORE_LABELS);
+
+    function barColor(v) {
+      if (v >= 8) return 'bg-emerald-500';
+      if (v >= 6) return 'bg-sky-500';
+      if (v >= 5) return 'bg-amber-500';
+      return 'bg-red-500';
+    }
+    function barBg(v) {
+      if (v >= 8) return 'bg-emerald-500/20';
+      if (v >= 6) return 'bg-sky-500/20';
+      if (v >= 5) return 'bg-amber-500/20';
+      return 'bg-red-500/20';
+    }
+    function textColor(v) {
+      if (v >= 7) return 'text-emerald-400';
+      if (v >= 6) return 'text-sky-400';
+      if (v >= 5) return 'text-amber-400';
+      return 'text-red-400';
+    }
+    function statusStyle(s) {
+      if (s === 'go') return 'bg-emerald-500/20 text-emerald-400 border-emerald-500/30';
+      if (s === 'wip') return 'bg-amber-500/20 text-amber-400 border-amber-500/30';
+      return 'bg-slate-500/20 text-slate-400 border-slate-500/30';
+    }
+    function priorityStyle(p) {
+      return p === 'H' ? 'bg-red-500/20 text-red-400 border-red-500/30' : 'bg-slate-500/15 text-slate-500 border-slate-600/30';
+    }
+
+    function renderList() {
+      let filtered = currentFilter === 'all' ? [...ideas] : ideas.filter(i => i.status === currentFilter);
+      if (currentSort === 'media') {
+        filtered.sort((a, b) => sortAsc ? a.scorecard.media - b.scorecard.media : b.scorecard.media - a.scorecard.media);
+      } else {
+        filtered.sort((a, b) => {
+          const pa = a.priority === 'H' ? 0 : 1, pb = b.priority === 'H' ? 0 : 1;
+          return sortAsc ? pa - pb : pb - pa;
+        });
+      }
+
+      document.getElementById('ideas-list').innerHTML = filtered.map(idea => {
+        const sc = idea.scorecard;
+        const bars = SCORE_KEYS.map(k => {
+          const v = sc[k] || 0;
+          return `<div class="flex-1 ${barBg(v)} rounded-full h-1"><div class="bar-fill ${barColor(v)} h-1 rounded-full" style="width:${v*10}%"></div></div>`;
+        }).join('');
+
+        return `
+          <div class="card bg-surface-1 rounded-2xl p-4 cursor-pointer border border-white/5 active:bg-surface-2"
+               onclick="showDetail('${idea.id}')">
+            <div class="flex items-start gap-3">
+              <div class="flex flex-col items-center pt-0.5" style="min-width:44px">
+                <span class="text-2xl font-extrabold leading-none ${textColor(sc.media)}">${sc.media.toFixed(1)}</span>
+                <span class="text-[9px] text-gray-600 mt-1 uppercase tracking-wider">/10</span>
+              </div>
+              <div class="flex-1 min-w-0">
+                <div class="flex items-center gap-1.5 flex-wrap mb-0.5">
+                  <h3 class="font-semibold text-white text-[15px] leading-tight">${idea.title}</h3>
+                  <span class="text-[9px] px-1.5 py-0.5 rounded-md font-semibold uppercase border ${statusStyle(idea.status)}">${idea.status}</span>
+                  <span class="text-[9px] px-1.5 py-0.5 rounded-md font-semibold border ${priorityStyle(idea.priority)}">${idea.priority}</span>
+                </div>
+                <p class="text-xs text-gray-500 leading-snug line-clamp-2">${idea.tagline || ''}</p>
+                <div class="flex gap-0.5 mt-2.5">${bars}</div>
+              </div>
+              <svg class="w-4 h-4 text-gray-600 mt-1 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"/>
+              </svg>
+            </div>
+          </div>`;
+      }).join('');
+
+      // Stats
+      const gc = ideas.filter(i => i.status === 'go').length;
+      const wc = ideas.filter(i => i.status === 'wip').length;
+      const pc = ideas.filter(i => i.status === 'parked').length;
+      document.querySelector('#stats-go .text-sm').textContent = gc;
+      document.querySelector('#stats-wip .text-sm').textContent = wc;
+      document.querySelector('#stats-parked .text-sm').textContent = pc;
+    }
+
+    function showDetail(id) {
+      const idea = ideas.find(i => i.id === id);
+      if (!idea) return;
+      const sc = idea.scorecard;
+      const mr = idea.market_research || {};
+      const strengths = idea.strengths || [];
+      const weaknesses = idea.weaknesses || [];
+      const direction = idea.direction || '';
+      const arch = idea.architecture || {};
+      const notes = idea.injection_notes || [];
+
+      const scoreRows = SCORE_KEYS.map(k => {
+        const v = sc[k] || 0;
+        const info = SCORE_LABELS[k];
+        return `
+          <div class="flex items-center gap-2.5 py-2">
+            <span class="text-sm w-5 text-center">${info.icon}</span>
+            <span class="text-xs text-gray-400 w-28 shrink-0">${info.label}</span>
+            <div class="flex-1 ${barBg(v)} rounded-full h-2">
+              <div class="bar-fill ${barColor(v)} h-2 rounded-full" style="width:${v*10}%"></div>
+            </div>
+            <span class="text-xs font-mono font-bold w-6 text-right ${textColor(v)}">${v}</span>
+          </div>`;
+      }).join('');
+
+      const strengthsHtml = strengths.length > 0 ? `
+        <div class="section-card rounded-2xl p-4 border border-emerald-500/10">
+          <h4 class="text-xs font-bold text-emerald-400 uppercase tracking-wider mb-2.5 flex items-center gap-1.5">
+            <span>💪</span> Punti di Forza
+          </h4>
+          <ul class="space-y-2">
+            ${strengths.map(s => `<li class="text-sm text-gray-300 flex gap-2 leading-snug"><span class="text-emerald-500 mt-0.5 shrink-0">+</span><span>${s}</span></li>`).join('')}
+          </ul>
+        </div>` : '';
+
+      const weaknessesHtml = weaknesses.length > 0 ? `
+        <div class="section-card rounded-2xl p-4 border border-red-500/10">
+          <h4 class="text-xs font-bold text-red-400 uppercase tracking-wider mb-2.5 flex items-center gap-1.5">
+            <span>⚠️</span> Problematicita
+          </h4>
+          <ul class="space-y-2">
+            ${weaknesses.map(w => `<li class="text-sm text-gray-300 flex gap-2 leading-snug"><span class="text-red-500 mt-0.5 shrink-0">-</span><span>${w}</span></li>`).join('')}
+          </ul>
+        </div>` : '';
+
+      const directionHtml = direction ? `
+        <div class="section-card rounded-2xl p-4 border border-sky-500/10">
+          <h4 class="text-xs font-bold text-sky-400 uppercase tracking-wider mb-2.5 flex items-center gap-1.5">
+            <span>🧭</span> Direzione
+          </h4>
+          <p class="text-sm text-gray-300 leading-relaxed">${direction}</p>
+        </div>` : '';
+
+      const archHtml = Object.keys(arch).length > 0 ? `
+        <div class="section-card rounded-2xl p-4 border border-violet-500/10">
+          <h4 class="text-xs font-bold text-violet-400 uppercase tracking-wider mb-3 flex items-center gap-1.5">
+            <span>🏗️</span> Architettura Ipotetica
+          </h4>
+          <div class="space-y-2.5">
+            ${Object.entries(arch).map(([k, v]) => {
+              const label = k.charAt(0).toUpperCase() + k.slice(1).replace(/_/g, ' ');
+              return `<div class="flex gap-2">
+                <span class="text-[11px] font-semibold text-violet-400/70 uppercase w-20 shrink-0 pt-0.5">${label}</span>
+                <span class="text-sm text-gray-300 leading-snug">${v}</span>
+              </div>`;
+            }).join('')}
+          </div>
+        </div>` : '';
+
+      const mrHtml = Object.keys(mr).length > 0 ? `
+        <div class="section-card rounded-2xl p-4 border border-white/5">
+          <h4 class="text-xs font-bold text-gray-400 uppercase tracking-wider mb-3 flex items-center gap-1.5">
+            <span>🔍</span> Ricerca di Mercato
+          </h4>
+          <div class="space-y-2">
+            ${Object.entries(mr).map(([k, v]) => {
+              const val = Array.isArray(v) ? v.join(', ') : v;
+              const label = k.replace(/_/g, ' ');
+              return `<div class="flex gap-2">
+                <span class="text-[11px] text-gray-500 uppercase w-28 shrink-0 pt-0.5">${label}</span>
+                <span class="text-sm text-gray-300">${val}</span>
+              </div>`;
+            }).join('')}
+          </div>
+        </div>` : '';
+
+      const notesHtml = notes.length > 0 ? `
+        <div class="section-card rounded-2xl p-4 border border-white/5">
+          <h4 class="text-xs font-bold text-gray-400 uppercase tracking-wider mb-2.5 flex items-center gap-1.5">
+            <span>📝</span> Note
+          </h4>
+          <ul class="space-y-1.5">
+            ${notes.map(n => `<li class="text-sm text-gray-400 flex gap-2"><span class="text-gray-600">•</span>${n}</li>`).join('')}
+          </ul>
+        </div>` : '';
+
+      document.getElementById('detail-content').innerHTML = `
+        <div class="slide-in">
+          <!-- Sticky header -->
+          <div class="sticky top-0 z-10 bg-surface-0/90 backdrop-blur-lg border-b border-white/5 px-4 py-3 flex items-center gap-3">
+            <button onclick="closeDetail()" class="p-1 -ml-1 rounded-lg active:bg-white/10">
+              <svg class="w-6 h-6 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M15 19l-7-7 7-7"/>
+              </svg>
+            </button>
+            <span class="font-semibold text-white truncate">${idea.title}</span>
+            <div class="ml-auto flex gap-1.5">
+              <span class="text-[10px] px-2 py-0.5 rounded-md font-semibold uppercase border ${statusStyle(idea.status)}">${idea.status}</span>
+              <span class="text-[10px] px-2 py-0.5 rounded-md font-semibold border ${priorityStyle(idea.priority)}">${idea.priority}</span>
+            </div>
+          </div>
+
+          <div class="px-4 py-5 space-y-5">
+            <!-- Hero -->
+            <div>
+              <div class="flex items-center gap-2 mb-1">
+                <span class="text-[11px] text-gray-500 uppercase tracking-wider">${idea.category || ''}</span>
+              </div>
+              <h2 class="text-2xl font-extrabold text-white leading-tight">${idea.title}</h2>
+              <p class="text-sm text-gray-400 mt-1">${idea.tagline || ''}</p>
+              <p class="text-sm text-gray-500 mt-3 leading-relaxed">${idea.abstract || ''}</p>
+            </div>
+
+            <!-- Score summary -->
+            <div class="flex gap-3">
+              <div class="flex-1 bg-surface-1 rounded-2xl p-4 text-center border border-white/5">
+                <div class="text-3xl font-extrabold ${textColor(sc.media)}">${sc.media.toFixed(1)}</div>
+                <div class="text-[10px] text-gray-500 mt-0.5 uppercase">Media</div>
+              </div>
+              <div class="flex-1 bg-surface-1 rounded-2xl p-4 text-center border border-white/5">
+                <div class="text-3xl font-extrabold text-gray-400">${sc.totale}</div>
+                <div class="text-[10px] text-gray-500 mt-0.5 uppercase">Tot /70</div>
+              </div>
+              <div class="flex-1 bg-surface-1 rounded-2xl p-4 text-center border border-white/5">
+                <div class="text-lg font-bold mt-1 ${
+                  sc.verdetto === 'GO' ? 'text-emerald-400' :
+                  sc.verdetto === 'PIVOT_NEEDED' ? 'text-amber-400' :
+                  sc.verdetto === 'PARK' ? 'text-slate-400' : 'text-red-400'
+                }">${(sc.verdetto || '-').replace('_', ' ')}</div>
+                <div class="text-[10px] text-gray-500 mt-0.5 uppercase">Verdetto</div>
+              </div>
+            </div>
+
+            <!-- Scorecard -->
+            <div class="bg-surface-1 rounded-2xl p-4 border border-white/5">
+              <h4 class="text-xs font-bold text-gray-400 uppercase tracking-wider mb-1">Scorecard</h4>
+              ${scoreRows}
+              ${sc.note ? `<p class="mt-3 text-xs text-gray-500 italic border-l-2 border-slate-700 pl-3 leading-relaxed">${sc.note}</p>` : ''}
+            </div>
+
+            <!-- Direction -->
+            ${directionHtml}
+
+            <!-- Strengths & Weaknesses -->
+            ${strengthsHtml}
+            ${weaknessesHtml}
+
+            <!-- Architecture -->
+            ${archHtml}
+
+            <!-- Market Research -->
+            ${mrHtml}
+
+            <!-- Notes -->
+            ${notesHtml}
+
+            <!-- Footer -->
+            <div class="flex justify-between text-[10px] text-gray-600 pt-2 pb-4">
+              <span>Creata ${idea.created || '-'}</span>
+              <span>Aggiornata ${idea.updated || '-'}</span>
+            </div>
+          </div>
+        </div>
+      `;
+
+      document.getElementById('detail-view').classList.remove('hidden');
+      document.getElementById('detail-view').scrollTop = 0;
+      document.getElementById('list-view').style.display = 'none';
+    }
+
+    function closeDetail() {
+      document.getElementById('detail-view').classList.add('hidden');
+      document.getElementById('list-view').style.display = '';
+    }
+
+    function filterBy(status) {
+      currentFilter = status;
+      document.querySelectorAll('.filter-btn').forEach(b => {
+        const active = b.dataset.filter === status;
+        b.className = `filter-btn shrink-0 px-3 py-1.5 rounded-full text-xs font-medium ${active ? 'bg-white/10 text-white' : 'bg-white/5 text-gray-400'}`;
+      });
+      renderList();
+    }
+
+    function sortBy(field) {
+      if (currentSort === field) sortAsc = !sortAsc;
+      else { currentSort = field; sortAsc = false; }
+      renderList();
+    }
+
+    // Handle back button
+    window.addEventListener('popstate', () => {
+      if (!document.getElementById('detail-view').classList.contains('hidden')) {
+        closeDetail();
+      }
+    });
+
+    async function init() {
+      try {
+        const resp = await fetch('./ideas.json');
+        ideas = await resp.json();
+        renderList();
+      } catch (e) {
+        document.getElementById('ideas-list').innerHTML =
+          '<p class="text-red-400 text-center py-12 text-sm">Errore caricamento dati</p>';
+      }
+    }
+
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeDetail(); });
+    init();
+  </script>
+</body>
+</html>
