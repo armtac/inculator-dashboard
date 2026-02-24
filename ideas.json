@@ -454,5 +454,175 @@
       "infra": "Alta affidabilità richiesta: multi-region, 99.99% uptime",
       "effort": "3-4 mesi MVP mobile, +2 mesi smartwatch"
     }
+  },
+  {
+    "id": "a2a9b125-95b1-4b62-9ce2-7dcfcfee7768",
+    "title": "ContentRepurpose AI",
+    "tagline": "Da un contenuto a dieci: newsletter, post, short in un clic",
+    "abstract": "Strumento Micro-SaaS che trasforma automaticamente un contenuto di partenza (articolo, podcast, video) in formati ottimizzati per diverse piattaforme social e newsletter, usando AI per mantenere tono e messaggio.",
+    "category": "Content Marketing/AI",
+    "status": "parked",
+    "created": "2026-02-24",
+    "updated": "2026-02-24",
+    "scorecard": {
+      "domanda_mercato": 8,
+      "differenziazione": 7,
+      "fattibilita_tecnica": 8,
+      "costo_infrastruttura": 9,
+      "manutenzione": 7,
+      "monetizzabilita": 8,
+      "rischio_legale": 8,
+      "totale": 55,
+      "media": 7.86,
+      "verdetto": "GO",
+      "note": "AI-powered, subscription model, low infra cost."
+    },
+    "market_research": {
+      "competitor_major": [
+        "Repurpose.io",
+        "Hootsuite",
+        "Buffer",
+        "Canva"
+      ],
+      "tam": "$50B content marketing tools (2024)",
+      "cagr": "12%",
+      "barriers": "Bassi - API accessibili"
+    },
+    "injection_notes": [
+      "Target: creator solitari e piccole agenzie",
+      "Modello freemium con limiti di minutaggio AI"
+    ],
+    "priority": "L",
+    "strengths": [
+      "Domanda alta: creator overload",
+      "AI APIs mature e low-cost",
+      "MVP in 4-6 settimane"
+    ],
+    "weaknesses": [
+      "Concorrenza su scheduling",
+      "Costo API AI se scale",
+      "Difficoltà differenziare oltre l'AI"
+    ],
+    "direction": "Focus su qualità della riscrittura (parafrasi) non solo taglio. Integrazione diretta con ChatGPT/Claude.",
+    "architecture": {
+      "frontend": "Next.js (React) - dashboard web",
+      "backend": "Node.js + serverless (Vercel) per orchestrator",
+      "ml": "OpenAI API (gpt-4o-mini) per rewriting",
+      "database": "Supabase (PostgreSQL)",
+      "infra": "Vercel + Supabase, costi <$20/mese per MVP",
+      "effort": "4-6 settimane"
+    }
+  },
+  {
+    "id": "9fd72c0a-e30b-4bc4-9e36-f3e18af64564",
+    "title": "VetCRM",
+    "tagline": "CRM semplice per cliniche veterinarie",
+    "abstract": "Software di gestione pazienti e appuntamenti su misura per piccole cliniche veterinarie: anagrafica animali, reminder vaccini, fatturazione integrata, ricette digitali.",
+    "category": "Veterinary/SaaS",
+    "status": "parked",
+    "created": "2026-02-24",
+    "updated": "2026-02-24",
+    "scorecard": {
+      "domanda_mercato": 7,
+      "differenziazione": 8,
+      "fattibilita_tecnica": 9,
+      "costo_infrastruttura": 9,
+      "manutenzione": 8,
+      "monetizzabilita": 8,
+      "rischio_legale": 7,
+      "totale": 56,
+      "media": 8.0,
+      "verdetto": "GO",
+      "note": "Settore underserved, basso costo infrastruttura."
+    },
+    "market_research": {
+      "competitor_major": [
+        "Vetter",
+        "eVetPractice",
+        "Cornerstone"
+      ],
+      "tam": "~30.000 cliniche vet in EU/US",
+      "cagr": "5%",
+      "barriers": "Medi - necessaria conoscenza dominio"
+    },
+    "injection_notes": [
+      "Prezzo mensile in base a numero animali",
+      "Integrazione con laboratori esterni"
+    ],
+    "priority": "L",
+    "strengths": [
+      "Mercato underserved: CRM generici non settoriali",
+      "Costo acquisizione basso su community vet",
+      "Revenue ricorrente"
+    ],
+    "weaknesses": [
+      "Mercato piccolo",
+      "Richiede supporto clienti qualificato",
+      "Concorrenti esistenti ma costosi"
+    ],
+    "direction": "Partire con MVP core (anagrafica, appuntamenti) e aggiungere moduli fatturazione/ricette.",
+    "architecture": {
+      "frontend": "React + shadcn/ui (web-based, responsive)",
+      "backend": "FastAPI (Python) o Node.js",
+      "database": "PostgreSQL su neon.tech (serverless)",
+      "infra": "Vercel frontend + Railway backend",
+      "effort": "6-8 settimane"
+    }
+  },
+  {
+    "id": "b31f27b4-c489-4fb9-95b3-71e3d914d835",
+    "title": "ParkFind Local",
+    "tagline": "Trova parcheggio in tempo reale nella tua città",
+    "abstract": "App community-driven per segnalare parcheggi liberi in piccole e medie città. Mappa interattiva, segnalazioni anonime, notifiche push in zona. Premium: probabilità di liberazione e prenotazione.",
+    "category": "Mobility/Community",
+    "status": "parked",
+    "created": "2026-02-24",
+    "updated": "2026-02-24",
+    "scorecard": {
+      "domanda_mercato": 7,
+      "differenziazione": 7,
+      "fattibilita_tecnica": 8,
+      "costo_infrastruttura": 8,
+      "manutenzione": 7,
+      "monetizzabilita": 7,
+      "rischio_legale": 6,
+      "totale": 50,
+      "media": 7.14,
+      "verdetto": "GO",
+      "note": "Network effect locale, monetizzazione premium."
+    },
+    "market_research": {
+      "competitor_major": [
+        "Waze",
+        "ParkWhiz",
+        "SpotHero"
+      ],
+      "tam": "1000+ piccole città EU/US con problemi parcheggio",
+      "cagr": "8%",
+      "barriers": "Bassi - crowdfunding seeding community"
+    },
+    "injection_notes": [
+      "Partire da una città pilota",
+      "Partnership con comuni per dati open data"
+    ],
+    "priority": "L",
+    "strengths": [
+      "Problema concreto quotidiano",
+      "Network effect locale",
+      "Monetizzazione Premium"
+    ],
+    "weaknesses": [
+      "Richiede massa critica per utilità",
+      "Segnalazioni false",
+      "Concorrenti grandi su metropoli"
+    ],
+    "direction": "Focus su piccole città (<200k) dove concorrenti non operano.",
+    "architecture": {
+      "frontend": "React Native (iOS+Android)",
+      "backend": "Node.js + Socket.io per real-time updates",
+      "database": "PostgreSQL + PostGIS",
+      "infra": "Fly.io per edge presence",
+      "effort": "8-10 settimane MVP"
+    }
   }
 ]
