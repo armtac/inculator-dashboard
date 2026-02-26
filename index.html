@@ -131,7 +131,7 @@
     }
 
     function renderList() {
-      let filtered = currentFilter === 'all' ? [...ideas] : ideas.filter(i => i.status === currentFilter);
+      let filtered = currentFilters.has('all') ? [...ideas] : ideas.filter(i => currentFilters.has(i.status));
       if (currentSort === 'media') {
         filtered.sort((a, b) => sortAsc ? a.scorecard.media - b.scorecard.media : b.scorecard.media - a.scorecard.media);
       } else {
@@ -149,8 +149,8 @@
         }).join('');
 
         return `
-          <div class="card bg-surface-1 rounded-2xl p-4 cursor-pointer border border-white/5 active:bg-surface-2"
-               onclick="showDetail('${idea.id}')">
+          <div class="card bg-surface-1 rounded-2xl p-4 cursor-pointer border border-white/5 active:bg-surface-2 swipeable"
+               data-id="${idea.id}" onclick="showDetail('${idea.id}')">
             <div class="flex items-start gap-3">
               <div class="flex flex-col items-center pt-0.5" style="min-width:44px">
                 <span class="text-2xl font-extrabold leading-none ${textColor(sc.media)}">${sc.media.toFixed(1)}</span>
@@ -501,7 +501,7 @@
           ideas = await resp.json();
           saveToLocalStorage();
         }
-        renderList();
+        toggleFilter('all');
         attachSwipeHandlers();
       } catch (e) {
         document.getElementById('ideas-list').innerHTML =
