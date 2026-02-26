@@ -62,7 +62,10 @@
             </div>
           </div>
         </div>
-        <!-- Filters -->
+        <!-- Alert: editing via Telegram -->
+        <div class="bg-blue-950/40 border border-blue-800/50 text-blue-200 text-xs px-3 py-2 rounded-lg mb-4">
+          Modifica status o elimina un’idea? Usa Telegram (es. “Metti Screenshot Redactor in wip” o “Elimina idea PixVid”).
+        </div>
         <div class="flex gap-1.5 mt-3 overflow-x-auto pb-1 -mx-1 px-1">
           <button onclick="toggleFilter('all')" class="filter-btn shrink-0 px-3 py-1.5 rounded-full text-xs font-medium bg-white/10 text-white" data-filter="all">Tutte</button>
           <button onclick="toggleFilter('go')" class="filter-btn shrink-0 px-3 py-1.5 rounded-full text-xs font-medium bg-white/5 text-gray-400" data-filter="go">GO</button>
@@ -149,7 +152,7 @@
         }).join('');
 
         return `
-          <div class="card bg-surface-1 rounded-2xl p-4 cursor-pointer border border-white/5 active:bg-surface-2 swipeable"
+          <div class="card bg-surface-1 rounded-2xl p-4 cursor-pointer border border-white/5 active:bg-surface-2"
                data-id="${idea.id}" onclick="showDetail('${idea.id}')">
             <div class="flex items-start gap-3">
               <div class="flex flex-col items-center pt-0.5" style="min-width:44px">
@@ -406,83 +409,7 @@
       } catch(e){}
     }
 
-    // Status change & delete
-    function changeStatus(id, newStatus) {
-      const idea = ideas.find(i => i.id === id);
-      if (idea) {
-        idea.status = newStatus;
-        saveToLocalStorage();
-        renderList();
-      }
-    }
-    function deleteIdea(id) {
-      if (confirm('Eliminare questa idea?')) {
-        ideas = ideas.filter(i => i.id !== id);
-        saveToLocalStorage();
-        renderList();
-      }
-    }
-
-    // Swipe handling
-    let touchStartX = 0, touchCurrentX = 0, activeCard = null;
-    function attachSwipeHandlers() {
-      const list = document.getElementById('ideas-list');
-      list.addEventListener('touchstart', e => {
-        const card = e.target.closest('.swipeable');
-        if (card) { activeCard = card; touchStartX = e.touches[0].clientX; card.style.transition = 'none'; }
-      }, {passive:true});
-      list.addEventListener('touchmove', e => {
-        if (!activeCard) return;
-        touchCurrentX = e.touches[0].clientX;
-        const dx = touchCurrentX - touchStartX;
-        const maxDrag = 120;
-        let tx = dx; if (dx>0) tx=Math.min(dx,maxDrag); if (dx<0) tx=Math.max(dx,-maxDrag);
-        activeCard.style.transform = `translateX(${tx}px)`;
-      }, {passive:true});
-      list.addEventListener('touchend', () => {
-        if (!activeCard) return;
-        const dx = touchCurrentX - touchStartX;
-        const threshold = 60;
-        activeCard.style.transition = '';
-        if (dx > threshold) {
-          showStatusMenu(activeCard, activeCard.dataset.id);
-        } else if (dx < -threshold) {
-          showDeleteButton(activeCard, activeCard.dataset.id);
-        } else {
-          activeCard.style.transform = '';
-        }
-        activeCard = null;
-      });
-    }
-    function showStatusMenu(card, id) {
-      removeMenu(); removeDelete();
-      const menu = document.createElement('div');
-      menu.id = 'status-menu';
-      menu.className = 'absolute right-2 top-1/2 -translate-y-1/2 flex gap-1 bg-surface-2/95 backdrop-blur p-1.5 rounded-xl border border-white/10 z-20';
-      ['go','wip','parked','done'].forEach(st => {
-        const btn = document.createElement('button');
-        btn.textContent = st.toUpperCase();
-        btn.className = 'px-2 py-1 text-[10px] font-bold rounded-lg border ' + statusStyle(st);
-        btn.onclick = () => { changeStatus(id, st); removeMenu(); };
-        menu.appendChild(btn);
-      });
-      card.style.position = 'relative';
-      card.appendChild(menu);
-      card.style.transform = '';
-    }
-    function removeMenu() { const m = document.getElementById('status-menu'); if (m) m.remove(); }
-    function showDeleteButton(card, id) {
-      removeMenu();
-      const btn = document.createElement('button');
-      btn.innerHTML = '🗑️ Elimina';
-      btn.id = 'delete-btn';
-      btn.className = 'absolute left-2 top-1/2 -translate-y-1/2 px-3 py-1 text-xs font-bold text-red-400 bg-red-500/10 border border-red-500/30 rounded-lg z-20';
-      card.style.position = 'relative';
-      card.appendChild(btn);
-      btn.onclick = () => { deleteIdea(id); removeDelete(); };
-      card.style.transform = '';
-    }
-    function removeDelete() { const b = document.getElementById('delete-btn'); if (b) b.remove(); }
+    // No UI modification allowed; all changes via Telegram
 
     // Handle back button
     window.addEventListener('popstate', () => {
@@ -502,7 +429,7 @@
           saveToLocalStorage();
         }
         toggleFilter('all');
-        attachSwipeHandlers();
+        // attachSwipeHandlers(); // disabilitato: solo lettura
       } catch (e) {
         document.getElementById('ideas-list').innerHTML =
           '<p class="text-red-400 text-center py-12 text-sm">Errore caricamento dati</p>';
