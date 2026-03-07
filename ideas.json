@@ -1136,5 +1136,176 @@
       "infra": "Vercel + Railway, Plaid costs ~$0.10/user",
       "effort": "6-8 settimane MVP"
     }
+  }, {
+    "id": "d4e5f6g7-h8i9-0j1k-2l3m-4n5o6p7q8r9s0t",
+    "title": "EventHorizon",
+    "tagline": "Scopri eventi locali nella tua città, in unico posto",
+    "abstract": "Aggregatore di eventi locali che raccoglie concerti, mostre, mercatini e attività community da diverse fonti (Eventbrite, Meetup, Facebook Events) in un'unica interfaccia pulita. Notifiche push per eventi matching interessi personali. Monetizzazione: featured listing per organizzatori + premium per utenti (early bird alerts).",
+    "category": "Local/Consumer",
+    "status": "parked",
+    "created": "2026-03-07",
+    "updated": "2026-03-07",
+    "scorecard": {
+      "domanda_mercato": 8,
+      "differenziazione": 7,
+      "fattibilita_tecnica": 8,
+      "costo_infrastruttura": 8,
+      "manutenzione": 6,
+      "monetizzabilita": 7,
+      "rischio_legale": 8,
+      "totale": 52,
+      "media": 7.43,
+      "verdetto": "GO",
+      "note": "Domanda reale, API esistenti, monetizzazione chiara."
+    },
+    "market_research": {
+      "competitor_major": [
+        "Eventbrite",
+        "Meetup",
+        "Facebook Events"
+      ],
+      "tam": "500M+ utenti cercano eventi globalmente",
+      "cagr": "5%",
+      "barriers": "bassi - API accessibili"
+    },
+    "injection_notes": [
+      "Focus su UX superiore ai competitor esistenti",
+      "Partire da una città pilota (es. Chieti o Pescara)"
+    ],
+    "priority": "L",
+    "strengths": [
+      "Problema reale: informazioni eventi frammentate",
+      "API pubbliche (Eventbrite, Meetup, Facebook Graph)",
+      "Monetizzazione featured listing chiara ($29-99/mese organizer)",
+      "Costo hosting basso (Vercel + serverless)"
+    ],
+    "weaknesses": [
+      "Network effect locale: utile solo con massa critica città",
+      "Dipendenze da API di terze parti (cambiamenti, rate limit)",
+      "Organizzatori piccoli non pagano senza risultati dimostrati"
+    ],
+    "direction": "GO - Partire con una città pilota (media 50k abitanti). Agganciare 50-100 organizer locali (associazioni, locali) con listing gratuiti. Monetizzare dopo 1000 utenti attivi. Pricing: featured listing $49/mese, premium user alerts $2.99/mese.",
+    "architecture": {
+      "frontend": "Next.js + Mapbox per mappa eventi, React Native mobile",
+      "backend": "Node.js + serverless (Vercel) per API aggregator",
+      "database": "Supabase (PostgreSQL) per eventi e user preferences",
+      "integrations": "Eventbrite API, Meetup API, Facebook Graph API",
+      "infra": "Vercel + Supabase, costi < $30/mese per 10k utenti",
+      "effort": "6-8 settimane MVP (web +API integration)"
+    }
+  }, {
+    "id": "e5f6g7h8-i9j0-1k2l-3m4n-5o6p7q8r9s0t1u",
+    "title": "TripSync",
+    "tagline": "Pianificatore di viaggio collaborativo senza account",
+    "abstract": "App web che permette a famiglie/gruppi di pianificare un viaggio condividendo un link. Aggiungono destinazioni, alloggi, attività in una mappa condivisa. Niente login obbligatorio, modifiche in tempo reale via link. Monetizzazione: affiliate (booking.com, flights) + export offline premium.",
+    "category": "Travel/Productivity",
+    "status": "parked",
+    "created": "2026-03-07",
+    "updated": "2026-03-07",
+    "scorecard": {
+      "domanda_mercato": 8,
+      "differenziazione": 8,
+      "fattibilita_tecnica": 9,
+      "costo_infrastruttura": 9,
+      "manutenzione": 7,
+      "monetizzabilita": 7,
+      "rischio_legale": 8,
+      "totale": 56,
+      "media": 8.0,
+      "verdetto": "GO",
+      "note": "Semplicità estrema, affiliate commissioni, basso costo."
+    },
+    "market_research": {
+      "competitor_major": [
+        "Wanderlog",
+        "TripIt",
+        "Google Trips (discontinued)"
+      ],
+      "gap": "Troppi account/login, troppi feature",
+      "tam": "$1.2T travel industry"
+    },
+    "injection_notes": [
+      "Zero login friction - link sharing only",
+      "Focus mobile-first, PWA per offline"
+    ],
+    "priority": "L",
+    "strengths": [
+      "Nessun login required - massima adoption",
+      "Reale need: famiglie pianificano via WhatsApp/Google Docs",
+      "Affiliate revenue immediata (booking.com, Skyscanner)",
+      "Costo hosting zero (Vercel serverless)"
+    ],
+    "weaknesses": [
+      "Richiede real-time collaboration senza account (sfida tecnica)",
+      "Monetizzazione dipende da affiliate, margini bassi",
+      "Difficoltà differenziare da Google Docs"
+    ],
+    "direction": "GO - Build MVP in 4 settimane. Core: mappa condivisa + lista destinazioni + link affiliate. UX must be smoother than sharing spreadsheet. Monetizza con export PDF premium ($4.99) + affiliate links. Marketing: Reddit r/travel, Facebook travel groups.",
+    "architecture": {
+      "frontend": "Next.js PWA (mobile-first) + Mapbox GL",
+      "backend": "Serverless functions (Vercel) per salvataggio stato su DB",
+      "database": "Supabase (PostgreSQL) conUUID-based room links",
+      "real_time": "WebSocket via Vercel Edge Config o supabase realtime",
+      "affiliate": "API Booking.com, Skyscanner, Amazon (attività)",
+      "infra": "Vercel + Supabase free tier sufficiente per MVP",
+      "effort": "4-6 settimane MVP"
+    }
+  }, {
+    "id": "f6g7h8i9-j0k1-2l3m-4n5o-6p7q8r9s0t1u2v",
+    "title": "ReviewHub",
+    "tagline": "Gestione recensioni da Google, Yelp, Facebook in un'unica dashboard",
+    "abstract": "Dashboard B2B per piccole attività locali (ristoranti, hotel, negozi) che aggrega tutte le recensioni da Google My Business, Yelp, Facebook in un'unica interfaccia. Risposta diretta, sentiment analysis, alert per nuove recensioni negative. Pricing flat $29/mese indipendentemente da numero sedi.",
+    "category": "SaaS/B2B",
+    "status": "parked",
+    "created": "2026-03-07",
+    "updated": "2026-03-07",
+    "scorecard": {
+      "domanda_mercato": 9,
+      "differenziazione": 8,
+      "fattibilita_tecnica": 8,
+      "costo_infrastruttura": 8,
+      "manutenzione": 6,
+      "monetizzabilita": 9,
+      "rischio_legale": 7,
+      "totale": 55,
+      "media": 7.86,
+      "verdetto": "GO",
+      "note": "Piccole business underserved, monetizzazione chiara $29/mese."
+    },
+    "market_research": {
+      "competitor_major": [
+        "BrightLocal",
+        "EmbedSocial",
+        "Birdeye"
+      ],
+      "pricing_gap": "Competitor $44-259/mese, troppi feature per piccole attività",
+      "tam": "~5M small businesses US+EU con presenza locale"
+    },
+    "injection_notes": [
+      "Pricing semplice: $29/mese flat, qualsiasi numero di sedi",
+      "Focus UX semplice: niente dashboard complesse"
+    ],
+    "priority": "L",
+    "strengths": [
+      "Pain reale: business owners controllano 3-4 platform separatamente",
+      "Monetizzazione chiara e sostenibile ($29/mese)",
+      "API accessibili (Google My Business, Yelp Fusion, Facebook Graph)",
+      "Low churn se integrato nel flusso operativo"
+    ],
+    "weaknesses": [
+      "Richiede aggiornamenti quando API cambiano (maintenance)",
+      "Supporto clienti necessario (non self-serve per tutti)",
+      "Difficoltà scaling se tutti usano gratis"
+    ],
+    "direction": "GO - Target: single-location businesses (ristoranti, bar, hotel). MVP in 6 settimane: aggregazione 3 piattaforme + risposta diretta + alert email. Onboarding guided con import automatico dati da Google. Pricing $29/mese, annual discount. Marketing: Facebook/Instagram ads geo-targeted, partnership con associazioni di categoria.",
+    "architecture": {
+      "frontend": "Next.js dashboard con grafici sentiment (Chart.js)",
+      "backend": "Python/FastAPI per scheduler polls API (cron)",
+      "database": "Supabase (PostgreSQL) per credentials e cached reviews",
+      "integrations": "Google My Business API, Yelp Fusion API, Facebook Graph API pages",
+      "alert_system": "SendGrid email + optional Telegram webhook",
+      "infra": "Vercel frontend + Railway backend, cronjobs su Railway",
+      "effort": "6-8 settimane MVP (3 platform integration + dashboard)"
+    }
   }
 ]
