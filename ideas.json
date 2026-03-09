@@ -1307,5 +1307,149 @@
       "infra": "Vercel frontend + Railway backend, cronjobs su Railway",
       "effort": "6-8 settimane MVP (3 platform integration + dashboard)"
     }
+  },
+  {
+    "id": "a1b2c3d4-e5f6-7890-abcd-ef1234567890",
+    "title": "NicheJob PayPerApp",
+    "tagline": "Job board verticale con modello pay-per-qualified-applicant",
+    "abstract": "Borsa lavoro specializzata per settori underserved (healthcare technicians, skilled trades, creative niches). Gli employer pagano solo $10-30 per candidato qualificato, non per job posting. Target: LinkedIn/Indeed non coprono bene queste nicchie.",
+    "category": "Recruiting/SaaS",
+    "status": "parked",
+    "created": "2026-03-10",
+    "updated": "2026-03-10",
+    "scorecard": {
+      "domanda_mercato": 8,
+      "differenziazione": 8,
+      "fattibilita_tecnica": 8,
+      "costo_infrastruttura": 9,
+      "manutenzione": 7,
+      "monetizzabilita": 9,
+      "rischio_legale": 7,
+      "media": 8.0,
+      "verdetto": "GO"
+    },
+    "market_research": {
+      "competitor_major": ["LinkedIn", "Indeed", "ZipRecruiter"],
+      "gap": "67% candidati qualificati mai visti per filtri keyword. Time-to-hire 42 giorni per posizioni skilled.",
+      "tam": "$28B recruitment software",
+      "pricing_model": "employer pays $10-30 per qualified applicant vs $250+ per job posting"
+    },
+    "priority": "L",
+    "strengths": [
+      "Modello monetizzazione innovativo: pay-per-outcome",
+      "Mercato sottoservito: LinkedIn/Indeed non specializzati",
+      "Barriere tecniche basse: matching AI + database",
+      "Network effect: più job = più candidati = più job"
+    ],
+    "weaknesses": [
+      "Necessita massa critica di job e candidati",
+      "Intermediario: se job board fallisce, reputazione compromessa",
+      "Competitor possono copiare il modello pricing"
+    ],
+    "direction": "Iniziare con una sola nicchia (es. healthcare technicians o skilled trades). Costruire database candidati attraverso content marketing gratuito (salary reports, career guides).",
+    "architecture": {
+      "frontend": "Next.js web app + mobile responsive",
+      "backend": "Node.js + OpenAI per matching scoring",
+      "database": "PostgreSQL + vector DB per skill matching",
+      "infra": "Vercel + Railway, costi <$50/mese per MVP",
+      "effort": "6-8 settimane MVP"
+    }
+  },
+  {
+    "id": "b2c3d4e5-f6g7-8901-2345-6789abcdefghij",
+    "title": "HealthScribe AI",
+    "tagline": "AI meeting assistant per documentazione sanitaria",
+    "abstract": "Trascrizione e strutturazione automatica di consultazioni mediche, note cliniche, report. Riduce bureaucratic overhead del 60%. Target: medici di base, cliniche private, fisioterapisti. Vertical-specific healthcare compliance.",
+    "category": "Healthcare/AI",
+    "status": "parked",
+    "created": "2026-03-10",
+    "updated": "2026-03-10",
+    "scorecard": {
+      "domanda_mercato": 9,
+      "differenziazione": 8,
+      "fattibilita_tecnica": 7,
+      "costo_infrastruttura": 8,
+      "manutenzione": 6,
+      "monetizzabilita": 8,
+      "rischio_legale": 6,
+      "media": 7.43,
+      "verdetto": "GO"
+    },
+    "market_research": {
+      "trending": "AI meeting assistants market $3.24B (2025) → $7.33B (2035)",
+      "competitor_major": ["Otter.ai", "Fireflies.ai", "Fathom"],
+      "gap": "Competitor orizzontali, nessuno specializzato healthcare compliance",
+      "tam": "$7.33B AI meeting assistants by 2035"
+    },
+    "priority": "L",
+    "strengths": [
+      "Mercato AI healthcare in crescita esplosiva",
+      "Healthcare ha compliance requirements specifici (HIPAA)",
+      "Burocrazia medica è pain point enorme",
+      "Willingness to pay alta: tempo medico = costo"
+    ],
+    "weaknesses": [
+      "Compliance HIPAA/GDPR complessa e costosa",
+      "Accuracy critica: errori in documenti medici = liability",
+      "Sales cycle B2B healthcare lungo",
+      "Necessario integration con EHR esistenti"
+    ],
+    "direction": "Focus su nicchia: fisioterapisti o cliniche private (più agili di ospedali). MVP con trascrizione + template note cliniche standard italiane. Pricing €49-99/mese per professionista.",
+    "architecture": {
+      "frontend": "Next.js dashboard + mobile PWA",
+      "backend": "Python/FastAPI + Whisper per trascrizione",
+      "database": "PostgreSQL (HIPAA-compliant hosting)",
+      "ml": "GPT-4 per summarization, entity extraction (diagnosi, terapie)",
+      "infra": "Healthcare-compliant cloud (AWS HIPAA), encryption E2E",
+      "effort": "8-10 settimane MVP"
+    }
+  },
+  {
+    "id": "c3d4e5f6-g7h8-9012-3456-789abcdefghijk",
+    "title": "NewsletterAds Marketplace",
+    "tagline": "Marketplace annunci per newsletter: publisher incontrano advertiser",
+    "abstract": "Piattaforma che connette publisher di newsletter con advertiser. Sponsorized posts, classified ads, programmatic matching basato su audience. Market gap: Paved/Swapstack servono grandi newsletter, nessuno per 1K-50K subscribers.",
+    "category": "Marketing/Marketplace",
+    "status": "parked",
+    "created": "2026-03-10",
+    "updated": "2026-03-10",
+    "scorecard": {
+      "domanda_mercato": 8,
+      "differenziazione": 7,
+      "fattibilita_tecnica": 8,
+      "costo_infrastruttura": 9,
+      "manutenzione": 7,
+      "monetizzabilita": 8,
+      "rischio_legale": 8,
+      "media": 7.71,
+      "verdetto": "GO"
+    },
+    "market_research": {
+      "trending": "Global email advertising market $11.25B by 2027, CAGR 13.1%",
+      "competitor_major": ["Paved", "Swapstack"],
+      "gap": "Paved/Swapstack servono newsletter >50K subscribers. Mercato underserved: 1K-50K subs.",
+      "tam": "$11.25B email advertising by 2027"
+    },
+    "priority": "L",
+    "strengths": [
+      "Marketplace: network effect (più publisher = più advertiser)",
+      "Take rate: 10-20% su ogni transazione",
+      "Low infra: matching platform, nessun contenuto",
+      "Creator economy in espansione: più newsletter ogni giorno"
+    ],
+    "weaknesses": [
+      "Chicken-and-egg: serve massa critica publisher + advertiser",
+      "Competitor established per newsletter grandi",
+      "Disintermediazione: publisher/advertiser potrebbero bypassare",
+      "Chargeback e dispute management complesso"
+    ],
+    "direction": "Focus su nicchie specifiche (es. newsletter tech/developer). Vette di publisher tramite outreach personale. Pricing: 15% take rate sugli ads. Self-serve per publisher, assisted per advertiser.",
+    "architecture": {
+      "frontend": "Next.js marketplace + dashboard analytics",
+      "backend": "Node.js + Stripe Connect per split payments",
+      "database": "PostgreSQL + analytics dashboard",
+      "infra": "Vercel + Railway, costi <$30/mese per MVP",
+      "effort": "6-8 settimane MVP"
+    }
   }
 ]
