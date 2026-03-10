@@ -1451,5 +1451,187 @@
       "infra": "Vercel + Railway, costi <$30/mese per MVP",
       "effort": "6-8 settimane MVP"
     }
+  },
+  {
+    "id": "d8e9f0a1-b2c3-4d5e-f6a7-b8c9d0e1f2a3",
+    "title": "MeetingMind AI",
+    "tagline": "Trascrizione e action items automatici dai meeting",
+    "abstract": "Micro-SaaS che partecipa ai meeting (Google Meet, Zoom, Teams), genera trascrizione automatica, estrae action items e decisioni chiave. Invia riassunto via email/Slack subito dopo il meeting. Pricing per numero meeting/mese.",
+    "category": "Productivity/B2B",
+    "status": "parked",
+    "created": "2026-03-10",
+    "updated": "2026-03-10",
+    "scorecard": {
+      "domanda_mercato": 9,
+      "differenziazione": 7,
+      "fattibilita_tecnica": 8,
+      "costo_infrastruttura": 8,
+      "manutenzione": 7,
+      "monetizzabilita": 9,
+      "rischio_legale": 6,
+      "totale": 54,
+      "media": 7.71,
+      "verdetto": "GO",
+      "note": "Mercato meeting AI $3.24B in crescita. Fattibilità alta con API esistenti."
+    },
+    "market_research": {
+      "competitor_major": [
+        "Otter.ai",
+        "Fireflies.ai",
+        "Fathom",
+        "Grain"
+      ],
+      "tam": "$3.24B AI meeting assistants (2025)",
+      "cagr": "17.5%",
+      "barriers": "Medi - API meeting platforms accessibili"
+    },
+    "injection_notes": [
+      "Focus su UX semplice e action items chiari",
+      "Pricing trasparente per team piccoli"
+    ],
+    "priority": "L",
+    "strengths": [
+      "Mercato in crescita esplosiva (17.5% CAGR)",
+      "Pain point reale: prendere appunti durante meeting",
+      "API Google Meet/Zoom accessibili",
+      "Monetizzazione subscription Ricorrente"
+    ],
+    "weaknesses": [
+      "Competitor consolidati (Otter.ai, Fireflies)",
+      "Necessario consent per recording (privacy)",
+      "Costo API AI per trascrizioni lunghe",
+      "Differentiazione: action items > solo trascrizione"
+    ],
+    "direction": "GO - MVP con Google Meet API + Whisper + GPT per summarization. Focus su action items automatici e integrazione Slack. Pricing $12-29/mese per utente.",
+    "architecture": {
+      "frontend": "Next.js dashboard (recording history, transcripts)",
+      "backend": "Node.js + Google Meet API / Zoom SDK",
+      "ml": "OpenAI Whisper per trascrizione, GPT-4 per summarization",
+      "database": "PostgreSQL per meeting data, S3 per audio",
+      "integrations": "Slack, Gmail, Google Calendar",
+      "infra": "Vercel + Railway, costi <$30/mese per MVP",
+      "effort": "4-6 settimane MVP"
+    }
+  },
+  {
+    "id": "e0f1a2b3-c4d5-6e7f-8a9b-0c1d2e3f4a5b",
+    "title": "Digital Detox Planner",
+    "tagline": "Pianifica la tua riduzione dello screen time",
+    "abstract": "App che aiuta a pianificare digital detox settimanali/mensili con reminder personalizzati, tracciamento progressi, e modalità focus. Suggerisce attività alternative offline. Market trend: growing demand for healthier tech habits.",
+    "category": "Wellness/Consumer",
+    "status": "parked",
+    "created": "2026-03-10",
+    "updated": "2026-03-10",
+    "scorecard": {
+      "domanda_mercato": 8,
+      "differenziazione": 7,
+      "fattibilita_tecnica": 8,
+      "costo_infrastruttura": 9,
+      "manutenzione": 8,
+      "monetizzabilita": 6,
+      "rischio_legale": 9,
+      "totale": 55,
+      "media": 7.86,
+      "verdetto": "GO",
+      "note": "Trend salute mentale + digital wellness in crescita. Basso costo infra."
+    },
+    "market_research": {
+      "competitor_major": [
+        "Forest",
+        "One Sec",
+        "Opal",
+        "Screen Time (iOS native)"
+      ],
+      "tam": "$500M digital wellness apps (2025)",
+      "cagr": "12%",
+      "barriers": "Bassi - app native semplice"
+    },
+    "injection_notes": [
+      "Focus su planning/scheduling detox, non solo tracking",
+      "Gamification con achievement e streak"
+    ],
+    "priority": "L",
+    "strengths": [
+      "Trend crescente: digital wellness e salute mentale",
+      "Differentiazione: focus su PLANNING detox (calendar integration)",
+      "Costo infrastruttura quasi zero (app on-device)",
+      "Mercato underserved: esistenti sono solo tracker o blocker"
+    ],
+    "weaknesses": [
+      "Screen Time nativo iOS/Android già esiste",
+      "Monetizzazione app wellness difficile (freemium model)",
+      "Retention challenge: utenti abbandonano dopo poche settimane",
+      "Feature facilmente copiabili da competitor"
+    ],
+    "direction": "GO - MVP app React Native con focus su planning (calendar + reminders for detox sessions). Gamification e streak tracking. Premium: custom challenges, statistics advanced, export. Pricing $4.99/mese.",
+    "architecture": {
+      "frontend": "React Native (iOS + Android)",
+      "backend": "Serverless (Firebase/Supabase) per sync e gamification",
+      "database": "SQLite locale + cloud sync",
+      "integrations": "Calendar API (Google/Apple), HealthKit per correlation",
+      "infra": "Firebase free tier sufficiente per MVP",
+      "effort": "4-6 settimane MVP"
+    }
+  },
+  {
+    "id": "f1a2b3c4-d5e6-7f8a-9b0c-1d2e3f4a5b6c",
+    "title": "ThumbCompare",
+    "tagline": "Confronta thumbnail YouTube vs competitor prima di pubblicare",
+    "abstract": "Tool per YouTube creator: carichi la thumbnail, inserisci keyword di ricerca, vedi come apparirà nei risultati vs top competitor. A/B test rapidi, heatmap attention prediction. Proven concept: Clickpilot $1.6K MRR in 5 mesi.",
+    "category": "Creator Tools",
+    "status": "parked",
+    "created": "2026-03-10",
+    "updated": "2026-03-10",
+    "scorecard": {
+      "domanda_mercato": 9,
+      "differenziazione": 8,
+      "fattibilita_tecnica": 8,
+      "costo_infrastruttura": 9,
+      "manutenzione": 8,
+      "monetizzabilita": 8,
+      "rischio_legale": 8,
+      "totale": 58,
+      "media": 8.29,
+      "verdetto": "GO",
+      "note": "Proven concept (Clickpilot), Creator economy in crescita."
+    },
+    "market_research": {
+      "competitor_major": [
+        "Clickpilot",
+        "Canva",
+        "TubeBuddy",
+        "vidIQ"
+      ],
+      "validation": "Clickpilot hit $1,600 MRR in 5 months with same concept",
+      "tam": "$15B creator economy tools",
+      "cagr": "10%",
+      "barriers": "Bassi - YouTube Data API accessibile"
+    },
+    "injection_notes": [
+      "Focus su UX semplice: upload → preview → download",
+      "Heatmap attention prediction con AI"
+    ],
+    "priority": "L",
+    "strengths": [
+      "Proven concept: Clickpilot ha già validato il modello ($1.6K MRR)",
+      "Creator economy in crescita esplosiva",
+      "Pain point reale: thumbnail performance è critica per views",
+      "Costo infrastruttura basso (YouTube Data API)"
+    ],
+    "weaknesses": [
+      "Clickpilot esiste e ha advantage first-mover",
+      "Competitor suite (TubeBuddy, vidIQ) potrebbero aggiungere feature",
+      "API YouTube rate limit",
+      "Monetizzazione: freemium vs one-time purchase"
+    ],
+    "direction": "GO - MVP web app con upload thumbnail, keyword input, preview nei risultati YouTube. Heatmap attention con AI. Pricing: free 5 analisi/settimana, premium $9/mese illimitato. Marketing: Reddit r/NewTubers, Twitter.",
+    "architecture": {
+      "frontend": "Next.js (React) + Canvas API per heatmap",
+      "backend": "Node.js + YouTube Data API v3",
+      "ml": "Eye-tracking prediction model (open source) o API",
+      "database": "Supabase (PostgreSQL) per history analisi",
+      "infra": "Vercel (frontend) + Railway (API), costi <$20/mese",
+      "effort": "3-4 settimane MVP"
+    }
   }
 ]
