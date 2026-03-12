@@ -1136,7 +1136,8 @@
       "infra": "Vercel + Railway, Plaid costs ~$0.10/user",
       "effort": "6-8 settimane MVP"
     }
-  }, {
+  },
+  {
     "id": "d4e5f6g7-h8i9-0j1k-2l3m-4n5o6p7q8r9s0t",
     "title": "EventHorizon",
     "tagline": "Scopri eventi locali nella tua città, in unico posto",
@@ -1193,7 +1194,8 @@
       "infra": "Vercel + Supabase, costi < $30/mese per 10k utenti",
       "effort": "6-8 settimane MVP (web +API integration)"
     }
-  }, {
+  },
+  {
     "id": "e5f6g7h8-i9j0-1k2l-3m4n-5o6p7q8r9s0t1u",
     "title": "TripSync",
     "tagline": "Pianificatore di viaggio collaborativo senza account",
@@ -1250,7 +1252,8 @@
       "infra": "Vercel + Supabase free tier sufficiente per MVP",
       "effort": "4-6 settimane MVP"
     }
-  }, {
+  },
+  {
     "id": "f6g7h8i9-j0k1-2l3m-4n5o-6p7q8r9s0t1u2v",
     "title": "ReviewHub",
     "tagline": "Gestione recensioni da Google, Yelp, Facebook in un'unica dashboard",
@@ -1329,7 +1332,11 @@
       "verdetto": "GO"
     },
     "market_research": {
-      "competitor_major": ["LinkedIn", "Indeed", "ZipRecruiter"],
+      "competitor_major": [
+        "LinkedIn",
+        "Indeed",
+        "ZipRecruiter"
+      ],
       "gap": "67% candidati qualificati mai visti per filtri keyword. Time-to-hire 42 giorni per posizioni skilled.",
       "tam": "$28B recruitment software",
       "pricing_model": "employer pays $10-30 per qualified applicant vs $250+ per job posting"
@@ -1377,7 +1384,11 @@
     },
     "market_research": {
       "trending": "AI meeting assistants market $3.24B (2025) → $7.33B (2035)",
-      "competitor_major": ["Otter.ai", "Fireflies.ai", "Fathom"],
+      "competitor_major": [
+        "Otter.ai",
+        "Fireflies.ai",
+        "Fathom"
+      ],
       "gap": "Competitor orizzontali, nessuno specializzato healthcare compliance",
       "tam": "$7.33B AI meeting assistants by 2035"
     },
@@ -1426,7 +1437,10 @@
     },
     "market_research": {
       "trending": "Global email advertising market $11.25B by 2027, CAGR 13.1%",
-      "competitor_major": ["Paved", "Swapstack"],
+      "competitor_major": [
+        "Paved",
+        "Swapstack"
+      ],
       "gap": "Paved/Swapstack servono newsletter >50K subscribers. Mercato underserved: 1K-50K subs.",
       "tam": "$11.25B email advertising by 2027"
     },
@@ -1632,6 +1646,186 @@
       "database": "Supabase (PostgreSQL) per history analisi",
       "infra": "Vercel (frontend) + Railway (API), costi <$20/mese",
       "effort": "3-4 settimane MVP"
+    }
+  },
+  {
+    "id": "99df3108-3ed1-45cd-931d-944c165a14ec",
+    "title": "ComplianceAI",
+    "tagline": "Scanner GDPR/HIPAA per piccole imprese verticali",
+    "abstract": "Tool che analizza siti web, documenti e processi per verificare conformità a framework normativi specifici (GDPR, HIPAA, PCI-DSS). Genera report dettagliati con remediation steps. Target: small business verticals che non possono permettersi consulenti legali costosi.",
+    "category": "Compliance/SaaS",
+    "status": "parked",
+    "created": "2026-03-13",
+    "updated": "2026-03-13",
+    "scorecard": {
+      "domanda_mercato": 9,
+      "differenziazione": 7,
+      "fattibilita_tecnica": 7,
+      "costo_infrastruttura": 8,
+      "manutenzione": 6,
+      "monetizzabilita": 8,
+      "rischio_legale": 6,
+      "totale": 51,
+      "media": 7.29,
+      "verdetto": "GO",
+      "note": "Domanda obbligatoria, pricing power elevato."
+    },
+    "market_research": {
+      "competitor_major": [
+        "ToS;DR",
+        "Termly",
+        "OneTrust",
+        "Cookiebot"
+      ],
+      "tam": "~2M small businesses EU/US needing compliance",
+      "cagr": "12% (regulatory compliance spending growth)",
+      "gaps": "ToS;DR focused only on ToS. OneTrust enterprise expensive. Opportunity: vertical-specific low-cost compliance for small businesses."
+    },
+    "injection_notes": [
+      "Focus su verticali ad alta regolamentazione (healthtech, fintech, edtech)",
+      "Template predefiniti per GDPR, HIPAA, PCI-DSS, ISO 27001"
+    ],
+    "priority": "L",
+    "strengths": [
+      "Regulatory pressure creates must-have demand",
+      "High willingness to pay (avoid fines)",
+      "Low infra cost using LLM APIs for document analysis",
+      "Solo-dev feasible with rule-based + AI"
+    ],
+    "weaknesses": [
+      "Need frequent updates when regulations change",
+      "Legal liability if reports are inaccurate (disclaimer needed)",
+      "Customer acquisition requires education",
+      "Enterprise sales cycle long if scaling to larger clients"
+    ],
+    "direction": "GO - Start with GDPR checker for e-commerce. Simpleweb scanner + PDF report generator. Pricing: $49 one-time scan or $99/mo subscription for continuous monitoring. Validate with 10 beta users from e-commerce Facebook groups.",
+    "architecture": {
+      "frontend": "Next.js dashboard with scan history",
+      "backend": "Python/FastAPI with Playwright crawler + OpenAI API for analysis",
+      "database": "PostgreSQL (Supabase) for user data and cached scans",
+      "ml": "Prompt engineering to extract compliance requirements from regulations",
+      "infra": "Vercel + Railway, cost < $50/mo for MVP",
+      "effort": "6-8 weeks"
+    }
+  },
+  {
+    "id": "12cc5f41-71c9-49d8-a6bf-6db2efed2e3f",
+    "title": "SkillBoard",
+    "tagline": "Job board per mestieri specializzati (healthcare, artigianato, tecnici)",
+    "abstract": "Borsa lavoro verticale per professioni tecniche specializzate (tecnici biomedicali, artigiani, operatori macchine). Modello pay-per-qualified-applicant: datori di lavoro pagano $15-40 solo per candidati che superano screening skills. Gli algoritmi AI abbinano competenze certificate con job description, superando i filtri keyword di LinkedIn/Indeed.",
+    "category": "Recruiting/SaaS",
+    "status": "parked",
+    "created": "2026-03-13",
+    "updated": "2026-03-13",
+    "scorecard": {
+      "domanda_mercato": 8,
+      "differenziazione": 8,
+      "fattibilita_tecnica": 8,
+      "costo_infrastruttura": 9,
+      "manutenzione": 7,
+      "monetizzabilita": 9,
+      "rischio_legale": 7,
+      "totale": 56,
+      "media": 8.0,
+      "verdetto": "GO",
+      "note": "Modello innovativo pay-per-outcome, network effect."
+    },
+    "market_research": {
+      "competitor_major": [
+        "LinkedIn",
+        "Indeed",
+        "ZipRecruiter",
+        "Dice"
+      ],
+      "gap": "67% qualified candidates missed by keyword filters (Jeff Taylor analysis). Time-to-hire 42 days for skilled positions.",
+      "tam": "$28B recruitment software market",
+      "pricing_model": "Employer pays $15-40 per qualified applicant vs $250+ per job posting on generic boards"
+    },
+    "injection_notes": [
+      "Start with single vertical (e.g., healthcare technicians or skilled trades)",
+      "Build candidate database via content marketing: salary guides, skill assessment tools"
+    ],
+    "priority": "L",
+    "strengths": [
+      "Pay-per-outcome model aligns with employer ROI",
+      "Underserved niche with acute hiring pain",
+      "Low customer acquisition cost via SEO/content",
+      "Network effect: more jobs attract more candidates and vice versa"
+    ],
+    "weaknesses": [
+      "Chicken-and-egg problem requires seeding both sides",
+      "Quality of matching algorithm is critical success factor",
+      "Employment law compliance responsibilities",
+      "Incumbents can copy the pricing model if proven"
+    ],
+    "direction": "GO - Launch focused on one trade (e.g., HVAC technicians). Build free tools: salary calculator, resume scanner to attract candidates. Pricing: $25 per qualified applicant (defined as matches 80%+ skills, has certification). Volume discounts for 5+ hires/month.",
+    "architecture": {
+      "frontend": "Next.js web app (mobile responsive) for both employers and candidates",
+      "backend": "Node.js + OpenAI embeddings for skill matching + vector DB (Pinecone)",
+      "database": "PostgreSQL for job posts, candidate profiles, applications",
+      "integrations": "Indeed API (import jobs), LinkedIn (profile import optional)",
+      "infra": "Vercel + Railway, <$50/mo for MVP",
+      "effort": "6-8 weeks MVP"
+    }
+  },
+  {
+    "id": "3b5211e9-547b-4fcc-841a-01f68a5c6fce",
+    "title": "ContentFlow AI",
+    "tagline": "Trasforma un contenuto in 10 formatti per social e newsletter",
+    "abstract": "Paste a link to your article, podcast, or video → AI generates platform-specific versions: LinkedIn post, Twitter/X threads, Instagram carousel captions, TikTok script, newsletter edition, Substack excerpt, etc. Maintains original tone and message while optimizing format and length. Creator's most valuable time-saver.",
+    "category": "Content Marketing/AI",
+    "status": "parked",
+    "created": "2026-03-13",
+    "updated": "2026-03-13",
+    "scorecard": {
+      "domanda_mercato": 9,
+      "differenziazione": 8,
+      "fattibilita_tecnica": 9,
+      "costo_infrastruttura": 9,
+      "manutenzione": 7,
+      "monetizzabilita": 8,
+      "rischio_legale": 8,
+      "totale": 58,
+      "media": 8.29,
+      "verdetto": "GO",
+      "note": "High demand, proven market (Repurpose.io exists but expensive)."
+    },
+    "market_research": {
+      "competitor_major": [
+        "Repurpose.io",
+        "Hootsuite",
+        "Buffer",
+        "Canva"
+      ],
+      "gap": "Repurpose.io ($349/yr) does automatic clipping without rewriting. Opportunity: high-quality AI paraphrasing that preserves author voice while optimizing for each platform.",
+      "tam": "$50B content marketing tools (2024)",
+      "cagr": "12%"
+    },
+    "injection_notes": [
+      "Focus on quality of rewrite (human-like), not just trimming",
+      "Integrate directly with OpenAI/Claude APIs, custom prompts per platform"
+    ],
+    "priority": "L",
+    "strengths": [
+      "Creators are time-poor and willing to pay for automation",
+      "LLM APIs are mature, cheap, high quality",
+      "Network effect: more supported platforms = more value",
+      "Fast time-to-market, MVP in 4-6 weeks"
+    ],
+    "weaknesses": [
+      "Competitors can add AI rewriting easily (feature war)",
+      "Copyright concerns if output too similar to original",
+      "Platform format changes require prompt updates",
+      "Pricing pressure from incumbents bundling"
+    ],
+    "direction": "GO - MVP supports 5 platforms: LinkedIn, Twitter, Instagram, newsletter, TikTok. Input URL or text → outputs ready-to-publish. Freemium: 5 transformations/mo free, $19/mo unlimited. Target solo creators and small agencies. Marketing: creator communities (Twitter, Indie Hackers).",
+    "architecture": {
+      "frontend": "Next.js dashboard with live preview + copy buttons",
+      "backend": "Node.js serverless (Vercel) with OpenAI API (gpt-4o-mini)",
+      "database": "Supabase for user accounts and transformation history",
+      "integrations": "YouTube transcript API, RSS parser for articles, direct text paste",
+      "infra": "Vercel + Supabase, cost < $30/mo for thousands of users",
+      "effort": "4-6 weeks MVP"
     }
   }
 ]
