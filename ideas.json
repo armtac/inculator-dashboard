@@ -1827,5 +1827,189 @@
       "infra": "Vercel + Supabase, cost < $30/mo for thousands of users",
       "effort": "4-6 weeks MVP"
     }
+  },
+  {
+    "id": "b3c4d5e6-f789-0123-4567-89abcdef024",
+    "title": "MindSync AI",
+    "tagline": "Compagno empatico per salute mentale e gestione emozioni",
+    "abstract": "App mobile che combina tracking dell'umore, esercizi CBT guidati e check-in adattivi tramite AI. Riconosce pattern di stress e suggerisce interventi personalizzati in tempo reale. Mercato AI wellness in crescita 31% CAGR.",
+    "category": "Health/AI",
+    "status": "parked",
+    "created": "2026-03-14",
+    "updated": "2026-03-14",
+    "scorecard": {
+      "domanda_mercato": 9,
+      "differenziazione": 7,
+      "fattibilita_tecnica": 8,
+      "costo_infrastruttura": 8,
+      "manutenzione": 6,
+      "monetizzabilita": 8,
+      "rischio_legale": 6,
+      "totale": 52,
+      "media": 7.43,
+      "verdetto": "GO",
+      "note": "Mercato $48.6B, alta domanda, monetizzazione subscription."
+    },
+    "market_research": {
+      "competitor_major": [
+        "Calm",
+        "Headspace",
+        "Woebot",
+        "Wysa"
+      ],
+      "tam": "$48.63B (AI companion market 2026)",
+      "cagr": "31%",
+      "barriers": "Medi - API AI accessibili, UX differentiation cruciale"
+    },
+    "injection_notes": [
+      "Focus su personalizzazione AI vs competitor generici",
+      "Freemium con coaching premium umano opzionale",
+      "Target under 35 stanchi di meditazione generica"
+    ],
+    "priority": "L",
+    "strengths": [
+      "Mercato in crescita esplosiva (31% CAGR)",
+      "AI matura per conversazioni empatiche e pattern recognition",
+      "Monetizzazione subscription collaudata nel wellness",
+      "Basso costo infrastruttura (AI APIs serverless)"
+    ],
+    "weaknesses": [
+      "Competitor consolidati (Calm, Headspace) con brand forte",
+      "Responsabilità etica per salute mentale richiede disclaimer",
+      "Rischio burnout utenti (abbandono alto dopo poche settimane)",
+      "Necessario compliance HIPAA/GDPR per dati salute"
+    ],
+    "direction": "GO con focus su adattività AI. MVP: tracking umore + chatbot empatico con interventi contestuali. Pricing $9.99/mese con trial 7 giorni. Differenziazione: impara dalle abitudini e suggerisce micro-interventi instead of just meditation.",
+    "architecture": {
+      "frontend": "React Native (iOS/Android) + web companion dashboard",
+      "backend": "Node.js + OpenAI GPT-4o / Claude API per conversazioni",
+      "database": "PostgreSQL (Supabase) per mood logs e preferences",
+      "ml": "Sentiment analysis + pattern recognition on daily behavior",
+      "infra": "Supabase + Vercel, costo < $50/mese per 1k utenti",
+      "effort": "6-8 settimane MVP (tracking + chatbot base)"
+    }
+  },
+  {
+    "id": "c4d5e6f7-g8h9-9012-3456-789abcdef025",
+    "title": "CircleSprout",
+    "tagline": "Platform per community verticali con modelli di engagement specifici",
+    "abstract": "Piattaforma white-label per creare community verticali (UX freelance, urban gardeners, indie devs). Include feature domain-specifiche che Discord/Slack non offrono: portfolio review, job board integrata, eventi virtuali, moduli coaching. Creator economy in espansione rende le community owned spazi cruciali.",
+    "category": "Community/SaaS",
+    "status": "parked",
+    "created": "2026-03-14",
+    "updated": "2026-03-14",
+    "scorecard": {
+      "domanda_mercato": 8,
+      "differenziazione": 8,
+      "fattibilita_tecnica": 7,
+      "costo_infrastruttura": 7,
+      "manutenzione": 6,
+      "monetizzabilita": 7,
+      "rischio_legale": 8,
+      "totale": 51,
+      "media": 7.29,
+      "verdetto": "GO",
+      "note": "Creator economy $480B by 2027, community as key differentiator."
+    },
+    "market_research": {
+      "competitor_major": [
+        "Circle.so",
+        "Discord",
+        "Slack",
+        "Geneva"
+      ],
+      "tam": "$480B creator economy by 2027 (communities segment growing at 12% CAGR)",
+      "cagr": "12%",
+      "gaps": "Circle.so too generic for ultra-niche verticals. Discord lacks monetization and professional features. Opportunity: vertical-specific engagement tools + robust membership management."
+    },
+    "injection_notes": [
+      "Iniziare con una sola nicchia pilota (es. UX designer freelance)",
+      "Feature verticali: portfolio critique sessions, job board, mentorship matching",
+      "Pricing $29-99/mese per community owner, take 10% on paid events"
+    ],
+    "priority": "L",
+    "strengths": [
+      "Creator economy in crescita: community owned = key differentiator vs free social platforms",
+      "Network effect una volta raggiunta massa critica di engaged members",
+      "Monetizzazione multipla: subscription SaaS + commissioni eventi + sponsorizzazioni",
+      "Vertical focus riduce competizione con generici"
+    ],
+    "weaknesses": [
+      "Circle.so già consolidato nel mercato community SaaS",
+      "Chicken-and-egg: vuota all'inizio, richiede seeding manuale intensivo",
+      "Churn alto se community non diventa attiva rapidamente",
+      "Richiede supporto clienti per aiutare owners a far crescere community"
+    ],
+    "direction": "GO - Partire con vertical specific: UX designer freelance. Features: portfolio feedback (thread-based), job board integrata, eventi virtuali Zoom integration. Onboarding assistito per founder community. Pricing: $49/mese base + revenue share su eventi a pagamento. Marketing: partnership con influencer della nicchia.",
+    "architecture": {
+      "frontend": "Next.js (web-first, mobile responsive) con design system personalizzabile",
+      "backend": "Node.js + Socket.io per real-time chat e notifications",
+      "database": "PostgreSQL + Redis per caching sessions",
+      "integrations": "Zoom API, Stripe Connect per payments, YouTube per recorded events",
+      "infra": "Vercel frontend + Railway backend, auto-scaling per eventi live",
+      "effort": "8-10 settimane MVP con core community features + job board"
+    }
+  },
+  {
+    "id": "d4e5f6g7-h8i9-0j1k-2l3m-4n5o6p7q8r9s0t1",
+    "title": "ReMultiply",
+    "tagline": "Trasforma un contenuto in 10 formatti per ogni piattaforma con un clic",
+    "abstract": "Paste URL articolo, podcast o video → AI genera automaticamente versioni platform-ottimizzate: LinkedIn post, Twitter/X threads, Instagram caption carosello, TikTok script, newsletter edition, Substack excerpt, Pinterest pin descriptions, Reddit post, LinkedIn article, Facebook post. Mantiene tono originale e ottimizza lunghezze. Creator's ultimate time-saver.",
+    "category": "Content Marketing/AI",
+    "status": "parked",
+    "created": "2026-03-14",
+    "updated": "2026-03-14",
+    "scorecard": {
+      "domanda_mercato": 9,
+      "differenziazione": 8,
+      "fattibilita_tecnica": 9,
+      "costo_infrastruttura": 9,
+      "manutenzione": 7,
+      "monetizzabilita": 8,
+      "rischio_legale": 8,
+      "totale": 58,
+      "media": 8.29,
+      "verdetto": "GO",
+      "note": "Alta domanda creator overload, proven concept (Repurpose.io)."
+    },
+    "market_research": {
+      "competitor_major": [
+        "Repurpose.io",
+        "Hootsuite",
+        "Buffer",
+        "Canva",
+        "Jasper"
+      ],
+      "gap": "Repurpose.io ($349/yr) fa solo clipping automatico senza riscrittura di qualità. Need: parafrasi AI che preserva voce autore e ottimizza per ogni platform format.",
+      "tam": "$50B content marketing tools (2024)",
+      "cagr": "12%"
+    },
+    "injection_notes": [
+      "Focus qualità riscrittura AI (paraphrasing human-like), non solo taglio",
+      "Integrazione diretta OpenAI GPT-4o-mini / Claude per ogni platform",
+      "Supporto podcast transcription, YouTube, articoli RSS"
+    ],
+    "priority": "L",
+    "strengths": [
+      "Creators time-poor, pagano per automation che risparmia ore",
+      "LLM APIs mature, cheap, high-quality output",
+      "Network effect: più platform supportati = più valore",
+      "MVP in 4-6 weeks, fast time-to-market"
+    ],
+    "weaknesses": [
+      "Competitor possono aggiungere AI rewriting facilmente (feature war imminente)",
+      "Copyright concerns se output troppo simile all'originale",
+      "Platform format changes (es. TikTok length) richiedono updates prompt",
+      "Pricing pressure da incumbents che bundlano"
+    ],
+    "direction": "GO - MVP supporta 6 platform: LinkedIn, Twitter/X, Instagram (caption + carousel), TikTok script, newsletter (HTML + plain), Substack excerpt. Input URL o testo directly. Freemium: 5 transformations/mo free, $19/mo unlimited. Target: solo creators e piccole agenzie (<10 persone). Marketing: Twitter/X, Indie Hackers, creator Facebook groups.",
+    "architecture": {
+      "frontend": "Next.js dashboard con live preview per ogni platform + copy buttons",
+      "backend": "Node.js serverless (Vercel Edge Functions) + OpenAI API (gpt-4o-mini) con custom prompts per platform",
+      "database": "Supabase (PostgreSQL) per account utenti e transformation history",
+      "integrations": "YouTube transcript API, RSS parser (articles), direct text paste, podcast audio → transcript (Whisper)",
+      "infra": "Vercel + Supabase, cost < $30/mese per migliaia di utenti (free tier sufficiente inizialmente)",
+      "effort": "4-6 settimane MVP (6 platforms + transcript + payment)"
+    }
   }
 ]
