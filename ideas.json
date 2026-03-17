@@ -2011,5 +2011,182 @@
       "infra": "Vercel + Supabase, cost < $30/mese per migliaia di utenti (free tier sufficiente inizialmente)",
       "effort": "4-6 settimane MVP (6 platforms + transcript + payment)"
     }
+  },
+  {
+    "id": "e5c6d7e8-f9a0-1b2c-3d4e-5f6a7b8c9d0e",
+    "title": "RealList AI",
+    "tagline": "Marketing kit AI per annunci immobiliari: da foto e dati a listing completo",
+    "abstract": "Tool per agenti immobiliari che prende dettagli di una proprietà (indirizzo, foto, specifiche) e genera automaticamente un marketing kit completo: descrizione professionale, social media posts, volantino PDF, email template per prospect. Target: agenti individuali e piccole agenzie.",
+    "category": "Real Estate/AI",
+    "status": "parked",
+    "created": "2026-03-17",
+    "updated": "2026-03-17",
+    "scorecard": {
+      "domanda_mercato": 8,
+      "differenziazione": 7,
+      "fattibilita_tecnica": 8,
+      "costo_infrastruttura": 9,
+      "manutenzione": 7,
+      "monetizzabilita": 8,
+      "rischio_legale": 8,
+      "totale": 55,
+      "media": 7.86,
+      "verdetto": "GO",
+      "note": "Mercato agenti immobiliari vasto, AI mature per analisi foto e generazione testo. Low infra cost."
+    },
+    "market_research": {
+      "competitor_major": [
+        "ChatGPT (generic)",
+        "Canva (templates)"
+      ],
+      "tam": "~2M agenti immobiliari EU/US",
+      "cagr": "5% (AI adoption in real estate)",
+      "barriers": "Bassi - API AI accessibili"
+    },
+    "injection_notes": [
+      "Focus su UX semplice: upload → kit completo in 60 secondi",
+      "Pricing per listing: $5-10 per property o $39/mese unlimited"
+    ],
+    "priority": "L",
+    "strengths": [
+      "Pain point reale: agenti passano ore a scrivere descrizioni",
+      "AI GPT-4V analizza foto automaticamente (vision)",
+      "Costo infrastruttura basso (API calls only)",
+      "Monetizzazione chiara: pay-per-use o subscription",
+      "Nessun competitor dedicato nel mercato real estate"
+    ],
+    "weaknesses": [
+      "Dipendenza da qualità foto fornite dall'utente",
+      "Mercato locale: differenze linguistiche e culturali",
+      "Potenzialmente copiabile da tool generici (ChatGPT + prompt)",
+      "Agenti tradizionali potrebbero essere resistenti all'AI"
+    ],
+    "direction": "GO - MVP web-based: upload foto + specifiche → genera descrizione + social posts + volantino PDF. Pricing: $7 per listing oppure $49/mese unlimited. Marketing: Facebook/Instagram ads targeting real estate agent groups.",
+    "architecture": {
+      "frontend": "Next.js dashboard con drag-drop upload foto",
+      "backend": "Node.js + OpenAI GPT-4V (vision) per analisi immagini, GPT-4 per copywriting",
+      "database": "Supabase (PostgreSQL) per history listings e user data",
+      "integrations": "Unsplash API (stock photos fallback), PDF generation (Puppeteer)",
+      "infra": "Vercel + Supabase, costi <$30/mese per MVP",
+      "effort": "4-6 settimane MVP"
+    }
+  },
+  {
+    "id": "f6d7e8f9-a0b1-2c3d-4e5f-6a7b8c9d0e1f",
+    "title": "VisualInventory Pro",
+    "tagline": "Gestione inventario visuale per collezioni e oggetti unici",
+    "abstract": "Tool che cataloga visivamente oggetti unici (equipaggiamento fotografico, strumenti musicali, collezioni, asset B2B) tramite foto. Traccia utilizzo, condizione, posizione e genera report automatici di riordino/maintenance. Target: creatori, collezionisti, aziende con asset fisici.",
+    "category": "Productivity/B2B",
+    "status": "parked",
+    "created": "2026-03-17",
+    "updated": "2026-03-17",
+    "scorecard": {
+      "domanda_mercato": 7,
+      "differenziazione": 8,
+      "fattibilita_tecnica": 7,
+      "costo_infrastruttura": 8,
+      "manutenzione": 7,
+      "monetizzabilita": 7,
+      "rischio_legale": 8,
+      "totale": 52,
+      "media": 7.43,
+      "verdetto": "GO",
+      "note": "Mercato niché ma underserved. AI vision rende catalogazione automatica possibile."
+    },
+    "market_research": {
+      "competitor_major": [
+        "Sortly",
+        "Asset Panda"
+      ],
+      "tam": "$500M inventory/asset management niche",
+      "cagr": "7%",
+      "barriers": "Bassi - GPT-4V per riconoscimento oggetti"
+    },
+    "injection_notes": [
+      "Focus su verticali specifiche (fotografi, maker spaces, studio recording)",
+      "QR code generation per tracciamento fisico"
+    ],
+    "priority": "L",
+    "strengths": [
+      "AI vision riconosce automaticamente oggetti dalle foto",
+      "Nessun competitor con focus veramente visuale (esistenti sono tabellari)",
+      "Use case B2B: rental companies, production houses",
+      "Potenziale white-label per aziende con asset specifici"
+    ],
+    "weaknesses": [
+      "Mercato più piccolo di inventory management generale",
+      "Riconoscimento AI potrebbe essere inaccurato per oggetti molto specifici/nuovi",
+      "Utenti devono fotografare ogni oggetto (onboarding laborioso)",
+      "Competitor esistenti hanno feature più complete (checkout, audit)"
+    ],
+    "direction": "GO - MVP mobile-first (React Native): snap foto → AI identifica oggetto → aggiunge a inventario con metadati estratti. Collezione view con ricerca visuale (similarity). Pricing: $12/mese individual, $49/mese team. Vertical: fotografi e content creators inizialmente.",
+    "architecture": {
+      "frontend": "React Native (iOS/Android) per camera access",
+      "backend": "Python/FastAPI + OpenAI GPT-4V per object recognition",
+      "database": "PostgreSQL + vector DB (Pinecone) per image similarity search",
+      "ml": "Embeddings visivi per ricerca per similitudine",
+      "infra": "Supabase + Vercel, cloud storage per immagini (S3)",
+      "effort": "6-8 settimane MVP"
+    }
+  },
+  {
+    "id": "a7b8c9d0-e1f2-3a4b-5c6d-7e8f9a0b1c2d",
+    "title": "MicroSaaS Intel",
+    "tagline": "Newsletter di intelligence su nicchie micro-SaaS profittevoli",
+    "abstract": "Newsletter settimanale premium che analizza mercati micro-SaaS underserved, reporta metrics e casi studio di successo, identifica trend emergenti prima che diventano mainstream. Target: indie hackers, solopreneurs, builders che cercano la prossima idea validata.",
+    "category": "Media/Newsletter",
+    "status": "parked",
+    "created": "2026-03-17",
+    "updated": "2026-03-17",
+    "scorecard": {
+      "domanda_mercato": 8,
+      "differenziazione": 7,
+      "fattibilita_tecnica": 9,
+      "costo_infrastruttura": 9,
+      "manutenzione": 8,
+      "monetizzabilita": 8,
+      "rischio_legale": 9,
+      "totale": 58,
+      "media": 8.29,
+      "verdetto": "GO",
+      "note": "Newsletter model collaudato, basso rischio, monetizzazione chiara."
+    },
+    "market_research": {
+      "competitor_major": [
+        "Trends.vc",
+        "Indie Hackers",
+        "Lenny's Newsletter"
+      ],
+      "tam": "$1B+ newsletter economy, indie maker segment growing",
+      "cagr": "15%",
+      "barriers": "Bassi - content + email delivery"
+    },
+    "injection_notes": [
+      "Focus specifico: micro-SaaS validated (revenue >$1K MRR) vs ideas generiche",
+      "Data-driven: metrics reali, non solo opinioni"
+    ],
+    "priority": "L",
+    "strengths": [
+      "Modello newsletter collaudato: sponsorship + subscription premium",
+      "MVP in 1-2 settimane (Ghost/Substack + research)",
+      "Costo infrastruttura quasi zero",
+      "Network effects: community di builders può diventare deal flow",
+      "Possibile expansion: database searchable, job board, community"
+    ],
+    "weaknesses": [
+      "Richiede ricerca costante e accesso a dati privati (indie makers willing to share?)",
+      "Mercato newsletter micro-SaaS già coperto da Trends.vc (ma più costoso)",
+      "Crescita subscriber dipende da viralità e referral",
+      "Responsabilità di accuratezza dati (revenue claims)"
+    ],
+    "direction": "GO - Launch su Substack (gratuito) per testare demand. 2-3 free issues → paywall. Pricing: $15/mese o $120/anno per analysis deep-dive + database access. Target: Indie Hackers, Twitter/X makers community. Sponsor: dev tools, hosting, AI APIs.",
+    "architecture": {
+      "frontend": "Substack/Ghost per newsletter delivery",
+      "backend": "Airtable/Notion per database research",
+      "database": "Simple CMS con search per paying subscribers",
+      "integrations": "Stripe per payment, Beehiiv per referral tracking",
+      "infra": "Substack/Beehiiv managed, zero devops",
+      "effort": "1-2 settimane setup, ongoing research weekly"
+    }
   }
 ]
