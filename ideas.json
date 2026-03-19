@@ -2188,5 +2188,189 @@
       "infra": "Substack/Beehiiv managed, zero devops",
       "effort": "1-2 settimane setup, ongoing research weekly"
     }
+  },
+  {
+    "id": "f8a2b3c4-d5e6-7f8a-9b0c-1d2e3f4a5b6c",
+    "title": "InvoiceChaser AI",
+    "tagline": "Promemoria automatici pagamenti fatture per freelancer via WhatsApp/SMS",
+    "abstract": "Micro-SaaS che si integra con sistemi di fatturazione (FreshBooks, Wave, custom) e invia promemoria automatici ai clienti via WhatsApp, SMS o Telegram quando le fatture sono in scadenza o scadute. I freelance odiano 'chiedere i soldi' — l'AI lo fa educatamente al posto loro.",
+    "category": "Finance/B2B",
+    "status": "parked",
+    "created": "2026-03-19",
+    "updated": "2026-03-19",
+    "scorecard": {
+      "domanda_mercato": 9,
+      "differenziazione": 7,
+      "fattibilita_tecnica": 9,
+      "costo_infrastruttura": 9,
+      "manutenzione": 8,
+      "monetizzabilita": 8,
+      "rischio_legale": 8,
+      "totale": 58,
+      "media": 8.29,
+      "verdetto": "GO",
+      "note": "Problema reale, tech semplice, monetizzazione subscription chiara."
+    },
+    "market_research": {
+      "competitor_major": [
+        "Manual email reminders",
+        "FreshBooks (built-in)",
+        "Wave (basic)"
+      ],
+      "tam": "72M+ freelancers globally",
+      "cagr": "8% (gig economy)",
+      "barriers": "Bassi - API WhatsApp/Twilio accessibili"
+    },
+    "injection_notes": [
+      "Focus su tono educato ma persistente",
+      "Multi-channel: WhatsApp > SMS > Email",
+      "Integration Zapier per no-code setup"
+    ],
+    "priority": "L",
+    "strengths": [
+      "Problema universale per freelance: chasing payments è tedious e stressante",
+      "Mercato enorme: 72M+ freelance global",
+      "Tech semplice: API integration + messaging",
+      "Monetizzazione chiara: $9-29/mese subscription",
+      "Time-to-value immediato: setup in 5 minuti"
+    ],
+    "weaknesses": [
+      "FreshBooks/QuickBooks hanno reminder built-in (ma limitati)",
+      "Dipendenza da API WhatsApp (costi per messaging)",
+      "Potenziale percepito come 'troppo aggressivo' se mal configurato",
+      "Clienti finali potrebbero essere infastiditi"
+    ],
+    "direction": "GO - MVP con integrazione Stripe/Wave + WhatsApp Business API. Focus su tono 'gentle but firm'. Pricing: $12/mese per 50 active invoices. Target: freelance web designer/developers. Marketing: Indie Hackers, Reddit r/freelance.",
+    "architecture": {
+      "frontend": "Next.js dashboard semplice",
+      "backend": "Node.js + serverless (Vercel)",
+      "integrations": "Wave API, Stripe, Twilio (SMS), WhatsApp Business API",
+      "database": "Supabase (PostgreSQL) per invoices e reminder schedules",
+      "infra": "Vercel + Supabase free tier, Twilio/WhatsApp costs scale with usage",
+      "effort": "3-4 settimane MVP"
+    }
+  },
+  {
+    "id": "g9b3c4d5-e6f7-8a9b-0c1d-2e3f4a5b6c7d",
+    "title": "VoiceCode IDE",
+    "tagline": "Sviluppo software tramite comandi vocali naturali",
+    "abstract": "IDE che trasforma descrizioni vocali in codice funzionante. Target: non-technical founders, indie hackers che vogliono prototipare velocemente senza scrivere codice manualmente. 'Crea un form login con email e password' → genera component React + backend.",
+    "category": "Developer Tools/AI",
+    "status": "parked",
+    "created": "2026-03-19",
+    "updated": "2026-03-19",
+    "scorecard": {
+      "domanda_mercato": 8,
+      "differenziazione": 8,
+      "fattibilita_tecnica": 7,
+      "costo_infrastruttura": 7,
+      "manutenzione": 6,
+      "monetizzabilita": 8,
+      "rischio_legale": 7,
+      "totale": 51,
+      "media": 7.29,
+      "verdetto": "GO",
+      "note": "Trend 'vibe coding' emergente, differenziazione voice-specific."
+    },
+    "market_research": {
+      "competitor_major": [
+        "GitHub Copilot",
+        "Replit",
+        "Lovable",
+        "v0.dev"
+      ],
+      "trending": "Voice-to-code AI assistants",
+      "tam": "$25B developer tools market",
+      "gap": "Nessuno player major focalizzato esclusivamente su voice interface"
+    },
+    "injection_notes": [
+      "Voice recognition per terminologia tech specifica",
+      "Iterazione continua: 'cambia colore', 'aggiungi validazione'",
+      "Export codice pulito in repo GitHub"
+    ],
+    "priority": "L",
+    "strengths": [
+      "Trend vibe coding in crescita",
+      "Voice input più veloce di typing per descrizioni complesse",
+      "Target chiaro: non-technical founders",
+      "Differentiazione da Copilot/Lovable",
+      "Possibile freemium con generazioni giornaliere limitate"
+    ],
+    "weaknesses": [
+      "Replit/Glitch potrebbero aggiungere voice facilmente",
+      "Precisione voice recognition per codice può essere problematica",
+      "Costo API AI per generazione codice (GPT-4/Claude)",
+      "Privacy concern: recording audio codice proprietario"
+    ],
+    "direction": "GO - MVP web-based con Whisper per STT, Claude/GPT-4 per code generation. Focus su componenti React/Vue comuni. Pricing: free 50 requests/day, $19/mese unlimited. Target indie hackers su Twitter.",
+    "architecture": {
+      "frontend": "Next.js con code editor integrato (Monaco)",
+      "backend": "Node.js + OpenAI Whisper API + Claude/GPT-4",
+      "database": "Supabase per user accounts e prompt history",
+      "integrations": "GitHub API per export repo",
+      "infra": "Vercel + Supabase, costi AI principale expense",
+      "effort": "4-6 settimane MVP (web first)"
+    }
+  },
+  {
+    "id": "h0c4d5e6-f7a8-9b0c-1d2e-3f4a5b6c7d8e",
+    "title": "NeighborTools",
+    "tagline": "Condivisione attrezzi e servizi tra vicini di casa",
+    "abstract": "App iper-locale per comunità di quartiere: presta/affitta attrezzi, trova babysitter verificati nella via, organizza compravendita di oggetti usati. Alternative comunitaria a Nextdoor senza toxic drama. Network effect locale con monetizzazione freemium.",
+    "category": "Community/Local",
+    "status": "parked",
+    "created": "2026-03-19",
+    "updated": "2026-03-19",
+    "scorecard": {
+      "domanda_mercato": 8,
+      "differenziazione": 8,
+      "fattibilita_tecnica": 8,
+      "costo_infrastruttura": 7,
+      "manutenzione": 6,
+      "monetizzabilita": 6,
+      "rischio_legale": 6,
+      "totale": 49,
+      "media": 7.0,
+      "verdetto": "GO",
+      "note": "Sharing economy locale con network effect, monetizzazione challenge ma fattibile."
+    },
+    "market_research": {
+      "competitor_major": [
+        "Nextdoor",
+        "Facebook Marketplace",
+        "Buy Nothing groups"
+      ],
+      "trending": "Hyper-local community apps, sustainability/sharing economy",
+      "tam": "Neighborhood-level interaction underserved",
+      "cagr": "5% (community platforms)"
+    },
+    "injection_notes": [
+      "Verification via address/consegna (risiko falso)",
+      "Rating system simile ad Airbnb",
+      "Commissioni su noleggio/babysitting, gratuita per lending"
+    ],
+    "priority": "L",
+    "strengths": [
+      "Problem reale: comprare trapano per 1 uso è spreco",
+      "Sustainability angle attuale e marketable",
+      "Network effect locale (difensibile)",
+      "Community bonding vs toxic social media",
+      "Costo infra basso (no real-time complex)"
+    ],
+    "weaknesses": [
+      "Cold start: serve massa critica per area",
+      "Moderation rischio di abusi (truffe, violenza)",
+      "Monetizzazione debole (commissioni basse su lending)",
+      "Competitor già esistenti (più che altro non specializzati)"
+    ],
+    "direction": "GO - MVP con focus su una sola città pilota (es. Chieti). Features: tool cataloging, booking calendar, in-app messaging. Pricing: free per lending, 10% commissione su noleggio a pagamento/babysitting.",
+    "architecture": {
+      "frontend": "React Native (iOS/Android) + web view",
+      "backend": "Node.js + PostgreSQL",
+      "database": "Supabase per users, listings, bookings",
+      "integrations": "Google Maps per proximity search, Stripe per pagamenti",
+      "infra": "Vercel + Supabase, low-cost scaling",
+      "effort": "6-8 settimane MVP"
+    }
   }
 ]
