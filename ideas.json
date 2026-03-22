@@ -34,12 +34,12 @@
     },
     "injection_notes": [
       "Concept ricalibrato da idea adult a social generalista",
-      "Verifica identit\u00e0 e safety features cruciale"
+      "Verifica identità e safety features cruciale"
     ],
     "priority": "L",
     "strengths": [
       "Mercato dating/social da $8.2B in crescita (CAGR 7.2%)",
-      "Trend forte verso autenticit\u00e0 e connessioni offline",
+      "Trend forte verso autenticità e connessioni offline",
       "Modello freemium collaudato nel settore"
     ],
     "weaknesses": [
@@ -53,7 +53,7 @@
       "frontend": "React Native (iOS + Android)",
       "backend": "Node.js + Socket.io per real-time",
       "database": "PostgreSQL + PostGIS per geolocalizzazione",
-      "auth": "Firebase Auth + verifica identit\u00e0 (Jumio/Onfido)",
+      "auth": "Firebase Auth + verifica identità (Jumio/Onfido)",
       "infra": "AWS/GCP, CDN per media, push notifications",
       "effort": "6-9 mesi MVP, team 2-3 persone"
     }
@@ -94,7 +94,7 @@
     "priority": "H",
     "strengths": [
       "Bisogno reale e crescente: GDPR, CCPA, data leaks",
-      "Pochi competitor diretti (Blurmatic \u00e8 basico)",
+      "Pochi competitor diretti (Blurmatic è basico)",
       "ML on-device = privacy by design, nessun server costoso",
       "Doppio mercato: consumer (freemium) + enterprise (SaaS)"
     ],
@@ -109,7 +109,7 @@
       "ml": "Core ML / TensorFlow Lite per detection PII on-device",
       "backend": "Serverless (Lambda/Cloud Functions) per licensing e analytics",
       "database": "Nessun dato utente server-side (privacy by design)",
-      "infra": "Minimale \u2014 tutto on-device, solo API licensing",
+      "infra": "Minimale — tutto on-device, solo API licensing",
       "effort": "3-4 mesi MVP iOS, +2 mesi Android"
     }
   },
@@ -117,7 +117,7 @@
     "id": "3c4d5e6f-7g8h-9i0j-1k2l-3m4n5o6p7q8r",
     "title": "Meeting Cost Meter",
     "tagline": "Calcolatore costo reale delle riunioni",
-    "abstract": "Integrazione calendar che calcola in tempo reale il costo aggregato delle riunioni (stakeholder \u00d7 hourly rate \u00d7 durata).",
+    "abstract": "Integrazione calendar che calcola in tempo reale il costo aggregato delle riunioni (stakeholder × hourly rate × durata).",
     "category": "Productivity/B2B",
     "status": "parked",
     "created": "2026-02-21",
@@ -159,18 +159,18 @@
       "Zero rischio legale"
     ],
     "weaknesses": [
-      "Non \u00e8 un prodotto standalone \u2014 \u00e8 una feature",
+      "Non è un prodotto standalone — è una feature",
       "Monetizzazione quasi impossibile come app singola",
-      "Competitor indiretti: Clockwise, Reclaim.ai gi\u00e0 ottimizzano meeting",
+      "Competitor indiretti: Clockwise, Reclaim.ai già ottimizzano meeting",
       "Richiede integrazione calendar che i big player possono copiare"
     ],
-    "direction": "Non sviluppare come prodotto. Meglio come plugin/widget per Slack, Notion o Chrome extension. Potrebbe funzionare come feature virale per acquisire utenti verso un prodotto pi\u00f9 ampio di productivity.",
+    "direction": "Non sviluppare come prodotto. Meglio come plugin/widget per Slack, Notion o Chrome extension. Potrebbe funzionare come feature virale per acquisire utenti verso un prodotto più ampio di productivity.",
     "architecture": {
       "frontend": "Chrome Extension + Slack App",
       "backend": "Serverless, quasi stateless",
       "database": "Solo config utente (salary ranges)",
       "integrations": "Google Calendar API, Outlook API, Slack API",
-      "infra": "Minimale \u2014 Lambda + API Gateway",
+      "infra": "Minimale — Lambda + API Gateway",
       "effort": "2-3 settimane per Chrome extension MVP"
     }
   },
@@ -194,7 +194,7 @@
       "totale": 43,
       "media": 6.14,
       "verdetto": "PIVOT_NEEDED",
-      "note": "Concetto ToS;DR esiste. Necessario differentiator (visual, grading, enterprise API). Modello SaaS B2B pi\u00f9 promettente."
+      "note": "Concetto ToS;DR esiste. Necessario differentiator (visual, grading, enterprise API). Modello SaaS B2B più promettente."
     },
     "market_research": {
       "competitor_major": [
@@ -211,29 +211,29 @@
     "strengths": [
       "Domanda reale: nessuno legge i ToS (97% degli utenti)",
       "EU Digital Services Act crea pressione regolamentare",
-      "LLM rendono il parsing ToS molto pi\u00f9 efficace di ToS;DR",
+      "LLM rendono il parsing ToS molto più efficace di ToS;DR",
       "Modello B2B SaaS per compliance enterprise"
     ],
     "weaknesses": [
       "ToS;DR esiste dal 2012 con community attiva",
-      "Responsabilit\u00e0 legale se il riassunto \u00e8 impreciso",
+      "Responsabilità legale se il riassunto è impreciso",
       "Costo LLM per parsing documenti lunghi",
       "Difficile monetizzare consumer (extension gratuita attesa)"
     ],
-    "direction": "Differenziare con UX superiore (grading visuale, risk scoring) e target enterprise compliance. La versione consumer \u00e8 il funnel, il revenue \u00e8 B2B API per legal tech.",
+    "direction": "Differenziare con UX superiore (grading visuale, risk scoring) e target enterprise compliance. La versione consumer è il funnel, il revenue è B2B API per legal tech.",
     "architecture": {
       "frontend": "Browser Extension (Chrome/Firefox) + Web dashboard",
       "backend": "Python/FastAPI + LLM API (GPT-4o-mini per costi)",
       "database": "PostgreSQL per cache ToS analizzati",
       "ml": "Prompt engineering per extraction clausole critiche",
-      "infra": "VPS + Redis cache per ToS gi\u00e0 analizzati",
+      "infra": "VPS + Redis cache per ToS già analizzati",
       "effort": "4-6 settimane MVP extension, +4 settimane dashboard B2B"
     }
   },
   {
     "id": "5e6f7g8h-9i0j-1k2l-3m4n-5o6p7q8r9s0t",
     "title": "PhotoVoice",
-    "tagline": "Tag vocali per foto \u2192 ricerca per voce",
+    "tagline": "Tag vocali per foto → ricerca per voce",
     "abstract": "App mobile che permette di aggiungere note audio alle foto per ricerca semantica vocale. Utile per archivi personali.",
     "category": "Consumer/Photo",
     "status": "parked",
@@ -250,14 +250,14 @@
       "totale": 43,
       "media": 6.14,
       "verdetto": "PIVOT_NEEDED",
-      "note": "Nich\u00e9. Photo management gi\u00e0 coperto da Google/Apple. Differenziatore voice insufficiente per mercato consumer."
+      "note": "Niché. Photo management già coperto da Google/Apple. Differenziatore voice insufficiente per mercato consumer."
     },
     "market_research": {
       "incumbents": [
         "Google Photos",
         "Apple Photos"
       ],
-      "niche_risk": "alto - mercato consumer gi\u00e0 coperto"
+      "niche_risk": "alto - mercato consumer già coperto"
     },
     "injection_notes": [
       "Pivot su vertical specifica? (medical photography, field inspection)"
@@ -269,12 +269,12 @@
       "Potenziale in verticali specifiche (ispezioni, medicina)"
     ],
     "weaknesses": [
-      "Google Photos e Apple Photos gi\u00e0 fanno ricerca semantica",
-      "Mercato consumer photo management \u00e8 dominato",
+      "Google Photos e Apple Photos già fanno ricerca semantica",
+      "Mercato consumer photo management è dominato",
       "Monetizzazione consumer quasi impossibile",
       "Nicchia troppo piccola per giustificare lo sviluppo"
     ],
-    "direction": "PARK. Se si riprende, pivot su verticale B2B: ispezioni edili, documentazione medica, field service. Il consumer \u00e8 morto contro Google/Apple.",
+    "direction": "PARK. Se si riprende, pivot su verticale B2B: ispezioni edili, documentazione medica, field service. Il consumer è morto contro Google/Apple.",
     "architecture": {
       "frontend": "React Native con accesso microfono + gallery",
       "backend": "Python + Whisper API per trascrizione",
@@ -287,7 +287,7 @@
   {
     "id": "6f7g8h9i-0j1k-2l3m-4n5o-6p7q8r9s0t1u",
     "title": "ChronicleForge",
-    "tagline": "Piattaforma audio \u2192 racconto RPG strutturato",
+    "tagline": "Piattaforma audio → racconto RPG strutturato",
     "abstract": "Sessioni di gioco di ruolo vengono registrate, trascritte e trasformate in racconto narrativo strutturato con personaggi e arco.",
     "category": "Gaming/Creative",
     "status": "go",
@@ -304,7 +304,7 @@
       "totale": 43,
       "media": 6.14,
       "verdetto": "GO",
-      "note": "Nich\u00e9 RPG ma passionale. DALL-E/LLM abbassano barriera tecnica. Modello freemium + templates. Community forte."
+      "note": "Niché RPG ma passionale. DALL-E/LLM abbassano barriera tecnica. Modello freemium + templates. Community forte."
     },
     "market_research": {
       "trending": "Actual Play podcasts/streaming (Critical Role)",
@@ -324,12 +324,12 @@
       "Community RPG appassionata e disposta a pagare",
       "Trend Actual Play in crescita (Critical Role, D&D Beyond)",
       "LLM + DALL-E abbassano drasticamente la barriera tecnica",
-      "Nessun competitor diretto fa audio\u2192narrativa strutturata"
+      "Nessun competitor diretto fa audio→narrativa strutturata"
     ],
     "weaknesses": [
       "Nicchia: ~50M giocatori RPG, conversione bassa",
-      "Trascrizione sessioni lunghe (3-4h) \u00e8 costosa",
-      "Qualit\u00e0 narrativa LLM potrebbe deludere i puristi",
+      "Trascrizione sessioni lunghe (3-4h) è costosa",
+      "Qualità narrativa LLM potrebbe deludere i puristi",
       "Richiede fine-tuning per stili narrativi diversi"
     ],
     "direction": "GO. MVP con trascrizione + strutturazione narrativa base. Target: content creator Actual Play che vogliono trasformare sessioni in contenuti pubblicabili. Freemium + premium per export e illustrazioni AI.",
@@ -337,7 +337,7 @@
       "frontend": "Next.js web app (responsive)",
       "backend": "Python + Whisper per trascrizione, GPT per narrativa",
       "database": "PostgreSQL + S3 per audio/media",
-      "ml": "Pipeline: audio \u2192 trascrizione \u2192 NER (personaggi) \u2192 narrativa",
+      "ml": "Pipeline: audio → trascrizione → NER (personaggi) → narrativa",
       "infra": "Vercel frontend + Railway/Fly.io backend",
       "effort": "6-8 settimane MVP (solo trascrizione + narrativa base)"
     }
@@ -383,9 +383,9 @@
       "Potenziale dati aggregati per assicurazioni/immobiliare"
     ],
     "weaknesses": [
-      "Citizen (US), Nextdoor, Ring Neighbors gi\u00e0 dominano",
+      "Citizen (US), Nextdoor, Ring Neighbors già dominano",
       "Network effect: inutile senza massa critica locale",
-      "Moderazione fake reports \u00e8 un incubo operativo",
+      "Moderazione fake reports è un incubo operativo",
       "Rischio amplificazione panico e discriminazione"
     ],
     "direction": "PARK. Troppi competitor con network effect consolidato. Se si riprende, focus su vertical specifica (disastri naturali, sicurezza scolastica) o mercato EU dove Citizen non opera.",
@@ -418,7 +418,7 @@
       "totale": 42,
       "media": 6.0,
       "verdetto": "PIVOT_NEEDED",
-      "note": "Esistono app simili (bSafe, Life360). Hard to monetize. Feature per device integrato (smartwatch) pi\u00f9 valida."
+      "note": "Esistono app simili (bSafe, Life360). Hard to monetize. Feature per device integrato (smartwatch) più valida."
     },
     "market_research": {
       "competitor_major": [
@@ -436,22 +436,22 @@
     "priority": "L",
     "strengths": [
       "Concetto semplice e chiaro",
-      "Potenziale B2B: lone worker safety \u00e8 un mercato reale",
+      "Potenziale B2B: lone worker safety è un mercato reale",
       "Tecnicamente fattibile con API native smartphone"
     ],
     "weaknesses": [
-      "bSafe, Life360, Noonlight gi\u00e0 esistono",
+      "bSafe, Life360, Noonlight già esistono",
       "Apple Watch e Pixel hanno SOS integrato nell'hardware",
       "Monetizzazione consumer difficile",
-      "Affidabilit\u00e0 critica: se fallisce in emergenza, \u00e8 un disastro legale"
+      "Affidabilità critica: se fallisce in emergenza, è un disastro legale"
     ],
-    "direction": "PARK. Come app consumer \u00e8 superata dall'hardware (Apple Watch SOS). Unico pivot valido: B2B lone worker safety con integrazione IoT/smart home. Possibile merger concettuale con AlertMap.",
+    "direction": "PARK. Come app consumer è superata dall'hardware (Apple Watch SOS). Unico pivot valido: B2B lone worker safety con integrazione IoT/smart home. Possibile merger concettuale con AlertMap.",
     "architecture": {
       "frontend": "Native iOS/Android per accesso background + watchOS/WearOS",
       "backend": "Node.js con WebSocket per notifiche real-time",
       "database": "PostgreSQL + Redis per stato emergenze attive",
       "integrations": "Twilio per SMS/chiamate, API emergency services",
-      "infra": "Alta affidabilit\u00e0 richiesta: multi-region, 99.99% uptime",
+      "infra": "Alta affidabilità richiesta: multi-region, 99.99% uptime",
       "effort": "3-4 mesi MVP mobile, +2 mesi smartwatch"
     }
   },
@@ -501,9 +501,9 @@
     "weaknesses": [
       "Concorrenza su scheduling",
       "Costo API AI se scale",
-      "Difficolt\u00e0 differenziare oltre l'AI"
+      "Difficoltà differenziare oltre l'AI"
     ],
-    "direction": "Focus su qualit\u00e0 della riscrittura (parafrasi) non solo taglio. Integrazione diretta con ChatGPT/Claude.",
+    "direction": "Focus su qualità della riscrittura (parafrasi) non solo taglio. Integrazione diretta con ChatGPT/Claude.",
     "architecture": {
       "frontend": "Next.js (React) - dashboard web",
       "backend": "Node.js + serverless (Vercel) per orchestrator",
@@ -572,8 +572,8 @@
   {
     "id": "b31f27b4-c489-4fb9-95b3-71e3d914d835",
     "title": "ParkFind Local",
-    "tagline": "Trova parcheggio in tempo reale nella tua citt\u00e0",
-    "abstract": "App community-driven per segnalare parcheggi liberi in piccole e medie citt\u00e0. Mappa interattiva, segnalazioni anonime, notifiche push in zona. Premium: probabilit\u00e0 di liberazione e prenotazione.",
+    "tagline": "Trova parcheggio in tempo reale nella tua città",
+    "abstract": "App community-driven per segnalare parcheggi liberi in piccole e medie città. Mappa interattiva, segnalazioni anonime, notifiche push in zona. Premium: probabilità di liberazione e prenotazione.",
     "category": "Mobility/Community",
     "status": "parked",
     "created": "2026-02-24",
@@ -597,12 +597,12 @@
         "ParkWhiz",
         "SpotHero"
       ],
-      "tam": "1000+ piccole citt\u00e0 EU/US con problemi parcheggio",
+      "tam": "1000+ piccole città EU/US con problemi parcheggio",
       "cagr": "8%",
       "barriers": "Bassi - crowdfunding seeding community"
     },
     "injection_notes": [
-      "Partire da una citt\u00e0 pilota",
+      "Partire da una città pilota",
       "Partnership con comuni per dati open data"
     ],
     "priority": "L",
@@ -612,11 +612,11 @@
       "Monetizzazione Premium"
     ],
     "weaknesses": [
-      "Richiede massa critica per utilit\u00e0",
+      "Richiede massa critica per utilità",
       "Segnalazioni false",
       "Concorrenti grandi su metropoli"
     ],
-    "direction": "Focus su piccole citt\u00e0 (<200k) dove concorrenti non operano.",
+    "direction": "Focus su piccole città (<200k) dove concorrenti non operano.",
     "architecture": {
       "frontend": "React Native (iOS+Android)",
       "backend": "Node.js + Socket.io per real-time updates",
@@ -652,7 +652,7 @@
         "Daily Inspire",
         "Motivational Quotes App"
       ],
-      "tam": "$500M (self\u2011help apps)",
+      "tam": "$500M (self‑help apps)",
       "cagr": "8%",
       "barriers": "bassi"
     },
@@ -673,7 +673,7 @@
     "direction": "Fare MVP in 2 giorni. Variare orario invio, A/B copy. Monetizza con Amazon Associates.",
     "architecture": {
       "frontend": "Landing page statica su Vercel",
-      "backend": "GitHub Actions o cron\u2011job.org per invio email via SendGrid free tier",
+      "backend": "GitHub Actions o cron‑job.org per invio email via SendGrid free tier",
       "database": "Nessuno, lista contatti in CSV",
       "auth": "Nessuno",
       "infra": "Vercel + SendGrid free",
@@ -684,7 +684,7 @@
     "id": "a7ceb5c6-6d52-40af-8ea2-bdd07bf026e6",
     "title": "LocalDealsAlert",
     "tagline": "Alert prezzi supermercati locali via Telegram",
-    "abstract": "Bot Telegram che scrapa volantini digitali di supermercati (Carrefour, Esselunga, etc.) e notifica offerte migliori nella propria citt\u00e0. Monetizzazione: affiliazione o abbonamento premium per alert in tempo reale.",
+    "abstract": "Bot Telegram che scrapa volantini digitali di supermercati (Carrefour, Esselunga, etc.) e notifica offerte migliori nella propria città. Monetizzazione: affiliazione o abbonamento premium per alert in tempo reale.",
     "category": "Utility/Consumer",
     "status": "parked",
     "created": "2026-02-24",
@@ -709,11 +709,11 @@
       ],
       "tam": "$200M (price comparison Italy)",
       "cagr": "4%",
-      "barriers": "media \u2013 scraping e aggiornamenti"
+      "barriers": "media – scraping e aggiornamenti"
     },
     "injection_notes": [
       "Partire con 2-3 catene",
-      "Usare Telegram bot per semplicit\u00e0"
+      "Usare Telegram bot per semplicità"
     ],
     "priority": "L",
     "strengths": [
@@ -739,7 +739,7 @@
     "id": "9e3c4b6b-281c-41dd-bc17-62ce55b0912c",
     "title": "ResumeMatch AI",
     "tagline": "Match CV e job description con punteggio e suggerimenti",
-    "abstract": "Semplice web app: incolli JD e CV, l'AI valuta compatibilit\u00e0 e consente download di versione ottimizzata. Pagamento una tantum $5. Hosting Vercel gratis. API LLM free tier (OpenRouter).",
+    "abstract": "Semplice web app: incolli JD e CV, l'AI valuta compatibilità e consente download di versione ottimizzata. Pagamento una tantum $5. Hosting Vercel gratis. API LLM free tier (OpenRouter).",
     "category": "Utility/Consumer",
     "status": "parked",
     "created": "2026-02-24",
@@ -767,17 +767,17 @@
       "barriers": "bassi"
     },
     "injection_notes": [
-      "Usare modello piccolo ma efficace (GPT\u20114o mini)",
+      "Usare modello piccolo ma efficace (GPT‑4o mini)",
       "Fatturare con Stripe Checkout"
     ],
     "priority": "L",
     "strengths": [
       "Problema reale per job seeker",
       "Costo hosting zero (Vercel)",
-      "Monetizzazione one\u2011click con Stripe"
+      "Monetizzazione one‑click con Stripe"
     ],
     "weaknesses": [
-      "Concorrenza di tool pi\u00f9 avanzati",
+      "Concorrenza di tool più avanzati",
       "Dipendenza da API LLM (costi se usage explode)"
     ],
     "direction": "MVP in 3 giorni. Pricing $5 per analysis. Offrire rimborso se score < 60%.",
@@ -834,7 +834,7 @@
     ],
     "weaknesses": [
       "Concorrenza su scheduling e templates (Mailchimp)",
-      "Richiede periodicamente aggiornamento templates per stagionalit\u00e0",
+      "Richiede periodicamente aggiornamento templates per stagionalità",
       "Dipende da OpenAI API costi che potrebbero esplodere con usage"
     ],
     "direction": "Partire con verticali ristoranti e wellness (estetisti, palestre). Template predefiniti per occasioni comuni (promozioni, compleanni, follow-up). Freemium con crediti AI mensili.",
@@ -851,7 +851,7 @@
     "id": "a2b3c4d5-e6f7-8901-2345-6789abcdef01",
     "title": "ComplianceCheck EU",
     "tagline": "Scanner GDPR/DSA per e-commerce UE",
-    "abstract": "Tool che analizza siti e-commerce e genera report di conformit\u00e0 GDPR, cookie law, Digital Services Act. Checklist automatizzata con remediation steps e tracking improvements.",
+    "abstract": "Tool che analizza siti e-commerce e genera report di conformità GDPR, cookie law, Digital Services Act. Checklist automatizzata con remediation steps e tracking improvements.",
     "category": "Legal/Compliance",
     "status": "parked",
     "created": "2026-02-25",
@@ -880,7 +880,7 @@
       "barriers": "Medi - necessaria conoscenza legale base e aggiornamenti"
     },
     "injection_notes": [
-      "Non \u00e8 consulenza legale, solo Checklist",
+      "Non è consulenza legale, solo Checklist",
       "Aggiornamenti normativi frequenti necessari"
     ],
     "priority": "L",
@@ -891,7 +891,7 @@
     ],
     "weaknesses": [
       "Richiede updates quando norme cambiano (manual work)",
-      "Responsabilit\u00e0 legale se report impreciso (disclaimer necessario)",
+      "Responsabilità legale se report impreciso (disclaimer necessario)",
       "Competitor established (OneTrust) ma costosi, quindi spazio per low-cost alternative"
     ],
     "direction": "MVP con checklist GDPR + scanner cookie legale. Pricing a scan o subscription mensile. Partnership con agenzie e-commerce per distribution come tool di audit.",
@@ -1006,7 +1006,7 @@
     ],
     "weaknesses": [
       "Competitor consolidati (Calm, Headspace)",
-      "Responsabilit\u00e0 etica per salute mentale",
+      "Responsabilità etica per salute mentale",
       "Rischio burnout utenti app wellness (abbandono alto)",
       "Necessario disclaimer non sostituisce terapia"
     ],
@@ -1040,7 +1040,7 @@
       "totale": 49,
       "media": 7.0,
       "verdetto": "GO",
-      "note": "Creator economy $250B\u2192$480B. Community = key differentiator per business."
+      "note": "Creator economy $250B→$480B. Community = key differentiator per business."
     },
     "market_research": {
       "competitor_major": [
@@ -1051,7 +1051,7 @@
       ],
       "tam": "$480B creator economy by 2027",
       "cagr": "12%",
-      "barriers": "Medi - Circle gi\u00e0 posizionato, ma spazio per ultra-nicchie"
+      "barriers": "Medi - Circle già posizionato, ma spazio per ultra-nicchie"
     },
     "injection_notes": [
       "Iniziare con una nicchia pilota (es. UX freelance)",
@@ -1065,10 +1065,10 @@
       "Network effect una volta raggiunta massa critica"
     ],
     "weaknesses": [
-      "Circle.so gi\u00e0 consolidato",
+      "Circle.so già consolidato",
       "Network effect: vuota all'inizio",
       "Richiede seeding manuale community iniziale",
-      "Churn alto se community non \u00e8 attiva"
+      "Churn alto se community non è attiva"
     ],
     "direction": "GO - Iniziare con una sola nicchia (UX freelance). Feature custom: portfolio review, feedback strutturato, job board. Pricing $29-99/mese per community owner.",
     "architecture": {
@@ -1083,7 +1083,7 @@
     "id": "246056a3-c101-499d-83d8-124ea915baa1",
     "title": "EcoSpend",
     "tagline": "Tracker impatto ambientale delle spese quotidiane",
-    "abstract": "Collega conti bancari e analizza carbon footprint di ogni acquisto. Suggerisce alternative pi\u00f9 sostenibili e tratta progressi personali. Mercato ESG in crescita, Gen Z interessata.",
+    "abstract": "Collega conti bancari e analizza carbon footprint di ogni acquisto. Suggerisce alternative più sostenibili e tratta progressi personali. Mercato ESG in crescita, Gen Z interessata.",
     "category": "FinTech/Sustainability",
     "status": "parked",
     "created": "2026-03-06",
@@ -1118,15 +1118,15 @@
     "priority": "L",
     "strengths": [
       "92% dei buyer preferisce brand responsabili",
-      "Gen Z molto interessata a sostenibilit\u00e0",
+      "Gen Z molto interessata a sostenibilità",
       "Dati carbon footprint disponibili (database aperti)",
       "Potenziale affiliazione prodotti eco-friendly"
     ],
     "weaknesses": [
-      "Monetizzazione consumer difficile (sensibilizzazione \u2260 pagamento)",
-      "Concetto simile in app bancarie gi\u00e0 esistenti",
+      "Monetizzazione consumer difficile (sensibilizzazione ≠ pagamento)",
+      "Concetto simile in app bancarie già esistenti",
       "Costo API bancarie (Plaid) non trascurabile",
-      "Affidabilit\u00e0 dati emissioni variabile per categoria"
+      "Affidabilità dati emissioni variabile per categoria"
     ],
     "direction": "PIVOT_NEEDED - Troppo difficile monetizzare consumer. Pivot B2B: vendere API carbon tracking a neobank/fintech come feature aggiuntiva.",
     "architecture": {
@@ -1140,8 +1140,8 @@
   {
     "id": "d4e5f6g7-h8i9-0j1k-2l3m-4n5o6p7q8r9s0t",
     "title": "EventHorizon",
-    "tagline": "Scopri eventi locali nella tua citt\u00e0, in unico posto",
-    "abstract": "Aggregatore di eventi locali che raccoglie concerti, mostre, mercatini e attivit\u00e0 community da diverse fonti (Eventbrite, Meetup, Facebook Events) in un'unica interfaccia pulita. Notifiche push per eventi matching interessi personali. Monetizzazione: featured listing per organizzatori + premium per utenti (early bird alerts).",
+    "tagline": "Scopri eventi locali nella tua città, in unico posto",
+    "abstract": "Aggregatore di eventi locali che raccoglie concerti, mostre, mercatini e attività community da diverse fonti (Eventbrite, Meetup, Facebook Events) in un'unica interfaccia pulita. Notifiche push per eventi matching interessi personali. Monetizzazione: featured listing per organizzatori + premium per utenti (early bird alerts).",
     "category": "Local/Consumer",
     "status": "parked",
     "created": "2026-03-07",
@@ -1171,7 +1171,7 @@
     },
     "injection_notes": [
       "Focus su UX superiore ai competitor esistenti",
-      "Partire da una citt\u00e0 pilota (es. Chieti o Pescara)"
+      "Partire da una città pilota (es. Chieti o Pescara)"
     ],
     "priority": "L",
     "strengths": [
@@ -1181,11 +1181,11 @@
       "Costo hosting basso (Vercel + serverless)"
     ],
     "weaknesses": [
-      "Network effect locale: utile solo con massa critica citt\u00e0",
+      "Network effect locale: utile solo con massa critica città",
       "Dipendenze da API di terze parti (cambiamenti, rate limit)",
       "Organizzatori piccoli non pagano senza risultati dimostrati"
     ],
-    "direction": "GO - Partire con una citt\u00e0 pilota (media 50k abitanti). Agganciare 50-100 organizer locali (associazioni, locali) con listing gratuiti. Monetizzare dopo 1000 utenti attivi. Pricing: featured listing $49/mese, premium user alerts $2.99/mese.",
+    "direction": "GO - Partire con una città pilota (media 50k abitanti). Agganciare 50-100 organizer locali (associazioni, locali) con listing gratuiti. Monetizzare dopo 1000 utenti attivi. Pricing: featured listing $49/mese, premium user alerts $2.99/mese.",
     "architecture": {
       "frontend": "Next.js + Mapbox per mappa eventi, React Native mobile",
       "backend": "Node.js + serverless (Vercel) per API aggregator",
@@ -1199,7 +1199,7 @@
     "id": "e5f6g7h8-i9j0-1k2l-3m4n-5o6p7q8r9s0t1u",
     "title": "TripSync",
     "tagline": "Pianificatore di viaggio collaborativo senza account",
-    "abstract": "App web che permette a famiglie/gruppi di pianificare un viaggio condividendo un link. Aggiungono destinazioni, alloggi, attivit\u00e0 in una mappa condivisa. Niente login obbligatorio, modifiche in tempo reale via link. Monetizzazione: affiliate (booking.com, flights) + export offline premium.",
+    "abstract": "App web che permette a famiglie/gruppi di pianificare un viaggio condividendo un link. Aggiungono destinazioni, alloggi, attività in una mappa condivisa. Niente login obbligatorio, modifiche in tempo reale via link. Monetizzazione: affiliate (booking.com, flights) + export offline premium.",
     "category": "Travel/Productivity",
     "status": "parked",
     "created": "2026-03-07",
@@ -1215,7 +1215,7 @@
       "totale": 56,
       "media": 8.0,
       "verdetto": "GO",
-      "note": "Semplicit\u00e0 estrema, affiliate commissioni, basso costo."
+      "note": "Semplicità estrema, affiliate commissioni, basso costo."
     },
     "market_research": {
       "competitor_major": [
@@ -1240,7 +1240,7 @@
     "weaknesses": [
       "Richiede real-time collaboration senza account (sfida tecnica)",
       "Monetizzazione dipende da affiliate, margini bassi",
-      "Difficolt\u00e0 differenziare da Google Docs"
+      "Difficoltà differenziare da Google Docs"
     ],
     "direction": "GO - Build MVP in 4 settimane. Core: mappa condivisa + lista destinazioni + link affiliate. UX must be smoother than sharing spreadsheet. Monetizza con export PDF premium ($4.99) + affiliate links. Marketing: Reddit r/travel, Facebook travel groups.",
     "architecture": {
@@ -1248,7 +1248,7 @@
       "backend": "Serverless functions (Vercel) per salvataggio stato su DB",
       "database": "Supabase (PostgreSQL) conUUID-based room links",
       "real_time": "WebSocket via Vercel Edge Config o supabase realtime",
-      "affiliate": "API Booking.com, Skyscanner, Amazon (attivit\u00e0)",
+      "affiliate": "API Booking.com, Skyscanner, Amazon (attività)",
       "infra": "Vercel + Supabase free tier sufficiente per MVP",
       "effort": "4-6 settimane MVP"
     }
@@ -1257,7 +1257,7 @@
     "id": "f6g7h8i9-j0k1-2l3m-4n5o-6p7q8r9s0t1u2v",
     "title": "ReviewHub",
     "tagline": "Gestione recensioni da Google, Yelp, Facebook in un'unica dashboard",
-    "abstract": "Dashboard B2B per piccole attivit\u00e0 locali (ristoranti, hotel, negozi) che aggrega tutte le recensioni da Google My Business, Yelp, Facebook in un'unica interfaccia. Risposta diretta, sentiment analysis, alert per nuove recensioni negative. Pricing flat $29/mese indipendentemente da numero sedi.",
+    "abstract": "Dashboard B2B per piccole attività locali (ristoranti, hotel, negozi) che aggrega tutte le recensioni da Google My Business, Yelp, Facebook in un'unica interfaccia. Risposta diretta, sentiment analysis, alert per nuove recensioni negative. Pricing flat $29/mese indipendentemente da numero sedi.",
     "category": "SaaS/B2B",
     "status": "parked",
     "created": "2026-03-07",
@@ -1281,7 +1281,7 @@
         "EmbedSocial",
         "Birdeye"
       ],
-      "pricing_gap": "Competitor $44-259/mese, troppi feature per piccole attivit\u00e0",
+      "pricing_gap": "Competitor $44-259/mese, troppi feature per piccole attività",
       "tam": "~5M small businesses US+EU con presenza locale"
     },
     "injection_notes": [
@@ -1298,7 +1298,7 @@
     "weaknesses": [
       "Richiede aggiornamenti quando API cambiano (maintenance)",
       "Supporto clienti necessario (non self-serve per tutti)",
-      "Difficolt\u00e0 scaling se tutti usano gratis"
+      "Difficoltà scaling se tutti usano gratis"
     ],
     "direction": "GO - Target: single-location businesses (ristoranti, bar, hotel). MVP in 6 settimane: aggregazione 3 piattaforme + risposta diretta + alert email. Onboarding guided con import automatico dati da Google. Pricing $29/mese, annual discount. Marketing: Facebook/Instagram ads geo-targeted, partnership con associazioni di categoria.",
     "architecture": {
@@ -1346,7 +1346,7 @@
       "Modello monetizzazione innovativo: pay-per-outcome",
       "Mercato sottoservito: LinkedIn/Indeed non specializzati",
       "Barriere tecniche basse: matching AI + database",
-      "Network effect: pi\u00f9 job = pi\u00f9 candidati = pi\u00f9 job"
+      "Network effect: più job = più candidati = più job"
     ],
     "weaknesses": [
       "Necessita massa critica di job e candidati",
@@ -1383,7 +1383,7 @@
       "verdetto": "GO"
     },
     "market_research": {
-      "trending": "AI meeting assistants market $3.24B (2025) \u2192 $7.33B (2035)",
+      "trending": "AI meeting assistants market $3.24B (2025) → $7.33B (2035)",
       "competitor_major": [
         "Otter.ai",
         "Fireflies.ai",
@@ -1396,7 +1396,7 @@
     "strengths": [
       "Mercato AI healthcare in crescita esplosiva",
       "Healthcare ha compliance requirements specifici (HIPAA)",
-      "Burocrazia medica \u00e8 pain point enorme",
+      "Burocrazia medica è pain point enorme",
       "Willingness to pay alta: tempo medico = costo"
     ],
     "weaknesses": [
@@ -1405,7 +1405,7 @@
       "Sales cycle B2B healthcare lungo",
       "Necessario integration con EHR esistenti"
     ],
-    "direction": "Focus su nicchia: fisioterapisti o cliniche private (pi\u00f9 agili di ospedali). MVP con trascrizione + template note cliniche standard italiane. Pricing \u20ac49-99/mese per professionista.",
+    "direction": "Focus su nicchia: fisioterapisti o cliniche private (più agili di ospedali). MVP con trascrizione + template note cliniche standard italiane. Pricing €49-99/mese per professionista.",
     "architecture": {
       "frontend": "Next.js dashboard + mobile PWA",
       "backend": "Python/FastAPI + Whisper per trascrizione",
@@ -1446,10 +1446,10 @@
     },
     "priority": "L",
     "strengths": [
-      "Marketplace: network effect (pi\u00f9 publisher = pi\u00f9 advertiser)",
+      "Marketplace: network effect (più publisher = più advertiser)",
       "Take rate: 10-20% su ogni transazione",
       "Low infra: matching platform, nessun contenuto",
-      "Creator economy in espansione: pi\u00f9 newsletter ogni giorno"
+      "Creator economy in espansione: più newsletter ogni giorno"
     ],
     "weaknesses": [
       "Chicken-and-egg: serve massa critica publisher + advertiser",
@@ -1486,7 +1486,7 @@
       "totale": 54,
       "media": 7.71,
       "verdetto": "GO",
-      "note": "Mercato meeting AI $3.24B in crescita. Fattibilit\u00e0 alta con API esistenti."
+      "note": "Mercato meeting AI $3.24B in crescita. Fattibilità alta con API esistenti."
     },
     "market_research": {
       "competitor_major": [
@@ -1531,7 +1531,7 @@
     "id": "e0f1a2b3-c4d5-6e7f-8a9b-0c1d2e3f4a5b",
     "title": "Digital Detox Planner",
     "tagline": "Pianifica la tua riduzione dello screen time",
-    "abstract": "App che aiuta a pianificare digital detox settimanali/mensili con reminder personalizzati, tracciamento progressi, e modalit\u00e0 focus. Suggerisce attivit\u00e0 alternative offline. Market trend: growing demand for healthier tech habits.",
+    "abstract": "App che aiuta a pianificare digital detox settimanali/mensili con reminder personalizzati, tracciamento progressi, e modalità focus. Suggerisce attività alternative offline. Market trend: growing demand for healthier tech habits.",
     "category": "Wellness/Consumer",
     "status": "parked",
     "created": "2026-03-10",
@@ -1572,7 +1572,7 @@
       "Mercato underserved: esistenti sono solo tracker o blocker"
     ],
     "weaknesses": [
-      "Screen Time nativo iOS/Android gi\u00e0 esiste",
+      "Screen Time nativo iOS/Android già esiste",
       "Monetizzazione app wellness difficile (freemium model)",
       "Retention challenge: utenti abbandonano dopo poche settimane",
       "Feature facilmente copiabili da competitor"
@@ -1591,7 +1591,7 @@
     "id": "f1a2b3c4-d5e6-7f8a-9b0c-1d2e3f4a5b6c",
     "title": "ThumbCompare",
     "tagline": "Confronta thumbnail YouTube vs competitor prima di pubblicare",
-    "abstract": "Tool per YouTube creator: carichi la thumbnail, inserisci keyword di ricerca, vedi come apparir\u00e0 nei risultati vs top competitor. A/B test rapidi, heatmap attention prediction. Proven concept: Clickpilot $1.6K MRR in 5 mesi.",
+    "abstract": "Tool per YouTube creator: carichi la thumbnail, inserisci keyword di ricerca, vedi come apparirà nei risultati vs top competitor. A/B test rapidi, heatmap attention prediction. Proven concept: Clickpilot $1.6K MRR in 5 mesi.",
     "category": "Creator Tools",
     "status": "parked",
     "created": "2026-03-10",
@@ -1622,14 +1622,14 @@
       "barriers": "Bassi - YouTube Data API accessibile"
     },
     "injection_notes": [
-      "Focus su UX semplice: upload \u2192 preview \u2192 download",
+      "Focus su UX semplice: upload → preview → download",
       "Heatmap attention prediction con AI"
     ],
     "priority": "L",
     "strengths": [
-      "Proven concept: Clickpilot ha gi\u00e0 validato il modello ($1.6K MRR)",
+      "Proven concept: Clickpilot ha già validato il modello ($1.6K MRR)",
       "Creator economy in crescita esplosiva",
-      "Pain point reale: thumbnail performance \u00e8 critica per views",
+      "Pain point reale: thumbnail performance è critica per views",
       "Costo infrastruttura basso (YouTube Data API)"
     ],
     "weaknesses": [
@@ -1652,7 +1652,7 @@
     "id": "99df3108-3ed1-45cd-931d-944c165a14ec",
     "title": "ComplianceAI",
     "tagline": "Scanner GDPR/HIPAA per piccole imprese verticali",
-    "abstract": "Tool che analizza siti web, documenti e processi per verificare conformit\u00e0 a framework normativi specifici (GDPR, HIPAA, PCI-DSS). Genera report dettagliati con remediation steps. Target: small business verticals che non possono permettersi consulenti legali costosi.",
+    "abstract": "Tool che analizza siti web, documenti e processi per verificare conformità a framework normativi specifici (GDPR, HIPAA, PCI-DSS). Genera report dettagliati con remediation steps. Target: small business verticals che non possono permettersi consulenti legali costosi.",
     "category": "Compliance/SaaS",
     "status": "parked",
     "created": "2026-03-13",
@@ -1772,7 +1772,7 @@
     "id": "3b5211e9-547b-4fcc-841a-01f68a5c6fce",
     "title": "ContentFlow AI",
     "tagline": "Trasforma un contenuto in 10 formatti per social e newsletter",
-    "abstract": "Paste a link to your article, podcast, or video \u2192 AI generates platform-specific versions: LinkedIn post, Twitter/X threads, Instagram carousel captions, TikTok script, newsletter edition, Substack excerpt, etc. Maintains original tone and message while optimizing format and length. Creator's most valuable time-saver.",
+    "abstract": "Paste a link to your article, podcast, or video → AI generates platform-specific versions: LinkedIn post, Twitter/X threads, Instagram carousel captions, TikTok script, newsletter edition, Substack excerpt, etc. Maintains original tone and message while optimizing format and length. Creator's most valuable time-saver.",
     "category": "Content Marketing/AI",
     "status": "parked",
     "created": "2026-03-13",
@@ -1818,7 +1818,7 @@
       "Platform format changes require prompt updates",
       "Pricing pressure from incumbents bundling"
     ],
-    "direction": "GO - MVP supports 5 platforms: LinkedIn, Twitter, Instagram, newsletter, TikTok. Input URL or text \u2192 outputs ready-to-publish. Freemium: 5 transformations/mo free, $19/mo unlimited. Target solo creators and small agencies. Marketing: creator communities (Twitter, Indie Hackers).",
+    "direction": "GO - MVP supports 5 platforms: LinkedIn, Twitter, Instagram, newsletter, TikTok. Input URL or text → outputs ready-to-publish. Freemium: 5 transformations/mo free, $19/mo unlimited. Target solo creators and small agencies. Marketing: creator communities (Twitter, Indie Hackers).",
     "architecture": {
       "frontend": "Next.js dashboard with live preview + copy buttons",
       "backend": "Node.js serverless (Vercel) with OpenAI API (gpt-4o-mini)",
@@ -1875,11 +1875,11 @@
     ],
     "weaknesses": [
       "Competitor consolidati (Calm, Headspace) con brand forte",
-      "Responsabilit\u00e0 etica per salute mentale richiede disclaimer",
+      "Responsabilità etica per salute mentale richiede disclaimer",
       "Rischio burnout utenti (abbandono alto dopo poche settimane)",
       "Necessario compliance HIPAA/GDPR per dati salute"
     ],
-    "direction": "GO con focus su adattivit\u00e0 AI. MVP: tracking umore + chatbot empatico con interventi contestuali. Pricing $9.99/mese con trial 7 giorni. Differenziazione: impara dalle abitudini e suggerisce micro-interventi instead of just meditation.",
+    "direction": "GO con focus su adattività AI. MVP: tracking umore + chatbot empatico con interventi contestuali. Pricing $9.99/mese con trial 7 giorni. Differenziazione: impara dalle abitudini e suggerisce micro-interventi instead of just meditation.",
     "architecture": {
       "frontend": "React Native (iOS/Android) + web companion dashboard",
       "backend": "Node.js + OpenAI GPT-4o / Claude API per conversazioni",
@@ -1935,7 +1935,7 @@
       "Vertical focus riduce competizione con generici"
     ],
     "weaknesses": [
-      "Circle.so gi\u00e0 consolidato nel mercato community SaaS",
+      "Circle.so già consolidato nel mercato community SaaS",
       "Chicken-and-egg: vuota all'inizio, richiede seeding manuale intensivo",
       "Churn alto se community non diventa attiva rapidamente",
       "Richiede supporto clienti per aiutare owners a far crescere community"
@@ -1954,7 +1954,7 @@
     "id": "d4e5f6g7-h8i9-0j1k-2l3m-4n5o6p7q8r9s0t1",
     "title": "ReMultiply",
     "tagline": "Trasforma un contenuto in 10 formatti per ogni piattaforma con un clic",
-    "abstract": "Paste URL articolo, podcast o video \u2192 AI genera automaticamente versioni platform-ottimizzate: LinkedIn post, Twitter/X threads, Instagram caption carosello, TikTok script, newsletter edition, Substack excerpt, Pinterest pin descriptions, Reddit post, LinkedIn article, Facebook post. Mantiene tono originale e ottimizza lunghezze. Creator's ultimate time-saver.",
+    "abstract": "Paste URL articolo, podcast o video → AI genera automaticamente versioni platform-ottimizzate: LinkedIn post, Twitter/X threads, Instagram caption carosello, TikTok script, newsletter edition, Substack excerpt, Pinterest pin descriptions, Reddit post, LinkedIn article, Facebook post. Mantiene tono originale e ottimizza lunghezze. Creator's ultimate time-saver.",
     "category": "Content Marketing/AI",
     "status": "parked",
     "created": "2026-03-14",
@@ -1980,12 +1980,12 @@
         "Canva",
         "Jasper"
       ],
-      "gap": "Repurpose.io ($349/yr) fa solo clipping automatico senza riscrittura di qualit\u00e0. Need: parafrasi AI che preserva voce autore e ottimizza per ogni platform format.",
+      "gap": "Repurpose.io ($349/yr) fa solo clipping automatico senza riscrittura di qualità. Need: parafrasi AI che preserva voce autore e ottimizza per ogni platform format.",
       "tam": "$50B content marketing tools (2024)",
       "cagr": "12%"
     },
     "injection_notes": [
-      "Focus qualit\u00e0 riscrittura AI (paraphrasing human-like), non solo taglio",
+      "Focus qualità riscrittura AI (paraphrasing human-like), non solo taglio",
       "Integrazione diretta OpenAI GPT-4o-mini / Claude per ogni platform",
       "Supporto podcast transcription, YouTube, articoli RSS"
     ],
@@ -1993,7 +1993,7 @@
     "strengths": [
       "Creators time-poor, pagano per automation che risparmia ore",
       "LLM APIs mature, cheap, high-quality output",
-      "Network effect: pi\u00f9 platform supportati = pi\u00f9 valore",
+      "Network effect: più platform supportati = più valore",
       "MVP in 4-6 weeks, fast time-to-market"
     ],
     "weaknesses": [
@@ -2007,7 +2007,7 @@
       "frontend": "Next.js dashboard con live preview per ogni platform + copy buttons",
       "backend": "Node.js serverless (Vercel Edge Functions) + OpenAI API (gpt-4o-mini) con custom prompts per platform",
       "database": "Supabase (PostgreSQL) per account utenti e transformation history",
-      "integrations": "YouTube transcript API, RSS parser (articles), direct text paste, podcast audio \u2192 transcript (Whisper)",
+      "integrations": "YouTube transcript API, RSS parser (articles), direct text paste, podcast audio → transcript (Whisper)",
       "infra": "Vercel + Supabase, cost < $30/mese per migliaia di utenti (free tier sufficiente inizialmente)",
       "effort": "4-6 settimane MVP (6 platforms + transcript + payment)"
     }
@@ -2016,7 +2016,7 @@
     "id": "e5c6d7e8-f9a0-1b2c-3d4e-5f6a7b8c9d0e",
     "title": "RealList AI",
     "tagline": "Marketing kit AI per annunci immobiliari: da foto e dati a listing completo",
-    "abstract": "Tool per agenti immobiliari che prende dettagli di una propriet\u00e0 (indirizzo, foto, specifiche) e genera automaticamente un marketing kit completo: descrizione professionale, social media posts, volantino PDF, email template per prospect. Target: agenti individuali e piccole agenzie.",
+    "abstract": "Tool per agenti immobiliari che prende dettagli di una proprietà (indirizzo, foto, specifiche) e genera automaticamente un marketing kit completo: descrizione professionale, social media posts, volantino PDF, email template per prospect. Target: agenti individuali e piccole agenzie.",
     "category": "Real Estate/AI",
     "status": "parked",
     "created": "2026-03-17",
@@ -2044,7 +2044,7 @@
       "barriers": "Bassi - API AI accessibili"
     },
     "injection_notes": [
-      "Focus su UX semplice: upload \u2192 kit completo in 60 secondi",
+      "Focus su UX semplice: upload → kit completo in 60 secondi",
       "Pricing per listing: $5-10 per property o $39/mese unlimited"
     ],
     "priority": "L",
@@ -2056,12 +2056,12 @@
       "Nessun competitor dedicato nel mercato real estate"
     ],
     "weaknesses": [
-      "Dipendenza da qualit\u00e0 foto fornite dall'utente",
+      "Dipendenza da qualità foto fornite dall'utente",
       "Mercato locale: differenze linguistiche e culturali",
       "Potenzialmente copiabile da tool generici (ChatGPT + prompt)",
       "Agenti tradizionali potrebbero essere resistenti all'AI"
     ],
-    "direction": "GO - MVP web-based: upload foto + specifiche \u2192 genera descrizione + social posts + volantino PDF. Pricing: $7 per listing oppure $49/mese unlimited. Marketing: Facebook/Instagram ads targeting real estate agent groups.",
+    "direction": "GO - MVP web-based: upload foto + specifiche → genera descrizione + social posts + volantino PDF. Pricing: $7 per listing oppure $49/mese unlimited. Marketing: Facebook/Instagram ads targeting real estate agent groups.",
     "architecture": {
       "frontend": "Next.js dashboard con drag-drop upload foto",
       "backend": "Node.js + OpenAI GPT-4V (vision) per analisi immagini, GPT-4 per copywriting",
@@ -2091,7 +2091,7 @@
       "totale": 52,
       "media": 7.43,
       "verdetto": "GO",
-      "note": "Mercato nich\u00e9 ma underserved. AI vision rende catalogazione automatica possibile."
+      "note": "Mercato niché ma underserved. AI vision rende catalogazione automatica possibile."
     },
     "market_research": {
       "competitor_major": [
@@ -2114,12 +2114,12 @@
       "Potenziale white-label per aziende con asset specifici"
     ],
     "weaknesses": [
-      "Mercato pi\u00f9 piccolo di inventory management generale",
+      "Mercato più piccolo di inventory management generale",
       "Riconoscimento AI potrebbe essere inaccurato per oggetti molto specifici/nuovi",
       "Utenti devono fotografare ogni oggetto (onboarding laborioso)",
-      "Competitor esistenti hanno feature pi\u00f9 complete (checkout, audit)"
+      "Competitor esistenti hanno feature più complete (checkout, audit)"
     ],
-    "direction": "GO - MVP mobile-first (React Native): snap foto \u2192 AI identifica oggetto \u2192 aggiunge a inventario con metadati estratti. Collezione view con ricerca visuale (similarity). Pricing: $12/mese individual, $49/mese team. Vertical: fotografi e content creators inizialmente.",
+    "direction": "GO - MVP mobile-first (React Native): snap foto → AI identifica oggetto → aggiunge a inventario con metadati estratti. Collezione view con ricerca visuale (similarity). Pricing: $12/mese individual, $49/mese team. Vertical: fotografi e content creators inizialmente.",
     "architecture": {
       "frontend": "React Native (iOS/Android) per camera access",
       "backend": "Python/FastAPI + OpenAI GPT-4V per object recognition",
@@ -2170,16 +2170,16 @@
       "Modello newsletter collaudato: sponsorship + subscription premium",
       "MVP in 1-2 settimane (Ghost/Substack + research)",
       "Costo infrastruttura quasi zero",
-      "Network effects: community di builders pu\u00f2 diventare deal flow",
+      "Network effects: community di builders può diventare deal flow",
       "Possibile expansion: database searchable, job board, community"
     ],
     "weaknesses": [
       "Richiede ricerca costante e accesso a dati privati (indie makers willing to share?)",
-      "Mercato newsletter micro-SaaS gi\u00e0 coperto da Trends.vc (ma pi\u00f9 costoso)",
-      "Crescita subscriber dipende da viralit\u00e0 e referral",
-      "Responsabilit\u00e0 di accuratezza dati (revenue claims)"
+      "Mercato newsletter micro-SaaS già coperto da Trends.vc (ma più costoso)",
+      "Crescita subscriber dipende da viralità e referral",
+      "Responsabilità di accuratezza dati (revenue claims)"
     ],
-    "direction": "GO - Launch su Substack (gratuito) per testare demand. 2-3 free issues \u2192 paywall. Pricing: $15/mese o $120/anno per analysis deep-dive + database access. Target: Indie Hackers, Twitter/X makers community. Sponsor: dev tools, hosting, AI APIs.",
+    "direction": "GO - Launch su Substack (gratuito) per testare demand. 2-3 free issues → paywall. Pricing: $15/mese o $120/anno per analysis deep-dive + database access. Target: Indie Hackers, Twitter/X makers community. Sponsor: dev tools, hosting, AI APIs.",
     "architecture": {
       "frontend": "Substack/Ghost per newsletter delivery",
       "backend": "Airtable/Notion per database research",
@@ -2193,7 +2193,7 @@
     "id": "f8a2b3c4-d5e6-7f8a-9b0c-1d2e3f4a5b6c",
     "title": "InvoiceChaser AI",
     "tagline": "Promemoria automatici pagamenti fatture per freelancer via WhatsApp/SMS",
-    "abstract": "Micro-SaaS che si integra con sistemi di fatturazione (FreshBooks, Wave, custom) e invia promemoria automatici ai clienti via WhatsApp, SMS o Telegram quando le fatture sono in scadenza o scadute. I freelance odiano 'chiedere i soldi' \u2014 l'AI lo fa educatamente al posto loro.",
+    "abstract": "Micro-SaaS che si integra con sistemi di fatturazione (FreshBooks, Wave, custom) e invia promemoria automatici ai clienti via WhatsApp, SMS o Telegram quando le fatture sono in scadenza o scadute. I freelance odiano 'chiedere i soldi' — l'AI lo fa educatamente al posto loro.",
     "category": "Finance/B2B",
     "status": "parked",
     "created": "2026-03-19",
@@ -2228,7 +2228,7 @@
     ],
     "priority": "L",
     "strengths": [
-      "Problema universale per freelance: chasing payments \u00e8 tedious e stressante",
+      "Problema universale per freelance: chasing payments è tedious e stressante",
       "Mercato enorme: 72M+ freelance global",
       "Tech semplice: API integration + messaging",
       "Monetizzazione chiara: $9-29/mese subscription",
@@ -2254,7 +2254,7 @@
     "id": "g9b3c4d5-e6f7-8a9b-0c1d-2e3f4a5b6c7d",
     "title": "VoiceCode IDE",
     "tagline": "Sviluppo software tramite comandi vocali naturali",
-    "abstract": "IDE che trasforma descrizioni vocali in codice funzionante. Target: non-technical founders, indie hackers che vogliono prototipare velocemente senza scrivere codice manualmente. 'Crea un form login con email e password' \u2192 genera component React + backend.",
+    "abstract": "IDE che trasforma descrizioni vocali in codice funzionante. Target: non-technical founders, indie hackers che vogliono prototipare velocemente senza scrivere codice manualmente. 'Crea un form login con email e password' → genera component React + backend.",
     "category": "Developer Tools/AI",
     "status": "parked",
     "created": "2026-03-19",
@@ -2291,14 +2291,14 @@
     "priority": "L",
     "strengths": [
       "Trend vibe coding in crescita",
-      "Voice input pi\u00f9 veloce di typing per descrizioni complesse",
+      "Voice input più veloce di typing per descrizioni complesse",
       "Target chiaro: non-technical founders",
       "Differentiazione da Copilot/Lovable",
       "Possibile freemium con generazioni giornaliere limitate"
     ],
     "weaknesses": [
       "Replit/Glitch potrebbero aggiungere voice facilmente",
-      "Precisione voice recognition per codice pu\u00f2 essere problematica",
+      "Precisione voice recognition per codice può essere problematica",
       "Costo API AI per generazione codice (GPT-4/Claude)",
       "Privacy concern: recording audio codice proprietario"
     ],
@@ -2316,7 +2316,7 @@
     "id": "h0c4d5e6-f7a8-9b0c-1d2e-3f4a5b6c7d8e",
     "title": "NeighborTools",
     "tagline": "Condivisione attrezzi e servizi tra vicini di casa",
-    "abstract": "App iper-locale per comunit\u00e0 di quartiere: presta/affitta attrezzi, trova babysitter verificati nella via, organizza compravendita di oggetti usati. Alternative comunitaria a Nextdoor senza toxic drama. Network effect locale con monetizzazione freemium.",
+    "abstract": "App iper-locale per comunità di quartiere: presta/affitta attrezzi, trova babysitter verificati nella via, organizza compravendita di oggetti usati. Alternative comunitaria a Nextdoor senza toxic drama. Network effect locale con monetizzazione freemium.",
     "category": "Community/Local",
     "status": "parked",
     "created": "2026-03-19",
@@ -2351,7 +2351,7 @@
     ],
     "priority": "L",
     "strengths": [
-      "Problem reale: comprare trapano per 1 uso \u00e8 spreco",
+      "Problem reale: comprare trapano per 1 uso è spreco",
       "Sustainability angle attuale e marketable",
       "Network effect locale (difensibile)",
       "Community bonding vs toxic social media",
@@ -2361,9 +2361,9 @@
       "Cold start: serve massa critica per area",
       "Moderation rischio di abusi (truffe, violenza)",
       "Monetizzazione debole (commissioni basse su lending)",
-      "Competitor gi\u00e0 esistenti (pi\u00f9 che altro non specializzati)"
+      "Competitor già esistenti (più che altro non specializzati)"
     ],
-    "direction": "GO - MVP con focus su una sola citt\u00e0 pilota (es. Chieti). Features: tool cataloging, booking calendar, in-app messaging. Pricing: free per lending, 10% commissione su noleggio a pagamento/babysitting.",
+    "direction": "GO - MVP con focus su una sola città pilota (es. Chieti). Features: tool cataloging, booking calendar, in-app messaging. Pricing: free per lending, 10% commissione su noleggio a pagamento/babysitting.",
     "architecture": {
       "frontend": "React Native (iOS/Android) + web view",
       "backend": "Node.js + PostgreSQL",
@@ -2412,7 +2412,7 @@
     "priority": "L",
     "strengths": [
       "Domanda alta: molti giovani hanno bisogno di educazione finanziaria",
-      "AI pu\u00f2 fornire suggerimenti personalizzati che le app tradizionali non hanno",
+      "AI può fornire suggerimenti personalizzati che le app tradizionali non hanno",
       "Costo infrastruttura basso: serverless + API",
       "Modello subscription ricorrente"
     ],
@@ -2422,7 +2422,7 @@
       "Richiede integrazione bancaria (Plaid costi)",
       "User acquisition costoso in verticale competitivo"
     ],
-    "direction": "Partire con budgeting e categorizzazione spese + AI tips. Monetizzare con subscription $9.99/mese per coaching avanzato e goal tracking. Focus su millennials con reddito sotto $50k che non usano YNAB per complessit\u00e0.",
+    "direction": "Partire con budgeting e categorizzazione spese + AI tips. Monetizzare con subscription $9.99/mese per coaching avanzato e goal tracking. Focus su millennials con reddito sotto $50k che non usano YNAB per complessità.",
     "architecture": {
       "frontend": "React Native (iOS/Android)",
       "backend": "Node.js + serverless (Vercel)",
@@ -2471,7 +2471,7 @@
     "priority": "L",
     "strengths": [
       "Tatuatori attualmente usano Instagram e fogli Excel - dolore reale",
-      "Disponibilit\u00e0 a pagare per tool che fidelizzano clienti",
+      "Disponibilità a pagare per tool che fidelizzano clienti",
       "Design approval workflow unico",
       "Modello subscription chiaro"
     ],
@@ -2534,7 +2534,7 @@
     ],
     "weaknesses": [
       "Mercato stagionale (picco estivo/primaverile)",
-      "Richiede alta qualit\u00e0 nei template",
+      "Richiede alta qualità nei template",
       "Supporto clienti intensivo per onboarding"
     ],
     "direction": "MVP con vendor database + timeline drag-and-drop + budget tracking + client portal. Pricing: $49/mese base, $79/mese con website builder. Onboarding guided con import spreadsheet.",
@@ -2545,6 +2545,187 @@
       "integrazioni": "Google Calendar, email templates, Stripe",
       "infra": "Vercel + Supabase",
       "effort": "6-8 settimane MVP"
+    }
+  },
+  {
+    "id": "130edd77-7ebf-4d2f-96ed-6f0c73cbecd3",
+    "title": "VerticalCompliance AI",
+    "tagline": "Scanner GDPR/HIPAA/PCI-DSS verticale per micro-imprese",
+    "abstract": "Tool di compliance automatizzato specifico per settori verticali (ristoranti, studi medici, e-commerce). Analizza sito web, documenti e processi generando report conformità con remediation steps. Pricing accessibile per SMEs che non possono permettersi consulenti costosi.",
+    "category": "Compliance/SaaS",
+    "status": "parked",
+    "created": "2026-03-22",
+    "updated": "2026-03-22",
+    "scorecard": {
+      "domanda_mercato": 9,
+      "differenziazione": 8,
+      "fattibilita_tecnica": 7,
+      "costo_infrastruttura": 8,
+      "manutenzione": 6,
+      "monetizzabilita": 9,
+      "rischio_legale": 6,
+      "totale": 53,
+      "media": 7.57,
+      "verdetto": "GO",
+      "note": "Trend forte AI compliance tools. Fattibilità alta, monetizzazione chiara."
+    },
+    "market_research": {
+      "competitor_major": [
+        "Termly",
+        "OneTrust",
+        "Cookiebot"
+      ],
+      "gap": "Competitor troppo costosi o troppo generici. Serve verticalizzazione e pricing accessibile.",
+      "tam": "~2M SMEs EU/US needing compliance",
+      "cagr": "12%"
+    },
+    "injection_notes": [
+      "Partire con 1-2 verticali (es. ristoranti, studi medici)",
+      "Template predefiniti + checklist interattiva"
+    ],
+    "priority": "L",
+    "strengths": [
+      "Regulatory pressure must-have demand",
+      "High willingness to pay vs fines (GDPR fino a 20M€)",
+      "Low infra cost (LLM APIs + crawler)",
+      "Vertical differentiation vs generic tools"
+    ],
+    "weaknesses": [
+      "Richiede updates quando norme cambiano",
+      "Legal liability se report impreciso (disclaimer obbligatorio)",
+      "Customer acquisition education needed"
+    ],
+    "direction": "MVP: GDPR checker per e-commerce + HIPAA per piccole cliniche. Web scanner + PDF report generator. Pricing: $49 one-time scan o $99/mo continuous monitoring. Target micro-SMEs con 1-10 dipendenti.",
+    "architecture": {
+      "frontend": "Next.js dashboard responsive",
+      "backend": "Python/FastAPI + Playwright crawler + OpenAI for analysis",
+      "database": "Supabase (PostgreSQL) per scansioni salvate",
+      "ml": "Prompt engineering extraction compliance clauses",
+      "infra": "Vercel + Railway, <$50/mo",
+      "effort": "6-8 settimane MVP"
+    }
+  },
+  {
+    "id": "3bc877a8-636b-4fa6-9017-9162cc8f0b5a",
+    "title": "HealthMeeting AI",
+    "tagline": "Trascrizione e compliance per consultazioni mediche",
+    "abstract": "AI assistant specializzato per healthcare: registra consultazioni (con consenso), genera trascrizione, estrae action items, compila automaticamente note cliniche strutturate. Ottimizzato per compliance HIPAA/GDPR, riduce bureaucratic overhead del 60% per medici di base, fisioterapisti, cliniche private.",
+    "category": "Healthcare/AI",
+    "status": "parked",
+    "created": "2026-03-22",
+    "updated": "2026-03-22",
+    "scorecard": {
+      "domanda_mercato": 9,
+      "differenziazione": 8,
+      "fattibilita_tecnica": 7,
+      "costo_infrastruttura": 8,
+      "manutenzione": 7,
+      "monetizzabilita": 8,
+      "rischio_legale": 5,
+      "totale": 52,
+      "media": 7.43,
+      "verdetto": "GO",
+      "note": "AI meeting market $3.24B→$7.33B. Healthcare vertical underserved, compliance built-in."
+    },
+    "market_research": {
+      "competitor_major": [
+        "Otter.ai",
+        "Fireflies.ai",
+        "Fathom"
+      ],
+      "gap": "Competitor horizontal, nessuno specializzato healthcare compliance e note cliniche.",
+      "tam": "$7.33B AI meeting assistants by 2035, healthcare segment growing 25% CAGR",
+      "vertical_opportunity": "Fisioterapisti, cliniche private, medici di base (non ospedali)"
+    },
+    "injection_notes": [
+      "Focus su note cliniche standard italiano (LLM fine-tuning)",
+      "Integrazione con software medici esistenti (es. Dottoripple)"
+    ],
+    "priority": "L",
+    "strengths": [
+      "Healthcare compliance built-in (HIPAA/GDPR)",
+      "Pain enorme: admin overhead 30-40% tempo medico",
+      "Willingness to pay alta (tempo medico = costo)",
+      "Network effect: referrals tra professionisti sanitari"
+    ],
+    "weaknesses": [
+      "Accuracy critica: errori = liability medica",
+      "Sales cycle B2B healthcare lungo",
+      "Necessario consenso paziente registrazione (UX hurdle)",
+      "Integration con EHR complessa"
+    ],
+    "direction": "MVP per fisioterapisti: trascrizione + template note italiano + export PDF. Pricing €49-99/mese per professionista. Partnership con associazioni categoria per distribution. Positioning: 'Il tuo segretario AI per documentazione clinica'.",
+    "architecture": {
+      "frontend": "Next.js web dashboard + PWA mobile",
+      "backend": "Python/FastAPI + Whisper + GPT-4 per strutt. note",
+      "database": "Supabase con encrypt at rest (HIPAA-compliant)",
+      "ml": "Entity extraction per diagnosi, terapie, farmaci",
+      "integrations": "Google Calendar, DICOM viewer optional",
+      "infra": "Healthcare-compliant (AWS HIPAA) + end-to-end encryption",
+      "effort": "8-10 settimane MVP"
+    }
+  },
+  {
+    "id": "c12308ec-5502-4851-9512-e586c695a344",
+    "title": "ContentRepurpose Pro",
+    "tagline": "Trasforma contenuti con AI rewriting di qualità superiore",
+    "abstract": "Micro-SaaS che trasforma articoli, podcast, video in 10+ formati platform-ottimizzati con riscrittura AI di alta qualità che preserva il tono dell'autore. Differenzia da Repurpose.io non solo tagliando, ma riscrivendo veramente per ogni piattaforma (LinkedIn, Twitter, Instagram, TikTok, newsletter, Substack).",
+    "category": "Content Marketing/AI",
+    "status": "parked",
+    "created": "2026-03-22",
+    "updated": "2026-03-22",
+    "scorecard": {
+      "domanda_mercato": 9,
+      "differenziazione": 9,
+      "fattibilita_tecnica": 8,
+      "costo_infrastruttura": 9,
+      "manutenzione": 7,
+      "monetizzabilita": 8,
+      "rischio_legale": 8,
+      "totale": 58,
+      "media": 8.29,
+      "verdetto": "GO",
+      "note": "Creator overload痛點.+ High quality paraphrase differentiation vs Repurpose.io."
+    },
+    "market_research": {
+      "competitor_major": [
+        "Repurpose.io",
+        "Hootsuite",
+        "Buffer",
+        "Jasper"
+      ],
+      "gap": "Repurpose.io ($349/yr) fa clipping automatico senza vera riscrittura. Questo fa parafrasi AI di qualità umana per ogni platform.",
+      "tam": "$50B content marketing tools (2024)",
+      "cagr": "12%",
+      "pricing_comparison": "Freemium $19/mo vs Repurpose $349/yr"
+    },
+    "injection_notes": [
+      "Focus su rewriting quality > clipping automation",
+      "Custom prompts per platform: LinkedIn professional vs TikTok slang",
+      "Supporto transcription per podcast/audio"
+    ],
+    "priority": "L",
+    "strengths": [
+      "Creator overload痛點 reale: risparmio 10+ ore/settimana",
+      "LLM APIs (GPT-4o-mini, Claude) qualità eccellente, costi bassi",
+      "Network effect: più format supportati = più valore",
+      "Fast time-to-market: MVP 4-6 weeks"
+    ],
+    "weaknesses": [
+      "Competitor possono aggiungere rewriting facilmente",
+      "Copyright se output troppo simile (paraphrase quality must be high)",
+      "Platform format changes richiedono prompt updates",
+      "Pricing pressure da incumbents bundling"
+    ],
+    "direction": "MVP supporta 6 format: LinkedIn post, Twitter thread, Instagram caption+carousel, TikTok script, newsletter HTML, Substack excerpt. Input URL o testo directly. Freemium: 5 transformations/mo free, $19/mo unlimited. Target: solo creators e piccole agenzie (<10 persone). Marketing: Twitter/X, Indie Hackers, creator Facebook groups. Monetizzazione early con Stripe Checkout one-time $5 per 10 transformations per non-commit users.",
+    "architecture": {
+      "frontend": "Next.js dashboard con live preview per ogni platform + copy buttons in one click",
+      "backend": "Node.js serverless (Vercel Edge) + OpenAI/Claude APIs con platform-specific prompts",
+      "database": "Supabase per user accounts e transformation history",
+      "integrations": "YouTube transcript API, RSS parser, Whisper per podcast audio → text, direct paste",
+      "ml": "Prompt engineering per voice preservation + platform optimization",
+      "infra": "Vercel + Supabase free tier, cost <$30/mo per thousands users",
+      "effort": "4-6 settimane MVP"
     }
   }
 ]
