@@ -2727,5 +2727,195 @@
       "infra": "Vercel + Supabase free tier, cost <$30/mo per thousands users",
       "effort": "4-6 settimane MVP"
     }
+  },
+  {
+    "id": "trend-001-2026-24mar",
+    "title": "NicheCRM Pro",
+    "tagline": "CRM verticali per professionisti underserved (tatuatori, nutrizionisti, terapeuti)",
+    "abstract": "Micro-SaaS di gestione clienti e appuntamenti per professionisti underserved: tatuatori, piercers, terapeuti, nutrizionisti. Include feature specifiche al vertical (consenso GDPR, gestione sconti, loyalty programs, reminder automatici). Target: piccole professioni non servite da CRM generici.",
+    "category": "SaaS/B2B",
+    "status": "parked",
+    "created": "2026-03-24",
+    "updated": "2026-03-24",
+    "scorecard": {
+      "domanda_mercato": 8,
+      "differenziazione": 8,
+      "fattibilita_tecnica": 9,
+      "costo_infrastruttura": 9,
+      "manutenzione": 7,
+      "monetizzabilita": 8,
+      "rischio_legale": 8,
+      "totale": 57,
+      "media": 8.14,
+      "verdetto": "GO",
+      "note": "2026 trend: Vertical SaaS per nicchie underserved. Alta fattibilità tech, basso costo infra, monetizzazione chiara."
+    },
+    "market_research": {
+      "competitor_major": [
+        "Square Appointments",
+        "Acuity Scheduling",
+        "Vagaro"
+      ],
+      "trending": "Vertical SaaS per nicchie specifiche",
+      "tam": "500k+ professionisti underserved EU/US",
+      "cagr": "15% (vertical SaaS)",
+      "barriers": "Bassi - API accessibili, feature set semplice"
+    },
+    "injection_notes": [
+      "Trend scouting 2026-03-24: Vertical SaaS con feature specifiche",
+      "Iniziare con vertical tatuatori: booking + consenso digitale",
+      "Expansion a nutrizionisti e terapeuti dopo validation"
+    ],
+    "priority": "L",
+    "strengths": [
+      "Mercato underserved: CRM generici troppo complessi per piccole professioni",
+      "Vertical focus = meno concorrenza, più switching costs",
+      "Feature specifiche vertical (consenso GDPR, loyalty) non presenti in CRM generici",
+      "Monetizzazione subscription $29-49/mese per professionista",
+      "Basso costo infra: serverless, PostgreSQL, Vercel"
+    ],
+    "weaknesses": [
+      "Mercato atomizzato: serve acquisizione per vertical",
+      "Supporto clienti richiesto (non self-serve per tutti)",
+      "Competitor orizzontali potrebbero aggiungere feature vertical",
+      "Necessario expertise specifico del vertical (customer discovery intensivo)"
+    ],
+    "direction": "GO - Iniziare con tatuatori (vertical chiaro, alto LTV per loyalty/upsells). MVP: booking online, gestione clienti, consenso digitale GDPR, reminder automatici. Pricing: €29/mese base, €49/mese con analytics e marketing automation. Marketing: Instagram/Facebook ads targeting tattoo artists, partnership convention settore.",
+    "architecture": {
+      "frontend": "Next.js dashboard responsive + PWA mobile",
+      "backend": "Node.js + serverless (Vercel Edge Functions)",
+      "database": "Supabase (PostgreSQL) con row-level security",
+      "integrations": "Cal.com API per booking, WhatsApp Business API per reminder, Stripe per pagamenti",
+      "ml": "Nessuno - rule-based per reminder e suggerimenti",
+      "infra": "Vercel + Supabase, costi <$30/mese per 100+ clienti",
+      "effort": "6-8 settimane MVP per un vertical"
+    }
+  },
+  {
+    "id": "trend-002-2026-24mar",
+    "title": "DocuGen AI",
+    "tagline": "Generatore AI di documenti legali per piccole imprese",
+    "abstract": "Piattaforma AI che genera documenti legali standard per piccole imprese: contratti di lavoro, NDA, accordi fornitori, privacy policy, termini di servizio. Input tramite form semplificato, output documento professionale pronto per firma. Target: MSME (piccole imprese) che non possono permettersi avvocati per ogni documento.",
+    "category": "LegalTech/AI",
+    "status": "parked",
+    "created": "2026-03-24",
+    "updated": "2026-03-24",
+    "scorecard": {
+      "domanda_mercato": 9,
+      "differenziazione": 7,
+      "fattibilita_tecnica": 8,
+      "costo_infrastruttura": 9,
+      "manutenzione": 6,
+      "monetizzabilita": 9,
+      "rischio_legale": 5,
+      "totale": 53,
+      "media": 7.57,
+      "verdetto": "GO",
+      "note": "2026 trend: AI Legal Doc gen per MSMEs. Mercato underserved, willingness to pay alta. Risks: legal liability, updates normativi."
+    },
+    "market_research": {
+      "competitor_major": [
+        "LegalZoom",
+        "Rocket Lawyer",
+        "Termly"
+      ],
+      "trending": "AI legal document generators",
+      "tam": "2M+ small businesses EU needing legal documents",
+      "cagr": "12%",
+      "barriers": "Medi - richiede legal review iniziale, disclaimer necessario"
+    },
+    "injection_notes": [
+      "Trend scouting 2026-03-24: MSMEs spendono $20k-50k/anno legal",
+      "AI può generare bozze per $10-50 vs $500+ avvocato",
+      "Focus su disclaimer 'not legal advice'"
+    ],
+    "priority": "L",
+    "strengths": [
+      "Mercato enorme: MSMEs hanno bisogno costante di documenti legali",
+      "Willingness to pay alta: confronto diretto vs costo avvocato",
+      "AI LLM maturi per generazione testo strutturato (GPT-4, Claude)",
+      "Modello pay-per-document o subscription ricorrente",
+      "Costo infra basso: serverless, API calls only"
+    ],
+    "weaknesses": [
+      "Liability legale se documento sbagliato (disclaimer necessario)",
+      "Leggi cambiano: richiede aggiornamento templates periodico",
+      "Trust: clienti potrebbero preferire avvocato 'umano'",
+      "Competitor established hanno brand trust"
+    ],
+    "direction": "GO - Iniziare con contratti dipendenti/freelance + NDA per startup tech. Semplice: form → AI generation → download PDF. Pricing: $19/documento singolo o $49/mese unlimited. Disclaimer 'draft for lawyer review'. Espansione a privacy policy e termini di servizio dopo validation.",
+    "architecture": {
+      "frontend": "Next.js landing + wizard form multi-step",
+      "backend": "Node.js + OpenAI GPT-4 per generazione documento",
+      "database": "Supabase per templates e user history",
+      "integrations": "DocuSign API per firma digitale, PDF generation (Puppeteer)",
+      "ml": "Prompt engineering per legal language, template placeholders",
+      "infra": "Vercel + Supabase, costi <$20/mese per MVP (scale con usage)",
+      "effort": "4-6 settimane MVP (5-10 templates legali)"
+    }
+  },
+  {
+    "id": "trend-003-2026-24mar",
+    "title": "CommunityStack",
+    "tagline": "Platform community per nicchie ultra-specifiche con monetizzazione",
+    "abstract": "Piattaforma white-label per community verticali ultra-specifiche (es. UX designer freelance, urban gardeners, indie hackers specific sub-niches). Include feature domain-specific: portfolio review, job board integrata, sessioni mentorship, eventi virtuali. Differenzia da Circle/Discord con focus monetizzazione creator.",
+    "category": "Community/SaaS",
+    "status": "parked",
+    "created": "2026-03-24",
+    "updated": "2026-03-24",
+    "scorecard": {
+      "domanda_mercato": 8,
+      "differenziazione": 8,
+      "fattibilita_tecnica": 7,
+      "costo_infrastruttura": 7,
+      "manutenzione": 6,
+      "monetizzabilita": 7,
+      "rischio_legale": 8,
+      "totale": 51,
+      "media": 7.29,
+      "verdetto": "GO",
+      "note": "2026 trend: Creator economy $480B by 2027. Community = key differentiator. Circle report: community diventano 'key differentiator for businesses'."
+    },
+    "market_research": {
+      "competitor_major": [
+        "Circle.so",
+        "Discord",
+        "Mighty Networks",
+        "Geneva"
+      ],
+      "trending": "Niche community platforms, creator economy",
+      "tam": "$480B creator economy by 2027",
+      "cagr": "12%",
+      "barriers": "Medi - Circle consolidato, ma spazio per ultra-nicchie"
+    },
+    "injection_notes": [
+      "Trend scouting 2026-03-24: Circle 2026 Community Trends Report - community passate da nice-to-have a key differentiator",
+      "Target ultra-nicchie (es. UX freelance in Italia) non servite da Circle generico",
+      "Feature specifiche: portfolio critique, job board, mentorship matching"
+    ],
+    "priority": "L",
+    "strengths": [
+      "Creator economy in crescita esplosiva ($480B by 2027)",
+      "Community diventano asset chiave vs social platform owned (Twitter, Facebook)",
+      "Network effect difensibile una volta raggiunta massa critica",
+      "Monetizzazione multipla: subscription platform + revenue share eventi/courses",
+      "Creator economy trend: builders cercano piattaforme owned"
+    ],
+    "weaknesses": [
+      "Circle.so già consolidato per community generaliste",
+      "Cold start: serve seeding manuale della prima community",
+      "Churn alto se engagement non costante",
+      "Richiede customer success per aiutare owners a far crescere community"
+    ],
+    "direction": "GO - Iniziare con una sola nicchia pilota (es. freelance UX designer italiani). MVP con core community features + portfolio critique thread + job board integrata. Pricing: $29/mese per community owner (fino a 100 membri), $79/mese illimitato. Revenue share 10% su eventi a pagamento e mentorship sessions.",
+    "architecture": {
+      "frontend": "Next.js (web-first) con design system custom per ogni community",
+      "backend": "Node.js + Socket.io per real-time chat e notifiche",
+      "database": "PostgreSQL + Redis per caching sessions",
+      "integrations": "Zoom API per eventi, Stripe Connect per pagamenti, Calendly per mentorship",
+      "ml": "Matching algorithm per mentorship basato su skills e goals",
+      "infra": "Vercel + Railway, white-label con custom domain",
+      "effort": "8-10 settimane MVP (community core + job board + events)"
+    }
   }
 ]
