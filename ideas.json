@@ -2917,5 +2917,188 @@
       "infra": "Vercel + Railway, white-label con custom domain",
       "effort": "8-10 settimane MVP (community core + job board + events)"
     }
+  },
+  {
+    "id": "f7e6d5c4-b3a2-9180-7654-3210fedcba98",
+    "title": "ContentPulse AI",
+    "tagline": "Trasforma un contenuto in 10 formatti per ogni piattaforma con un clic",
+    "abstract": "Paste URL articolo, podcast o video → AI genera automaticamente versioni platform-ottimizzate: LinkedIn post, Twitter/X threads, Instagram caption carosello, TikTok script, newsletter edition, Substack excerpt, Pinterest pin, Reddit post. Mantiene tono originale e ottimizza lunghezze. Creator's ultimate time-saver.",
+    "category": "Content Marketing/AI",
+    "status": "parked",
+    "created": "2026-03-27",
+    "updated": "2026-03-27",
+    "scorecard": {
+      "domanda_mercato": 9,
+      "differenziazione": 8,
+      "fattibilita_tecnica": 9,
+      "costo_infrastruttura": 9,
+      "manutenzione": 7,
+      "monetizzabilita": 8,
+      "rischio_legale": 8,
+      "totale": 58,
+      "media": 8.29,
+      "verdetto": "GO",
+      "note": "Alta domanda creator overload, proven concept (Repurpose.io)."
+    },
+    "market_research": {
+      "competitor_major": [
+        "Repurpose.io",
+        "Hootsuite",
+        "Buffer",
+        "Canva",
+        "Jasper"
+      ],
+      "tam": "$50B content marketing tools (2024)",
+      "cagr": "12%",
+      "barriers": "Bassi - API accessibili"
+    },
+    "injection_notes": [
+      "Focus su qualità riscrittura AI (paraphrasing human-like), non solo taglio",
+      "Integrazione diretta OpenAI GPT-4o-mini / Claude per ogni platform",
+      "Supporto transcription per podcast/audio"
+    ],
+    "priority": "L",
+    "strengths": [
+      "Creators time-poor, pagano per automation che risparmia ore",
+      "LLM APIs mature e low-cost",
+      "Network effect: più platform supportati = più valore",
+      "Fast time-to-market: MVP 4-6 weeks"
+    ],
+    "weaknesses": [
+      "Competitor possono aggiungere rewriting facilmente",
+      "Copyright concerns se output troppo simile (paraphrase quality must be high)",
+      "Platform format changes richiedono prompt updates",
+      "Pricing pressure da incumbents bundling"
+    ],
+    "direction": "GO - MVP supporta 6 formati: LinkedIn post, Twitter/X threads, Instagram caption+carousel, TikTok script, newsletter edition, Substack excerpt. Input URL o testo. Freemium: 5 transformations/mo free, $19/mo unlimited. Target: solo creators e piccole agenzie (<10 persone). Marketing: Twitter/X, Indie Hackers, creator Facebook groups.",
+    "architecture": {
+      "frontend": "Next.js dashboard con live preview per ogni platform + copy buttons",
+      "backend": "Node.js serverless (Vercel Edge Functions) + OpenAI API (gpt-4o-mini) con custom prompts per platform",
+      "database": "Supabase (PostgreSQL) per account utenti e transformation history",
+      "integrations": "YouTube transcript API, RSS parser, Whisper per podcast audio → text, direct paste",
+      "ml": "Prompt engineering per voice preservation + platform optimization",
+      "infra": "Vercel + Supabase, cost < $30/mese per migliaia di utenti (free tier sufficiente inizialmente)",
+      "effort": "4-6 settimane MVP (6 platforms + transcript + payment)"
+    }
+  },
+  {
+    "id": "1a2b3c4d-5e6f-7a8b-9c0d-1e2f3a4b5c6d",
+    "title": "WellnessPro CRM",
+    "tagline": "CRM completo per wellness practitioners: yoga, pilates, massaggi",
+    "abstract": "Piattaforma di gestione clienti e appuntamenti peroperatori del benessere: yoga instructor, pilates teachers, massaggiatori, fisioterapisti. Include feature specifiche: gestione corsi, prenotazioni online, promemoria automatici, fatturazione integrata, gestione abbonamenti. Tutto in uno, mobile-first.",
+    "category": "Health/Wellness SaaS",
+    "status": "parked",
+    "created": "2026-03-27",
+    "updated": "2026-03-27",
+    "scorecard": {
+      "domanda_mercato": 8,
+      "differenziazione": 8,
+      "fattibilita_tecnica": 9,
+      "costo_infrastruttura": 9,
+      "manutenzione": 8,
+      "monetizzabilita": 8,
+      "rischio_legale": 7,
+      "totale": 57,
+      "media": 8.14,
+      "verdetto": "GO",
+      "note": "Vertical underserved, alta monetizzazione subscription."
+    },
+    "market_research": {
+      "competitor_major": [
+        "Square Appointments",
+        "Acuity Scheduling",
+        "Vagaro"
+      ],
+      "tam": "~500k wellness practitioners EU/US",
+      "cagr": "5%",
+      "barriers": "Bassi - sviluppo standard"
+    },
+    "injection_notes": [
+      "Partire da USA/UE dove cultura wellness strong",
+      "Integrazione con social (Instagram portfolio)",
+      "Template marketing per promozioni corsi"
+    ],
+    "priority": "L",
+    "strengths": [
+      "Wellness practitioners currently use Google Calendar + Excel - real pain",
+      "Willingness to pay per tool that retains clients",
+      "Subscription clear $29-49/mo",
+      "Low infra cost"
+    ],
+    "weaknesses": [
+      "Mercato di nicchia piccolo",
+      "User acquisition must be hyper-targeted (Instagram, wellness communities)",
+      "Alta mediazione per convincere practitioners tradizionali"
+    ],
+    "direction": "GO - Partire da USA/UE. MVP: booking online + gestione clienti + pagamenti + membership. Pricing $29-49/mo. Marketing: Instagram/Facebook ads targeting wellness instructors, partnership con yoga studios. Up-sell: automated reminders, reviews management.",
+    "architecture": {
+      "frontend": "Next.js dashboard responsive + PWA mobile",
+      "backend": "Node.js + serverless (Vercel Edge Functions)",
+      "database": "Supabase (PostgreSQL) con row-level security",
+      "integrations": "Cal.com API per booking, Stripe per pagamenti, SendGrid per reminders",
+      "ml": "Nessuno - rule-based per reminder e suggerimenti",
+      "infra": "Vercel + Supabase, costi <$30/mese per 100+ clienti",
+      "effort": "6-8 settimane MVP per un vertical"
+    }
+  },
+  {
+    "id": "9e8d7c6b-5a4f-3e2d-1c0b-9a8f7e6d5c4b",
+    "title": "VideoLingo AI",
+    "tagline": "Dubbing e traduzione automatica video con lip-sync AI",
+    "abstract": "Tool che prende un video e genera versioni doppiate in altre lingue con sincronizzazione labiale AI. Per creator YouTube, corsi online, aziende che vogliono raggiungere pubblico globale senza costi di doppiaggio professionale. Supporta 10+ lingue, mantiene tono originale.",
+    "category": "Video/AI",
+    "status": "parked",
+    "created": "2026-03-27",
+    "updated": "2026-03-27",
+    "scorecard": {
+      "domanda_mercato": 8,
+      "differenziazione": 8,
+      "fattibilita_tecnica": 7,
+      "costo_infrastruttura": 7,
+      "manutenzione": 7,
+      "monetizzabilita": 8,
+      "rischio_legale": 7,
+      "totale": 52,
+      "media": 7.43,
+      "verdetto": "GO",
+      "note": "AI video localization emerging, high demand from creators."
+    },
+    "market_research": {
+      "competitor_major": [
+        "Rask.ai",
+        "HeyGen",
+        "DubVerse"
+      ],
+      "tam": "$5B video localization market (2025)",
+      "cagr": "15%",
+      "barriers": "Medi - AI video generation still improving quality"
+    },
+    "injection_notes": [
+      "Focus su qualità lip-sync realistico",
+      "Pricing per minute di video elaborato",
+      "Supporto direct upload da YouTube/Google Drive"
+    ],
+    "priority": "L",
+    "strengths": [
+      "Pain reale: localization expensive ($500-1000/video)",
+      "AI riduce costo del 90%",
+      "Creator economy in crescita cerca global reach",
+      "Monetizzazione per minute clear"
+    ],
+    "weaknesses": [
+      "Qualità AI ancora imperfetta per lingue complesse",
+      "Costo GPU per rendering video alto",
+      "Competitor established (HeyGen) but expensive",
+      "Copyright issues se user carica video non propri"
+    ],
+    "direction": "GO - MVP: supporta 3 lingue (ES, FR, DE), lip-sync base, export 1080p. Pricing: $0.10/minuto elaborato, bundle mensili. Target: YouTubers con 10k+ subs, course creators. Marketing: creator communities, partnership con platform come Thinkific.",
+    "architecture": {
+      "frontend": "Next.js dashboard con upload drag-drop, preview side-by-side",
+      "backend": "Python/FastAPI + AI models: Whisper per transcript, GPT-4 per translation, Wav2Lip per lip-sync",
+      "database": "Supabase per jobs e user credits",
+      "ml": "Whisper + Wav2Lip + GPT-4 translation, fine-tuning per quality",
+      "infra": "Railway con GPU instances per rendering, S3 per storage video",
+      "effort": "6-8 settimane MVP (single language + basic sync)"
+    }
   }
 ]
