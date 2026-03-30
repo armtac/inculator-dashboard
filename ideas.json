@@ -3464,5 +3464,182 @@
       "infra": "Vercel + Supabase free tier inizialmente",
       "effort": "3-4 settimane per primi 5 templates + website"
     }
+  },
+  {
+    "id": "trend-001-2026-31mar",
+    "title": "VideoLingo AI",
+    "tagline": "Dubbing e traduzione automatica video con lip-sync AI per creator",
+    "abstract": "Tool che prende un video e genera versioni doppiate in altre lingue con sincronizzazione labiale AI. Per creator YouTube, corsi online, aziende che vogliono raggiungere pubblico globale senza costi di doppiaggio professionale ($500-1000/video). Supporta 10+ lingue, mantiene tono originale.",
+    "category": "Video/AI",
+    "status": "parked",
+    "created": "2026-03-31",
+    "updated": "2026-03-31",
+    "scorecard": {
+      "domanda_mercato": 9,
+      "differenziazione": 8,
+      "fattibilita_tecnica": 7,
+      "costo_infrastruttura": 7,
+      "manutenzione": 7,
+      "monetizzabilita": 8,
+      "rischio_legale": 7,
+      "totale": 53,
+      "media": 7.57,
+      "verdetto": "GO",
+      "note": "Trend 2026: AI video localization. Creators vogliono global reach, costo doppiaggio professionale proibitivo."
+    },
+    "market_research": {
+      "competitor_major": [
+        "Rask.ai",
+        "HeyGen",
+        "DubVerse"
+      ],
+      "tam": "$5B video localization market (2025)",
+      "cagr": "15%",
+      "pricing_reference": "$29-199/month competitors"
+    },
+    "injection_notes": [
+      "Trend scouting 2026-03-31: AI-powered video localization identified via Tavily",
+      "Focus su quality lip-sync realistic",
+      "Pricing per minute elaborato"
+    ],
+    "priority": "L",
+    "strengths": [
+      "Pain reale: localization costa $500-1000/video",
+      "AI riduce costo del 90%",
+      "Creator economy cerca global reach",
+      "Monetizzazione per minute chiara"
+    ],
+    "weaknesses": [
+      "Qualità AI ancora imperfetta per lingue complesse",
+      "Costo GPU per rendering video alto",
+      "Competitor established (HeyGen)",
+      "Copyright issues se user carica video non propri"
+    ],
+    "direction": "GO - MVP: supporta 3 lingue (ES, FR, DE), lip-sync base, export 1080p. Pricing: $0.10/minuto, bundle mensili. Target: YouTubers 10k+ subs, course creators.",
+    "architecture": {
+      "frontend": "Next.js dashboard con upload drag-drop",
+      "backend": "Python/FastAPI + Whisper + GPT-4 + Wav2Lip",
+      "database": "Supabase per jobs e credits",
+      "ml": "Whisper transcript, Wav2Lip lip-sync, GPT-4 translation",
+      "infra": "Railway con GPU instances, S3 storage",
+      "effort": "6-8 settimane MVP"
+    }
+  },
+  {
+    "id": "trend-002-2026-31mar",
+    "title": "ReviewHub Local",
+    "tagline": "Gestione recensioni Google, Yelp, Facebook in un'unica dashboard",
+    "abstract": "Dashboard B2B per piccole attività locali (ristoranti, hotel, negozi) che aggrega tutte le recensioni da Google My Business, Yelp, Facebook in un'unica interfaccia. Risposta diretta, sentiment analysis, alert per recensioni negative. Pricing flat $29/mese.",
+    "category": "SaaS/B2B",
+    "status": "parked",
+    "created": "2026-03-31",
+    "updated": "2026-03-31",
+    "scorecard": {
+      "domanda_mercato": 9,
+      "differenziazione": 8,
+      "fattibilita_tecnica": 8,
+      "costo_infrastruttura": 8,
+      "manutenzione": 6,
+      "monetizzabilita": 9,
+      "rischio_legale": 7,
+      "totale": 55,
+      "media": 7.86,
+      "verdetto": "GO",
+      "note": "Gap di prezzo: competitor $44-259/mese, troppi feature per piccole attività. Opportunity: $29 flat."
+    },
+    "market_research": {
+      "competitor_major": [
+        "BrightLocal",
+        "EmbedSocial",
+        "Birdeye"
+      ],
+      "pricing_gap": "Competitor $44-259/mese, troppi feature per single-location",
+      "tam": "~5M small businesses US+EU con presenza locale"
+    },
+    "injection_notes": [
+      "Trend scouting 2026-03-31: Micro-SaaS for local businesses reputation management",
+      "Focus UX semplice, niente dashboard complesse",
+      "Pricing flat $29/mese qualsiasi numero sedi"
+    ],
+    "priority": "L",
+    "strengths": [
+      "Pain reale: business owners controllano 3-4 platform separatamente",
+      "Monetizzazione chiara $29/mese, low churn",
+      "API accessibili (Google, Yelp, Facebook)",
+      "Mercato underserved: competitor over-featured"
+    ],
+    "weaknesses": [
+      "Richiede aggiornamenti quando API cambiano",
+      "Supporto clienti necessario",
+      "Difficoltà scaling se tutti usano gratis"
+    ],
+    "direction": "GO - Target single-location businesses. MVP: aggregazione 3 platform + risposta diretta + alert email. Onboarding guided. Pricing $29/mese, annual discount.",
+    "architecture": {
+      "frontend": "Next.js dashboard con sentiment charts",
+      "backend": "Python/FastAPI per scheduler polls API",
+      "database": "Supabase per credentials e cached reviews",
+      "integrations": "Google My Business API, Yelp Fusion, Facebook Graph",
+      "infra": "Vercel + Railway, cronjobs su Railway",
+      "effort": "6-8 settimane MVP"
+    }
+  },
+  {
+    "id": "trend-003-2026-31mar",
+    "title": "FreelanceFlow Accounting",
+    "tagline": "Contabilità per freelancer con reddito irregolare, tasse e multi-valuta",
+    "abstract": "Accounting software specifico per freelancer: smooth irregular income across months, automated quarterly tax estimation, track profitability per project/client, handle multi-currency. Differenzia da QuickBooks/FreshBooks che sono built per business regolari, non freelance.",
+    "category": "FinTech/SaaS",
+    "status": "parked",
+    "created": "2026-03-31",
+    "updated": "2026-03-31",
+    "scorecard": {
+      "domanda_mercato": 9,
+      "differenziazione": 8,
+      "fattibilita_tecnica": 9,
+      "costo_infrastruttura": 9,
+      "manutenzione": 7,
+      "monetizzabilita": 9,
+      "rischio_legale": 6,
+      "totale": 57,
+      "media": 8.14,
+      "verdetto": "GO",
+      "note": "72.9M freelancers globally. FreshBooks/QuickBooks non capiscono irregular income."
+    },
+    "market_research": {
+      "competitor_major": [
+        "QuickBooks",
+        "FreshBooks",
+        "Wave"
+      ],
+      "tam": "72.9M freelancers US+UE in crescita",
+      "cagr": "8% (gig economy)",
+      "pricing_reference": "FreshBooks $13/mo, QuickBooks $25-150/mo"
+    },
+    "injection_notes": [
+      "Trend scouting 2026-03-31: Vertical SaaS for freelancers accounting",
+      "Focus su smooth income feature (risparmio mese x mese)",
+      "Tax estimation automatico per paese"
+    ],
+    "priority": "L",
+    "strengths": [
+      "72.9M freelancers globally, mercato enorme",
+      "Willingness to pay alta per risparmio tempo admin",
+      "Competitor non verticalizzati su freelance",
+      "Pricing $13-40/mese chiaro"
+    ],
+    "weaknesses": [
+      "Competitor consolidati con brand forte",
+      "Richiede expertise fiscale per paese",
+      "Compliance fiscale cambia frequentemente"
+    ],
+    "direction": "GO - MVP: income smoothing, quarterly tax estimation, project profitability, multi-currency. Pricing $19/mese base, $39/mese con tax advisor access. Target IT freelancers, designers, developers.",
+    "architecture": {
+      "frontend": "Next.js dashboard responsive",
+      "backend": "Node.js + Stripe for invoicing",
+      "database": "Supabase (PostgreSQL) con RLS",
+      "integrations": "Stripe API, bank APIs (Plaid), tax APIs",
+      "infra": "Vercel + Supabase, costi <$30/mese",
+      "effort": "6-8 settimane MVP"
+    }
   }
 ]
