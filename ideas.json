@@ -3641,5 +3641,189 @@
       "infra": "Vercel + Supabase, costi <$30/mese",
       "effort": "6-8 settimane MVP"
     }
+  },
+  {
+    "id": "trend-scout-001-2026-04-01",
+    "title": "AgentWorkflow AI",
+    "tagline": "Agenti AI che agiscono autonomamente sui tuoi dati e workflow",
+    "abstract": "Piattaforma di agenti AI autonomi che monitorano dati business (analytics, accounting, inventory) e eseguono azioni automatiche: inviano report, aggiustano prezzi, notificano anomalie, prenotano risorse. Trend emergente 2026: da SaaS a SaaS Agents.",
+    "category": "AI Automation/B2B",
+    "status": "parked",
+    "created": "2026-04-01",
+    "updated": "2026-04-01",
+    "scorecard": {
+      "domanda_mercato": 9,
+      "differenziazione": 8,
+      "fattibilita_tecnica": 7,
+      "costo_infrastruttura": 7,
+      "manutenzione": 6,
+      "monetizzabilita": 9,
+      "rischio_legale": 7,
+      "totale": 53,
+      "media": 7.57,
+      "verdetto": "GO",
+      "note": "Trend 2026 emergente: agenti AI autonomi. Mercato pronto per soluzioni action-oriented, non solo analytics."
+    },
+    "market_research": {
+      "competitor_major": [
+        "Zapier",
+        "Make"
+      ],
+      "trending": "AI agents autonomous workflow execution",
+      "tam": "$12B workflow automation market",
+      "cagr": "25%",
+      "barriers": "Medi - richiede robustezza agenti, error handling"
+    },
+    "injection_notes": [
+      "Trend scouting 2026-04-01: shift da SaaS a SaaS Agents identificato",
+      "Focus su action, non solo monitoring",
+      "Pricing per numero di workflow automatizzati"
+    ],
+    "priority": "L",
+    "strengths": [
+      "Next-gen workflow: da 'se X allora Y' a 'monitora e agisci intelligentemente'",
+      "Mercato automation maturo ($12B), pronto per evoluzione AI-driven",
+      "Alta willingness to pay per tempo risparmiato",
+      "Network effect: più integrazioni = più casi d'uso"
+    ],
+    "weaknesses": [
+      "Agenti AI possono commettere errori costosi se non controllati",
+      "Trust issues: utenti devono fidarsi di azioni automatiche",
+      "Complessi da debuggare quando qualcosa va storto",
+      "Competitor established (Zapier) possono aggiungere AI agents"
+    ],
+    "direction": "GO - MVP con 3 agenti pre-configurati: report scheduler, anomaly notifier, auto-responder. Pricing $49/mese per 10 agenti attivi. Target: operations manager SME.",
+    "architecture": {
+      "frontend": "Next.js dashboard per configurazione agenti e audit log",
+      "backend": "Python/FastAPI + LangChain per agent orchestration",
+      "database": "PostgreSQL + Redis per task queue",
+      "integrations": "Slack, Google Sheets, Stripe, Shopify APIs",
+      "ml": "OpenAI GPT-4 function calling per decisioni agenti",
+      "infra": "Vercel + Railway, costi <$50/mese iniziale",
+      "effort": "6-8 settimane MVP"
+    }
+  },
+  {
+    "id": "trend-scout-002-2026-04-01",
+    "title": "NicheTemplate Pro",
+    "tagline": "Template project management predefiniti per nicchie professionali",
+    "abstract": "Marketplace di template pronti all'uso per project management verticali: wedding planners, fitness coaches, podcast producers, construction managers. Ogni template include task predefiniti, timeline, checklist specifiche di settore. Si integra con Notion, ClickUp, Trello.",
+    "category": "Productivity/Templates",
+    "status": "parked",
+    "created": "2026-04-01",
+    "updated": "2026-04-01",
+    "scorecard": {
+      "domanda_mercato": 8,
+      "differenziazione": 8,
+      "fattibilita_tecnica": 9,
+      "costo_infrastruttura": 9,
+      "manutenzione": 8,
+      "monetizzabilita": 7,
+      "rischio_legale": 9,
+      "totale": 58,
+      "media": 8.29,
+      "verdetto": "GO",
+      "note": "Trend 2026: vertical-specific project templates. Boring business, alta margin, low risk."
+    },
+    "market_research": {
+      "competitor_major": [
+        "Notion templates marketplace",
+        "Trello templates"
+      ],
+      "trending": "Niche project management templates",
+      "tam": "$500M templates market",
+      "cagr": "10%",
+      "barriers": "Bassi - content creation + distribution"
+    },
+    "injection_notes": [
+      "Trend scouting 2026-04-01: underserved nicchie need specific templates",
+      "Start con 5 verticali: wedding, fitness, podcast, construction, e-commerce",
+      "Modello one-time purchase + subscription per updates"
+    ],
+    "priority": "L",
+    "strengths": [
+      "Low-cost business: template creation + hosting statico",
+      "Scalabile: ogni nuovo template = nuovo prodotto senza R&D tech",
+      "Altamente difendibile con knowledge domain specifica",
+      "Network effect: utenti possono contribuire templates (community)",
+      "Zero competizione in nicchie specifiche"
+    ],
+    "weaknesses": [
+      "Templates facili da copiare (DRM difficile)",
+      "Competition da marketplaces ufficiali Notion/Trello",
+      "Richiede expertise di dominio per ogni verticale",
+      "Monetizzazione one-time se non si fa subscription"
+    ],
+    "direction": "GO - Partire con 5 verticali ad alto LTV (wedding $$$, construction long-term). Pricing: $29/template singolo, $79/mese unlimited access. Marketing: SEO long-tail + influencer di nicchia.",
+    "architecture": {
+      "frontend": "Next.js static site con preview templates + Stripe checkout",
+      "database": "Supabase per downloads e subscriptions",
+      "integrations": "Notion API, ClickUp API, Trello API per push diretto",
+      "infra": "Vercel + Supabase free tier inizialmente",
+      "ml": "Nessuno - rule-based templates",
+      "effort": "3-4 settimane per 5 templates + sito"
+    }
+  },
+  {
+    "id": "trend-scout-003-2026-04-01",
+    "title": "SupplySignal",
+    "tagline": "Monitoraggio disruption supply chain con alert AI per PMI",
+    "abstract": "Monitora in tempo reale disruption supply chain (scioperi, disastri naturali, port congestion) per settori specifici (elettronica, tessile, food). AI aggrega news, social, dati trasporti e invia alert personalizzati. Target: importatori/esportatori SME che non hanno risk management dedicato.",
+    "category": "Supply Chain/AI",
+    "status": "parked",
+    "created": "2026-04-01",
+    "updated": "2026-04-01",
+    "scorecard": {
+      "domanda_mercato": 8,
+      "differenziazione": 8,
+      "fattibilita_tecnica": 8,
+      "costo_infrastruttura": 8,
+      "manutenzione": 7,
+      "monetizzabilita": 8,
+      "rischio_legale": 7,
+      "totale": 54,
+      "media": 7.71,
+      "verdetto": "GO",
+      "note": "2026 trend: AI supply chain risk monitoring. High demand given recent global disruptions."
+    },
+    "market_research": {
+      "competitor_major": [
+        "Resilinc",
+        "Everstream Analytics"
+      ],
+      "trending": "AI supply chain disruption tracking",
+      "tam": "$5B supply chain risk management market (2025)",
+      "cagr": "12%",
+      "barriers": "Medi - data aggregation + AI analysis"
+    },
+    "injection_notes": [
+      "Trend scouting 2026-04-01: AI supply chain monitoring for SMEs underserved",
+      "Focus su PMI che non possono permettersi Resilinc ($50k+/anno)",
+      "Pricing accessible $99-299/mese vs enterprise $50k+"
+    ],
+    "priority": "L",
+    "strengths": [
+      "Disruption recenti (Suez 2021, COVID, Red Sea) hanno creato awareness",
+      "SMEs underserved: competitor enterprise solo per grandi aziende",
+      "AI può aggregare dati da fonti eterogenee rapidamente",
+      "Subscription model chiaro: per settore monitorato",
+      "Alto LTV: business critical, alto switching cost"
+    ],
+    "weaknesses": [
+      "Richiede accesso a molteplici data sources (costi API)",
+      "False positives possono causare 'alert fatigue'",
+      "Competitor enterprise potrebbero fare down-market",
+      "Richiede expertise supply chain per validation"
+    ],
+    "direction": "GO - Partire con verticale elettronica (componenti). Aggregazione da: maritime tracking, news APIs, social listening. Dashboard con mappa rischio + alert Telegram/email. Pricing: $149/mese per 1 settore, $249/mese unlimited.",
+    "architecture": {
+      "frontend": "Next.js dashboard con risk map e alert history",
+      "backend": "Python/FastAPI + Celery per scheduling tasks",
+      "database": "PostgreSQL + Redis per caching",
+      "integrations": "MarineTraffic API, NewsAPI, AIS data, GDAC (global disruption)",
+      "ml": "NLP per severity classification + recommendation engine",
+      "infra": "Vercel + Railway, cronjobs per polling",
+      "effort": "6-8 settimane MVP (single sector, basic alerts)"
+    }
   }
 ]
