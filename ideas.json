@@ -3825,5 +3825,172 @@
       "infra": "Vercel + Railway, cronjobs per polling",
       "effort": "6-8 settimane MVP (single sector, basic alerts)"
     }
+  {
+    "id": "f8g9h0i1-j2k3-4l5m-6n7o-8p9q0r1s2t3u",
+    "title": "ContentRepurpose AI",
+    "tagline": "Da un contenuto a dieci: newsletter, post, short in un clic",
+    "abstract": "Micro-SaaS che trasforma automaticamente un contenuto di partenza (articolo, podcast, video) in formati ottimizzati per diverse piattaforme social e newsletter, usando AI per mantenere tono e messaggio.",
+    "category": "Content Marketing/AI",
+    "status": "parked",
+    "created": "2026-04-02",
+    "updated": "2026-04-02",
+    "scorecard": {
+      "domanda_mercato": 9,
+      "differenziazione": 8,
+      "fattibilita_tecnica": 9,
+      "costo_infrastruttura": 9,
+      "manutenzione": 7,
+      "monetizzabilita": 8,
+      "rischio_legale": 8,
+      "totale": 58,
+      "media": 8.29,
+      "verdetto": "GO",
+      "note": "Trend scouting 2026: AI-powered content repurposing. High demand, proven market, low infra cost."
+    },
+    "market_research": {
+      "competitor_major": [
+        "Repurpose.io",
+        "Hootsuite",
+        "Buffer"
+      ],
+      "tam": "$50B content marketing tools",
+      "cagr": "12%",
+      "gap": "Repurpose.io does clipping senza rewriting. This does quality paraphrasing per platform."
+    },
+    "injection_notes": [
+      "Focus su rewriting quality > clipping automation",
+      "Target: solo creators e piccole agenzie"
+    ],
+    "priority": "L",
+    "strengths": [
+      "Creator overload pain: risparmio 10+ ore/settimana",
+      "LLM APIs mature e low-cost",
+      "Network effect: più platform supportati = più valore"
+    ],
+    "weaknesses": [
+      "Competitor possono aggiungere rewriting facilmente",
+      "Copyright concerns se output troppo simile"
+    ],
+    "direction": "GO - MVP: 6 platform (LinkedIn, Twitter, Instagram, TikTok, newsletter, Substack). Freemium $19/mo. Marketing: Twitter/X, Indie Hackers.",
+    "architecture": {
+      "frontend": "Next.js dashboard con live preview",
+      "backend": "Node.js serverless + OpenAI API (gpt-4o-mini)",
+      "database": "Supabase per history",
+      "integrations": "YouTube transcript, RSS, Whisper",
+      "infra": "Vercel + Supabase, <$30/mese",
+      "effort": "4-6 settimane MVP"
+    }
+  },
+  {
+    "id": "g2h3i4j5-k6l7-8m9n-0o1p-2q3r4s5t6u7v",
+    "title": "NicheComm",
+    "tagline": "Platform community per nicchie professionali ultra-specifiche",
+    "abstract": "Piattaforma white-label per community verticali (UX freelance, urban gardeners, indie devs). Feature specifiche: portfolio review, job board integrata, mentorship matching. Differenzia da Circle/Discord con monetizzazione integrata.",
+    "category": "Community/SaaS",
+    "status": "parked",
+    "created": "2026-04-02",
+    "updated": "2026-04-02",
+    "scorecard": {
+      "domanda_mercato": 8,
+      "differenziazione": 8,
+      "fattibilita_tecnica": 7,
+      "costo_infrastruttura": 7,
+      "manutenzione": 6,
+      "monetizzabilita": 7,
+      "rischio_legale": 8,
+      "totale": 51,
+      "media": 7.29,
+      "verdetto": "GO",
+      "note": "Trend scouting 2026: creator economy $480B by 2027. Community become key differentiator."
+    },
+    "market_research": {
+      "competitor_major": [
+        "Circle.so",
+        "Discord"
+      ],
+      "tam": "$480B creator economy by 2027",
+      "cagr": "12%",
+      "gap": "Circle too generic for ultra-niches, Discord lacks monetization"
+    },
+    "injection_notes": [
+      "Partire con una nicchia pilota (es. UX designer freelance)",
+      "Feature: portfolio critique, job board, mentorship"
+    ],
+    "priority": "L",
+    "strengths": [
+      "Creator economy growth esplosiva",
+      "Network effect difensibile",
+      "Monetizzazione multipla (subscription + commissioni)"
+    ],
+    "weaknesses": [
+      "Circle.so consolidato",
+      "Cold start problem",
+      "Churn alto se engagement basso"
+    ],
+    "direction": "GO - Nicchia pilota UX designer. Pricing: $29-99/mese + revenue share 10% su eventi. Marketing: partnership influencer.",
+    "architecture": {
+      "frontend": "Next.js web-first",
+      "backend": "Node.js + Socket.io real-time",
+      "database": "PostgreSQL + Redis",
+      "integrations": "Zoom API, Stripe Connect, Calendly",
+      "infra": "Vercel + Railway, white-label",
+      "effort": "8-10 settimane MVP"
+    }
+  },
+  {
+    "id": "p6q7r8s9-t0u1-2v3w-4x5y-6z7a8b9c0d1e",
+    "title": "WellnessPal AI",
+    "tagline": "Compagno AI per salute mentale e gestione emozioni",
+    "abstract": "App che combina tracking dell'umore, esercizi CBT e check-in adattivi tramite AI. Riconosce pattern di stress e suggerisce interventi personalizzati. Mercato AI wellness in crescita 31% CAGR.",
+    "category": "Health/AI",
+    "status": "parked",
+    "created": "2026-04-02",
+    "updated": "2026-04-02",
+    "scorecard": {
+      "domanda_mercato": 9,
+      "differenziazione": 7,
+      "fattibilita_tecnica": 8,
+      "costo_infrastruttura": 7,
+      "manutenzione": 6,
+      "monetizzabilita": 8,
+      "rischio_legale": 6,
+      "totale": 51,
+      "media": 7.29,
+      "verdetto": "GO",
+      "note": "Mercato $48.6B con CAGR 31%. AI mature for empatic conversations."
+    },
+    "market_research": {
+      "competitor_major": [
+        "Calm",
+        "Headspace",
+        "Wysa"
+      ],
+      "tam": "$48.63B AI companion market 2026",
+      "cagr": "31%"
+    },
+    "injection_notes": [
+      "Focus su adattività AI vs competitor generici",
+      "Pricing $9.99/mese con trial 7 giorni"
+    ],
+    "priority": "L",
+    "strengths": [
+      "Mercato in crescita esplosiva",
+      "Monetizzazione subscription collaudata",
+      "Basso costo infrastruttura"
+    ],
+    "weaknesses": [
+      "Competitor consolidati",
+      "Responsabilità etica per salute mentale",
+      "Retention challenge"
+    ],
+    "direction": "GO - MVP: tracking umore + chatbot empatico. Target under 35. Pricing $9.99/mese.",
+    "architecture": {
+      "frontend": "React Native + web dashboard",
+      "backend": "Node.js + OpenAI API",
+      "database": "Supabase PostgreSQL",
+      "ml": "Sentiment analysis + pattern recognition",
+      "infra": "Supabase + Vercel, <$50/mese per 1k utenti",
+      "effort": "6-8 settimane MVP"
+    }
   }
 ]
