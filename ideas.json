@@ -3992,5 +3992,191 @@
       "infra": "Supabase + Vercel, <$50/mese per 1k utenti",
       "effort": "6-8 settimane MVP"
     }
+  },
+  {
+    "id": "trend-scout-001-2026-04-05",
+    "title": "PodcastNoteGen AI",
+    "tagline": "Show notes automatici per podcasters: riassunti, timestamp, SEO in un clic",
+    "abstract": "Micro-SaaS che automaticamente genera show notes professionali dai podcast: riassunti punti chiave, timestamp automatici, estrazione citabili, bozza per blog SEO. Risparmia 2-3 ore di lavoro manuale a ogni episodio. Target: podcasters indipendenti e piccole reti.",
+    "category": "Content/AI",
+    "status": "parked",
+    "created": "2026-04-05",
+    "updated": "2026-04-05",
+    "scorecard": {
+      "domanda_mercato": 9,
+      "differenziazione": 7,
+      "fattibilita_tecnica": 8,
+      "costo_infrastruttura": 8,
+      "manutenzione": 7,
+      "monetizzabilita": 8,
+      "rischio_legale": 8,
+      "totale": 55,
+      "media": 7.86,
+      "verdetto": "GO",
+      "note": "Mercato podcast $23B, crescita costante. Pain point reale: post-produzione tediosa."
+    },
+    "market_research": {
+      "competitor_major": [
+        "Descript",
+        "Castos"
+      ],
+      "trending": "AI content repurposing per podcast",
+      "tam": "$23B podcasting industry (2026)",
+      "cagr": "15%",
+      "barriers": "Bassi - API Whisper accessibile"
+    },
+    "injection_notes": [
+      "Trend scouting 2026-04-05: Automated podcast show notes generator",
+      "Focus su qualità SEO e citabili estratti",
+      "Pricing per episodio o subscription"
+    ],
+    "priority": "L",
+    "strengths": [
+      "Pain point universale: ogni podcaster odia scrivere show notes",
+      "AI Whisper rende trascrizione quasi gratis",
+      "GPT-4 parafrasa e struttura contenuto di qualità",
+      "Monetizzazione chiara: $15-30/mese subscription",
+      "Mercato in crescita: 5M+ podcast attivi"
+    ],
+    "weaknesses": [
+      "Competitor established potrebbero aggiungere feature simili",
+      "Accuratezza timestamp dipende da qualità audio",
+      "Dipendenza da OpenAI API (costi se scale)",
+      "Podcasters nicchia potrebbero essere price-sensitive"
+    ],
+    "direction": "GO - MVP: upload audio → trascrizione Whisper → GPT-4 genera show notes, chapters, blog draft. Pricing: $19/mese per 4 episodi, $39/mese illimitato. Target: podcasters 1K-50K ascolti/eps.",
+    "architecture": {
+      "frontend": "Next.js dashboard drag-drop upload",
+      "backend": "Python/FastAPI + Whisper API + GPT-4",
+      "database": "Supabase (PostgreSQL) per jobs e history",
+      "ml": "Whisper per transcript, GPT-4 per summarization e SEO",
+      "integrations": "RSS feed import, Google Docs export, WordPress API",
+      "infra": "Vercel + Supabase + S3 per audio, <$50/mese",
+      "effort": "4-6 settimane MVP"
+    }
+  },
+  {
+    "id": "trend-scout-002-2026-04-05",
+    "title": "FreelanceFlow Accounting",
+    "tagline": "Contabilità per freelancer con reddito irregolare e tax estimation",
+    "abstract": "Software contabilità verticale per freelancer: smoothing reddito irregolare su mesi, stima automatica tasse trimestrali, tracking redditività per progetto/cliente, multi-valuta. Differenzia da QuickBooks/FreshBooks che sono built per business a reddito regolare. Target: 72M+ freelancer globali.",
+    "category": "FinTech/SaaS",
+    "status": "parked",
+    "created": "2026-04-05",
+    "updated": "2026-04-05",
+    "scorecard": {
+      "domanda_mercato": 9,
+      "differenziazione": 8,
+      "fattibilita_tecnica": 9,
+      "costo_infrastruttura": 9,
+      "manutenzione": 7,
+      "monetizzabilita": 9,
+      "rischio_legale": 6,
+      "totale": 57,
+      "media": 8.14,
+      "verdetto": "GO",
+      "note": "QuickBooks/FreshBooks non capiscono irregular income. Vertical SaaS opportunity."
+    },
+    "market_research": {
+      "competitor_major": [
+        "QuickBooks",
+        "FreshBooks",
+        "Wave"
+      ],
+      "trending": "Vertical SaaS per freelancers",
+      "tam": "72.9M freelancers US+UE, mercato $10B+",
+      "cagr": "8%",
+      "barriers": "Bassi - API bancarie accessibili (Plaid)"
+    },
+    "injection_notes": [
+      "Trend scouting 2026-04-05: AI content repurposing trending",
+      "Focus su income smoothing feature unica",
+      "Tax estimation automatico per paese"
+    ],
+    "priority": "L",
+    "strengths": [
+      "Mercato enorme: 72M+ freelancer globali",
+      "Pain point reale: QuickBooks non gestisce reddito "mese buono/mese cattivo\"",
+      "Feature unica: income smoothing across months per budgeting",
+      "Willingness to pay alta per risparmio tempo admin",
+      "Pricing $19-39/mese chiaro vs competitore"
+    ],
+    "weaknesses": [
+      "Competitor consolidati con brand forte (QuickBooks)",
+      "Richiede expertise fiscale per paese (espansione lenta)",
+      "Compliance fiscale cambia frequentemente (manutenzione)",
+      "Costo API bancarie (Plaid) $0.10/user"
+    ],
+    "direction": "GO - MVP: income smoothing, quarterly tax estimation, project profitability, multi-currency. Start con US/UK/IT. Pricing $19/mese base, $39/mese con tax advisor access. Target: designer, developers, consultants.",
+    "architecture": {
+      "frontend": "Next.js dashboard responsive + mobile PWA",
+      "backend": "Node.js + Plaid API per bank connection + Stripe per invoicing",
+      "database": "Supabase (PostgreSQL) con RLS",
+      "integrations": "Plaid API, Stripe API, tax APIs (Avalara)",
+      "infra": "Vercel + Supabase, <$30/mese",
+      "effort": "6-8 settimane MVP"
+    }
+  },
+  {
+    "id": "trend-scout-003-2026-04-05",
+    "title": "ReviewSync Local",
+    "tagline": "Gestione recensioni Google, Yelp, Facebook in un'unica dashboard semplice",
+    "abstract": "Micro-SaaS B2B per piccole attività locali (ristoranti, negozi, servizi): aggrega recensioni da Google My Business, Yelp, Facebook in un'unica interfaccia pulita. Risposta diretta, sentiment analysis base, alert per recensioni negative. Pricing flat $29/mese, indipendentemente da numero sedi.",
+    "category": "SaaS/B2B Local",
+    "status": "parked",
+    "created": "2026-04-05",
+    "updated": "2026-04-05",
+    "scorecard": {
+      "domanda_mercato": 9,
+      "differenziazione": 8,
+      "fattibilita_tecnica": 8,
+      "costo_infrastruttura": 8,
+      "manutenzione": 6,
+      "monetizzabilita": 9,
+      "rischio_legale": 7,
+      "totale": 55,
+      "media": 7.86,
+      "verdetto": "GO",
+      "note": "Gap pricing: competitor $44-259/mese over-featured per single-location. Opportunity: $29 flat."
+    },
+    "market_research": {
+      "competitor_major": [
+        "BrightLocal ($44/mo)",
+        "EmbedSocial ($259/mo)",
+        "Birdeye (enterprise)"
+      ],
+      "trending": "Micro-SaaS for local business reputation",
+      "tam": "~5M small businesses US+EU con presenza locale",
+      "cagr": "6%",
+      "barriers": "Bassi - API accessibili"
+    },
+    "injection_notes": [
+      "Trend scouting 2026-04-05: Local business underserved da tool enterprise",
+      "Focus UX semplice, niente dashboard complesse",
+      "Pricing flat $29/mese per qualsiasi numero sedi"
+    ],
+    "priority": "L",
+    "strengths": [
+      "Pain point reale: business owners controllano 3-4 platform separatamente",
+      "Monetizzazione chiara $29/mese, low churn se integrato nel workflow",
+      "API accessibili: Google My Business, Yelp Fusion, Facebook Graph",
+      "Mercato underserved: competitor over-featured per single-location",
+      "Network effect: agenzie possono gestire multi-client"
+    ],
+    "weaknesses": [
+      "Richiede aggiornamenti quando API cambiano",
+      "Supporto clienti necessario per onboarding",
+      "Difficoltà scaling se utenti free troppi",
+      "Concorrenza potenziale da Google Business Profile se aggiunge aggregazione"
+    ],
+    "direction": "GO - Target single-location businesses (restaurants, cafés, retail). MVP: aggregazione 3 platform + risposta diretta + alert email. Onboarding guided con import automatico. Pricing $29/mese flat, annual discount 20%. Marketing: Facebook ads geo-targeted, partnerships con associazioni di categoria.",
+    "architecture": {
+      "frontend": "Next.js dashboard responsive con sentiment charts (Chart.js)",
+      "backend": "Python/FastAPI per scheduler polls API (cron)",
+      "database": "Supabase (PostgreSQL) per credentials e cached reviews",
+      "integrations": "Google My Business API, Yelp Fusion API, Facebook Graph API",
+      "infra": "Vercel + Railway, cronjobs su Railway, <$30/mese",
+      "effort": "6-8 settimane MVP"
+    }
   }
 ]
