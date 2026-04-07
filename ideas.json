@@ -4118,6 +4118,194 @@
     }
   },
   {
+    "id": "trend-001-2026-04-07",
+    "title": "MedBill AI",
+    "tagline": "Automazione fatturazione per studi medici e cliniche private",
+    "abstract": "Sistema AI che automatizza billing workflow per piccole pratiche mediche: codifica automatica procedure (ICD-10/CPT), verifica coperture assicurative in tempo reale, invio claim elettronici, tracking pagamenti e follow-up automatici. Riduce errori di billing del 40% e 10+ ore di lavoro admin/settimana.",
+    "category": "Healthcare/FinTech",
+    "status": "parked",
+    "created": "2026-04-07",
+    "updated": "2026-04-07",
+    "scorecard": {
+      "domanda_mercato": 9,
+      "differenziazione": 7,
+      "fattibilita_tecnica": 8,
+      "costo_infrastruttura": 8,
+      "manutenzione": 6,
+      "monetizzabilita": 9,
+      "rischio_legale": 6,
+      "totale": 53,
+      "media": 7.57,
+      "verdetto": "GO",
+      "note": "Trend scouting 2026-04-07: Medical billing automation. Pain point enorme per piccoli studi, willingness to pay alta (ogni errore costa tempo e soldi)."
+    },
+    "market_research": {
+      "competitor_major": [
+        "Kareo",
+        "AdvancedMD",
+        "SimplePractice"
+      ],
+      "trending": "AI healthcare automation, billing optimization",
+      "tam": "500k+ small medical practices US/EU",
+      "cagr": "12%",
+      "barriers": "Medi - richiede integrazione con EHR e conoscenza billing codes"
+    },
+    "injection_notes": [
+      "Focus su piccole pratiche 1-5 medici, non ospedali",
+      "Integrazione con EHR comuni italiani (Dottoripple, MioDottore)",
+      "Compliance HIPAA/GDPR built-in"
+    ],
+    "priority": "L",
+    "strengths": [
+      "Pain point enorme: billing errors costano $125B/anno in US solo",
+      "Willingness to pay alta: ogni claim rifiutato = perdita revenue",
+      "AI può auto-codificare procedure da note cliniche",
+      "Market underserved per piccole pratiche (competitor costosi/complessi)"
+    ],
+    "weaknesses": [
+      "Integrazione EHR variabili per paese (API non standardizzate)",
+      "Compliance billing codes cambiano frequentemente (manutenzione)",
+      "Accuratezza critica: coding sbagliato = sanzioni/fraud",
+      "Sales cycle B2B healthcare lungo"
+    ],
+    "direction": "GO - MVP per medici di base italiani: integrazione Dottoripple/MioDottore, auto-codifica ICD-10, verifica Tessera Sanitaria/STS. Pricing €99-199/mese per studio. Partnership con associazioni categoria.",
+    "architecture": {
+      "frontend": "Next.js dashboard con workflow billing visuale",
+      "backend": "Python/FastAPI + GPT-4 per extraction procedure da note",
+      "database": "PostgreSQL HIPAA-compliant (Supabase o AWS)",
+      "integrations": "Dottoripple API, MioDottore API, STS verifica, FatturaPA",
+      "ml": "NLP per extraction diagnosis/procedure da note cliniche, auto-suggest ICD-10 codes",
+      "infra": "Vercel + Railway/AWS HIPAA, costi <$50/mese per 10 clienti",
+      "effort": "8-10 settimane MVP"
+    }
+  },
+  {
+    "id": "trend-002-2026-04-07",
+    "title": "StaySync Pro",
+    "tagline": "Channel manager lightweight per affitti brevi (1-10 proprietà)",
+    "abstract": "Gestione centralizzata calendari, prezzi e disponibilità per Airbnb, Booking.com, VRBO. Target: piccoli host con 1-10 proprietà che non possono permettersi Guesty/Lodgify (troppo costosi/complessi). Sync automatico, pricing dinamico base, messaggi unificati.",
+    "category": "Travel/SaaS",
+    "status": "parked",
+    "created": "2026-04-07",
+    "updated": "2026-04-07",
+    "scorecard": {
+      "domanda_mercato": 8,
+      "differenziazione": 7,
+      "fattibilita_tecnica": 8,
+      "costo_infrastruttura": 9,
+      "manutenzione": 7,
+      "monetizzabilita": 8,
+      "rischio_legale": 8,
+      "totale": 55,
+      "media": 7.86,
+      "verdetto": "GO",
+      "note": "Trend scouting 2026-04-07: Short-term rental channel management. Guesty/Lodgify over-featured e costosi per small host."
+    },
+    "market_research": {
+      "competitor_major": [
+        "Guesty",
+        "Lodgify",
+        "Hospitable"
+      ],
+      "trending": "Short-term rental growth post-COVID, professional hosting",
+      "tam": "5M+ small hosts EU/US con 1-10 proprietà",
+      "cagr": "15%",
+      "barriers": "Bassi - API Airbnb/Booking.com accessibili"
+    },
+    "injection_notes": [
+      "Focus su proprietari individuali, non property manager professionisti",
+      "Pricing aggressivo vs competitor (50% in meno)",
+      "Double-booking prevention è feature killer"
+    ],
+    "priority": "L",
+    "strengths": [
+      "Mercato enorme: milioni di small host usano spreadsheet/manual sync",
+      "Pain point reale: double-booking costoso e stressante",
+      "API Airbnb/Booking.com stabili e documentate",
+      "Monetizzazione chiara: per-proprietà pricing",
+      "Competitor costosi: Guesty da $100+/mese minimo"
+    ],
+    "weaknesses": [
+      "API rate limits di piattaforme OTA",
+      "Supporto clienti necessario per onboarding (non tech-savvy hosts)",
+      "Concorrenza da Hospitable (player recente, agressivo)",
+      "Geolocalizzazione: normative affitti brevi variabili per città"
+    ],
+    "direction": "GO - MVP: sync calendari Airbnb/Booking.com, unified inbox messaggi, pricing base per stagione. Pricing: €9/proprietà/mese, bundle €49/10 proprietà. Target host italiani/spagnoli con 2-5 case. Marketing: Facebook gruppi host, partnership con agenzie locali.",
+    "architecture": {
+      "frontend": "Next.js dashboard responsive con calendar view",
+      "backend": "Node.js + API integrations Airbnb, Booking.com, VRBO",
+      "database": "PostgreSQL per listings, bookings, messaggi",
+      "integrations": "Airbnb API, Booking.com API, WhatsApp Business (opzionale)",
+      "ml": "Pricing suggestion base (rule-based), demand forecasting semplice",
+      "infra": "Vercel + Supabase, costi <$30/mese per 100 proprietà",
+      "effort": "6-8 settimane MVP (2 platform integration)"
+    }
+  },
+  {
+    "id": "trend-003-2026-04-07",
+    "title": "KitchenPulse AI",
+    "tagline": "Analytics predittivo per ristoranti: demand, staffing, inventory",
+    "abstract": "Dashboard AI per ristoranti indipendenti che predice demand giornaliera, ottimizza staff scheduling e suggerisce inventory ordering. Riduce food waste del 25% e overstaffing. Target: ristoranti familiari/piccoli con 10-50 coperti, non chain.",
+    "category": "Food & Beverage/AI",
+    "status": "parked",
+    "created": "2026-04-07",
+    "updated": "2026-04-07",
+    "scorecard": {
+      "domanda_mercato": 8,
+      "differenziazione": 8,
+      "fattibilita_tecnica": 7,
+      "costo_infrastruttura": 8,
+      "manutenzione": 7,
+      "monetizzabilita": 8,
+      "rischio_legale": 8,
+      "totale": 54,
+      "media": 7.71,
+      "verdetto": "GO",
+      "note": "Trend scouting 2026-04-07: Restaurant AI analytics. Pain point reale: margini sottili, food waste, overstaffing."
+    },
+    "market_research": {
+      "competitor_major": [
+        "Toast",
+        "Square for Restaurants",
+        "7shifts"
+      ],
+      "trending": "AI restaurant management, demand forecasting",
+      "tam": "300k+ independent restaurants EU/US",
+      "cagr": "10%",
+      "barriers": "Medi - richiede dati POS, learning curve per tradizionalisti"
+    },
+    "injection_notes": [
+      "Focus su ristoranti indipendenti, non chain (hanno già tools)",
+      "Integrazione POS comuni italiani (RCH, Sam4s, custom)",
+      "Prediction accuracy migliora con dati storici 3+ mesi"
+    ],
+    "priority": "L",
+    "strengths": [
+      "Pain point reale: food waste 30% inventory, margini ristoranti 3-5%",
+      "AI forecasting riduce costi significativamente",
+      "Mercato underserved: competitor enterprise (Toast) costosi/complessi",
+      "Willingness to pay: ROI immediato con 10% cost reduction",
+      "Viral potential: recommendation chef ristorante→ristorante"
+    ],
+    "weaknesses": [
+      "Richiede integrazione POS (standard non uniforme in Italia)",
+      "Accuracy predizioni dipende da qualità dati storici",
+      "Ristoratori tradizionalisti: learning curve, resistenza tech",
+      "Seasonal events (ferragosto, Natale) difficili da predirre"
+    ],
+    "direction": "GO - MVP: upload CSV/export POS → forecast demand 7 giorni, staff scheduling suggerito, inventory par levels. Pricing: €49/mese base, €99/mese con inventory tracking integrato. Target: ristoranti italiani 30-80 coperti. Marketing: associazioni ristoratori, cold outreach.",
+    "architecture": {
+      "frontend": "Next.js dashboard con charts previsioni, staff scheduler",
+      "backend": "Python/FastAPI + Prophet/ML per time-series forecasting",
+      "database": "PostgreSQL per sales data, predictions, inventory",
+      "integrations": "CSV import POS, API RCH (opzionale), WhatsApp per alert",
+      "ml": "Time-series forecasting (Prophet/LightGBM), anomaly detection per demand spikes",
+      "infra": "Vercel + Railway, costi <$40/mese",
+      "effort": "6-8 settimane MVP (forecasting + dashboard)"
+    }
+  },
+  {
     "id": "trend-scout-003-2026-04-05",
     "title": "ReviewSync Local",
     "tagline": "Gestione recensioni Google, Yelp, Facebook in un'unica dashboard semplice",
