@@ -2548,6 +2548,188 @@
     }
   },
   {
+    "id": "trend-001-2026-04-13",
+    "title": "WellnessPro CRM",
+    "tagline": "CRM completo per wellness practitioners: yoga, pilates, massaggi",
+    "abstract": "Piattaforma di gestione clienti e appuntamenti per operatori del benessere: yoga instructor, pilates teachers, massaggiatori. Include feature specifiche: gestione corsi, prenotazioni online, promemoria automatici, fatturazione integrata, gestione abbonamenti. Target: ~500k wellness practitioners EU/US underserved da CRM generici.",
+    "category": "Health/Wellness SaaS",
+    "status": "parked",
+    "created": "2026-04-13",
+    "updated": "2026-04-13",
+    "scorecard": {
+      "domanda_mercato": 8,
+      "differenziazione": 8,
+      "fattibilita_tecnica": 9,
+      "costo_infrastruttura": 9,
+      "manutenzione": 8,
+      "monetizzabilita": 8,
+      "rischio_legale": 7,
+      "totale": 57,
+      "media": 8.14,
+      "verdetto": "GO",
+      "note": "Trend scouting 2026-04-13: Vertical CRM wellness underserved. Mercato ~500k practitioners, competitor generici troppo complessi, pricing $29-49/mese chiaro."
+    },
+    "market_research": {
+      "competitor_major": [
+        "Square Appointments",
+        "Acuity Scheduling",
+        "Vagaro"
+      ],
+      "tam": "~500k wellness practitioners EU/US",
+      "cagr": "5%",
+      "barriers": "Bassi - API booking accessibili, feature set standard"
+    },
+    "injection_notes": [
+      "Trend scouting 2026-04-13: Vertical wellness CRM identified",
+      "Focus su mobile-first experience (instructor sempre in movimento)",
+      "Feature specifiche: class packs, recurring subscriptions, attendance tracking"
+    ],
+    "priority": "L",
+    "strengths": [
+      "Wellness practitioners usano Google Calendar + Excel - reale pain point",
+      "Willingness to pay alta per tool che fidelizzano clienti",
+      "Modello subscription $29-49/mese chiaro",
+      "Low infra cost: serverless + PostgreSQL + Vercel",
+      "Nessun competitor veramente verticalizzato su wellness"
+    ],
+    "weaknesses": [
+      "Mercato di nicchia più piccolo di healthcare generale",
+      "User acquisition deve essere hyper-targeted (Instagram, wellness communities)",
+      "Alta mediazione per convincere practitioners tradizionalisti"
+    ],
+    "direction": "GO - MVP: booking + gestione clienti + pagamenti + membership. Pricing $29-49/mese. Marketing: Instagram/Facebook ads targeting wellness instructors, partnership con yoga studios. Target: yoga/pilates instructor USA/EU.",
+    "architecture": {
+      "frontend": "Next.js dashboard responsive + PWA mobile",
+      "backend": "Node.js + serverless (Vercel Edge Functions)",
+      "database": "Supabase (PostgreSQL) con row-level security",
+      "integrations": "Cal.com API per booking, Stripe per pagamenti, SendGrid per reminders",
+      "infra": "Vercel + Supabase, costi <$30/mese per 100+ clienti",
+      "effort": "6-8 settimane MVP"
+    }
+  },
+  {
+    "id": "trend-002-2026-04-13",
+    "title": "HealthScribe AI",
+    "tagline": "Trascrizione e documentazione automatica per professionisti sanitari",
+    "abstract": "AI assistant che registra consultazioni mediche (con consenso), genera trascrizione, estrae action items, compila automaticamente note cliniche strutturate. Target: fisioterapeuti, infermieri privatisti, medici di base, cliniche private (1-5 professionisti). Compliance HIPAA/GDPR built-in.",
+    "category": "Healthcare/AI",
+    "status": "parked",
+    "created": "2026-04-13",
+    "updated": "2026-04-13",
+    "scorecard": {
+      "domanda_mercato": 9,
+      "differenziazione": 8,
+      "fattibilita_tecnica": 8,
+      "costo_infrastruttura": 8,
+      "manutenzione": 7,
+      "monetizzabilita": 9,
+      "rischio_legale": 5,
+      "totale": 54,
+      "media": 7.71,
+      "verdetto": "GO",
+      "note": "Trend scouting 2026-04-13: AI medical documentation. Pain enorme: 30-40% tempo medico in admin. Mercato $7.33B AI meeting assistants by 2035, healthcare segment 25% CAGR."
+    },
+    "market_research": {
+      "competitor_major": [
+        "Otter.ai",
+        "Fireflies.ai",
+        "Fathom"
+      ],
+      "gap": "Competitor horizontal generici, nessuno specializzato healthcare compliance + note cliniche",
+      "tam": "$7.33B AI meeting assistants by 2035, healthcare 25% CAGR",
+      "vertical_opportunity": "Fisioterapisti, piccole cliniche, medici di base (non ospedali)"
+    },
+    "injection_notes": [
+      "Trend scouting 2026-04-13: Vertical AI meeting healthcare identified",
+      "Focus su note cliniche standard italiane (template ICD-9)",
+      "Compliance HIPAA/GDPR built-in con E2E encryption"
+    ],
+    "priority": "L",
+    "strengths": [
+      "Pain point enorme: admin overhead 30-40% tempo medico",
+      "Willingness to pay alta: tempo medico = costo diretto",
+      "Network effect: referrals tra professionisti sanitari",
+      "Mercato $7.33B in crescita 25% CAGR"
+    ],
+    "weaknesses": [
+      "Accuracy critica: errori = liability medica",
+      "Sales cycle B2B healthcare lungo",
+      "Consenso paziente registrazione (UX hurdle)",
+      "Integration con EHR complessa"
+    ],
+    "direction": "GO - MVP per fisioterapisti: trascrizione Whisper + note template italiano + export PDF. Pricing €49-99/mese. Partnership associazioni categoria. Positioning: 'Segretario AI per documentazione clinica'.",
+    "architecture": {
+      "frontend": "Next.js web dashboard + PWA mobile",
+      "backend": "Python/FastAPI + Whisper + GPT-4 per strutturazione note",
+      "database": "Supabase con encrypt at rest (HIPAA-compliant)",
+      "integrations": "Google Calendar, optional DICOM viewer",
+      "ml": "Entity extraction diagnosi, terapie, farmaci",
+      "infra": "Healthcare-compliant (AWS HIPAA) + E2E encryption",
+      "effort": "8-10 settimane MVP"
+    }
+  },
+  {
+    "id": "trend-003-2026-04-13",
+    "title": "ContentRepurpose AI",
+    "tagline": "Un contenuto → 10 formati per ogni piattaforma con un clic",
+    "abstract": "Paste URL articolo, podcast o video → AI genera automaticamente versioni platform-ottimizzate: LinkedIn post, Twitter/X threads, Instagram caption, TikTok script, newsletter, Substack excerpt. Mantiene tono originale, ottimizza lunghezze. Creator economy $500B+ richiede tools di repurposing di qualità.",
+    "category": "Content Marketing/AI",
+    "status": "parked",
+    "created": "2026-04-13",
+    "updated": "2026-04-13",
+    "scorecard": {
+      "domanda_mercato": 9,
+      "differenziazione": 8,
+      "fattibilita_tecnica": 9,
+      "costo_infrastruttura": 9,
+      "manutenzione": 7,
+      "monetizzabilita": 8,
+      "rischio_legale": 8,
+      "totale": 58,
+      "media": 8.29,
+      "verdetto": "GO",
+      "note": "Trend scouting 2026-04-13: Creator economy $500B+, 86% creators usano AI. Repurpose.io ($349/yr) fa solo clipping. Questo fa riscrittura AI di qualità per ogni platform."
+    },
+    "market_research": {
+      "competitor_major": [
+        "Repurpose.io",
+        "Hootsuite",
+        "Buffer",
+        "Canva"
+      ],
+      "gap": "Repurpose.io fa solo clipping senza rewriting di qualità. Serve parafrasi AI che preserva voce autore.",
+      "tam": "$50B content marketing tools (2024), creator economy $500B+ (2026)",
+      "cagr": "12%"
+    },
+    "injection_notes": [
+      "Trend scouting 2026-04-13: AI content repurposing identificato come top trend",
+      "Focus su rewriting quality > clipping automation",
+      "Target: solo creators e piccole agenzie (<10 persone)"
+    ],
+    "priority": "L",
+    "strengths": [
+      "Creator overload pain point reale: risparmio 10+ ore/settimana",
+      "LLM APIs mature, cheap, high-quality output",
+      "Network effect: più platform supportati = più valore",
+      "Fast time-to-market: MVP 4-6 settimane"
+    ],
+    "weaknesses": [
+      "Competitor possono aggiungere rewriting facilmente",
+      "Copyright concerns se output troppo simile",
+      "Platform format changes richiedono prompt updates"
+    ],
+    "direction": "GO - MVP 6 formati: LinkedIn, X/Twitter, Instagram, TikTok script, newsletter, Substack. Input URL o testo. Freemium 5 transformations/mese free, $19/mese unlimited. Marketing: Twitter/X, Indie Hackers, creator groups.",
+    "architecture": {
+      "frontend": "Next.js dashboard con live preview + copy buttons",
+      "backend": "Node.js serverless (Vercel) + OpenAI GPT-4o-mini con custom prompts per platform",
+      "database": "Supabase per account utenti e history",
+      "integrations": "YouTube transcript API, RSS parser, Whisper per podcast",
+      "ml": "Prompt engineering per voice preservation + platform optimization",
+      "infra": "Vercel + Supabase, cost <$30/mese per migliaia di utenti",
+      "effort": "4-6 settimane MVP"
+    }
+  },
+  {
     "id": "130edd77-7ebf-4d2f-96ed-6f0c73cbecd3",
     "title": "VerticalCompliance AI",
     "tagline": "Scanner GDPR/HIPAA/PCI-DSS verticale per micro-imprese",
