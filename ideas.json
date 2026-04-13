@@ -4366,5 +4366,178 @@
       "infra": "Vercel + Railway, cronjobs su Railway, <$30/mese",
       "effort": "6-8 settimane MVP"
     }
+  },
+  {
+    "id": "trend-2026-04-12-001",
+    "title": "VideoLingo Pro",
+    "tagline": "Dubbing AI con lip-sync per creator che vogliono audience globale",
+    "abstract": "Piattaforma AI che doppia automaticamente video in 10+ lingue con sincronizzazione labiale realistica. Per YouTubers, course creators, aziende. Costa $500-1000/video con doppiatori professionisti, AI lo riduce a $0.10/minuto. Target: creator con 10k+ subs che vogliono espansione globale.",
+    "category": "Video/AI",
+    "status": "parked",
+    "created": "2026-04-12",
+    "updated": "2026-04-12",
+    "scorecard": {
+      "domanda_mercato": 9,
+      "differenziazione": 8,
+      "fattibilita_tecnica": 7,
+      "costo_infrastruttura": 6,
+      "manutenzione": 7,
+      "monetizzabilita": 8,
+      "rischio_legale": 7,
+      "totale": 52,
+      "media": 7.43,
+      "verdetto": "GO",
+      "note": "Tavily trend 2026: AI video localization. Mercato $5B, CAGR 15%. Pain point: costo doppiaggio proibitivo."
+    },
+    "market_research": {
+      "competitor_major": ["Rask.ai", "HeyGen", "DubVerse"],
+      "tam": "$5B video localization market 2026",
+      "cagr": "15%",
+      "barriers": "Medi - AI lip-sync migliorando, costo GPU per rendering"
+    },
+    "injection_notes": [
+      "Trend scouting 2026-04-12: Tavily identifica AI video localization come top emerging opportunity",
+      "Focus su qualità lip-sync superiore a competitor",
+      "Pricing per minute elaborato vs subscription"
+    ],
+    "priority": "L",
+    "strengths": [
+      "Pain point enorme: localization costa $500-1000/video professionale",
+      "AI riduce costo del 90%",
+      "Creator economy in crescita cerca global reach",
+      "Mercato $5B in espansione (15% CAGR)",
+      "Monetizzazione chiara: pay-per-minute o bundle"
+    ],
+    "weaknesses": [
+      "Qualità AI ancora imperfetta per lingue complesse",
+      "Costo GPU per rendering video (infrastructure heavy)",
+      "Competitor established (HeyGen, Rask.ai) già posizionati",
+      "Copyright issues se utente carica video non propri"
+    ],
+    "direction": "GO - MVP: supporta 3 lingue (ES, FR, DE), lip-sync base, export 1080p. Pricing: $0.10/minuto, $49/mese illimitato. Target: YouTubers 10k+ subs, course creators. Marketing: creator communities, partnership Thinkific/Teachable.",
+    "architecture": {
+      "frontend": "Next.js dashboard con upload drag-drop, side-by-side preview",
+      "backend": "Python/FastAPI + Whisper transcript + GPT-4 translation + Wav2Lip lip-sync",
+      "database": "Supabase per jobs queue e user credits",
+      "ml": "Whisper + Wav2Lip + GPT-4, fine-tuning per quality",
+      "infra": "Railway con GPU instances, S3 storage video, costi ~$100-200/mese GPU",
+      "effort": "6-8 settimane MVP (3 lingue + basic lip-sync)"
+    }
+  },
+  {
+    "id": "trend-2026-04-12-002",
+    "title": "MicroInfluencer Connect",
+    "tagline": "Discovery e gestione micro-influencer per brand piccoli",
+    "abstract": "Piattaforma che connette brand piccoli (e-commerce, local businesses) con micro-influencer 1K-50K follower. Discovery filtrato per nicchia, engagement rate, location. Campaign tracking, automated outreach, performance analytics. Mercato underserved: Paved/Swapstack servono solo influencer grandi.",
+    "category": "Marketing/Marketplace",
+    "status": "parked",
+    "created": "2026-04-12",
+    "updated": "2026-04-12",
+    "scorecard": {
+      "domanda_mercato": 8,
+      "differenziazione": 8,
+      "fattibilita_tecnica": 8,
+      "costo_infrastruttura": 9,
+      "manutenzione": 7,
+      "monetizzabilita": 8,
+      "rischio_legale": 7,
+      "totale": 55,
+      "media": 7.86,
+      "verdetto": "GO",
+      "note": "Tavily trend 2026: micro-influencer marketing. ROI superiore a macro-influencer, underserved."
+    },
+    "market_research": {
+      "competitor_major": ["Paved", "Swapstack", "Upfluence"],
+      "gap": "Paved/Swapstack servono solo newsletter >50K. Opportunity: micro 1K-50K.",
+      "tam": "$11.25B influencer marketing by 2027",
+      "cagr": "13%",
+      "barriers": "Bassi - API social accessibili, scraping public data"
+    },
+    "injection_notes": [
+      "Trend scouting 2026-04-12: Tavily identifica micro-influencer come trend underserved",
+      "Focus su brand piccoli che non possono $10k+ campaign",
+      "Micro-influencer hanno engagement rate 3x superiore"
+    ],
+    "priority": "L",
+    "strengths": [
+      "Mercato micro-influencer crescente (engagement > reach)",
+      "Network effect: più brand = più influencer e viceversa",
+      "Low infra cost: API-based, nessun inventory",
+      "Take rate 10-15% su ogni transazione",
+      "Nessun competitor dedicato a micro 1K-50K"
+    ],
+    "weaknesses": [
+      "Chicken-and-egg: serve seeding di entrambi lati",
+      "Influencer piccoli potrebbero non capire valore",
+      "Brand piccoli hanno budget limitato per campaign",
+      "Fake followers detection necessario"
+    ],
+    "direction": "GO - MVP: discovery database + outreach templates + basic tracking. Pricing: free per influencer, $49/mese brand per 10 outreach, $149/mese unlimited. Target: D2C e-commerce locali ($10k-100k revenue/anno).",
+    "architecture": {
+      "frontend": "Next.js marketplace + dashboard campaign",
+      "backend": "Node.js + Instagram/TikTok APIs + scraping",
+      "database": "PostgreSQL + vector DB per matching",
+      "ml": "Engagement rate analysis, fake follower detection",
+      "infra": "Vercel + Railway, costi <$30/mese",
+      "effort": "6-8 settimane MVP (discovery + outreach + tracking)"
+    }
+  },
+  {
+    "id": "trend-2026-04-12-003",
+    "title": "FinanceCoach AI",
+    "tagline": "Coach finanziario AI per millennials con reddito irregolare",
+    "abstract": "App che agisce come coach finanziario personale: analizza spese, budget, offre consigli personalizzati e avvisi proattivi. Collega conti bancari via Plaid, utilizza AI per insight comportamentali. Focus su smooth income feature per chi ha reddito variabile (freelance, gig workers). Differenzia da Mint/YNAB che sono per reddito fisso.",
+    "category": "FinTech/AI",
+    "status": "parked",
+    "created": "2026-04-12",
+    "updated": "2026-04-12",
+    "scorecard": {
+      "domanda_mercato": 9,
+      "differenziazione": 8,
+      "fattibilita_tecnica": 8,
+      "costo_infrastruttura": 8,
+      "manutenzione": 7,
+      "monetizzabilita": 8,
+      "rischio_legale": 6,
+      "totale": 54,
+      "media": 7.71,
+      "verdetto": "GO",
+      "note": "Tavily trend 2026: AI personal finance coach underserved per millennials. Mercato $10B+."
+    },
+    "market_research": {
+      "competitor_major": ["Mint", "YNAB", "Personal Capital", "Rocket Money"],
+      "gap": "Nessuno risolve problema smooth income per reddito variabile",
+      "tam": "$10B+ personal finance apps",
+      "cagr": "12%",
+      "barriers": "Medi - API bancarie (Plaid), compliance fiscale"
+    },
+    "injection_notes": [
+      "Trend scouting 2026-04-12: Tavily identifica AI personal finance coach come trend",
+      "Focus su millennials con reddito <$50k che trovano YNAB troppo complesso",
+      "Feature unica: income smoothing across months"
+    ],
+    "priority": "L",
+    "strengths": [
+      "Mercato enorme: 72M+ freelancer/gig workers globalmente",
+      "Pain point reale: smoothing income irregolare",
+      "AI differenzia con insight comportamentali personalizzati",
+      "Monetizzazione subscription $9.99/mese collaudata",
+      "Basso costo infra: serverless + API"
+    ],
+    "weaknesses": [
+      "Competitor consolidati (YNAB, Mint) con milioni utenti",
+      "Costo Plaid API ~$0.10/user (scaling concern)",
+      "Rischio regolatorio se supera linea advice/consulenza",
+      "User acquisition costoso in verticale competitivo"
+    ],
+    "direction": "GO - MVP: budgeting + AI tips + income smoothing visualization. Collega 2-3 banche via Plaid. Pricing $9.99/mese, trial 30 giorni. Target: under 35 freelance/designer/developers con reddito variabile.",
+    "architecture": {
+      "frontend": "React Native (iOS/Android) + web dashboard",
+      "backend": "Node.js + Plaid API + OpenAI GPT-4o-mini",
+      "database": "Supabase (PostgreSQL) con RLS",
+      "integrations": "Plaid (banking), Stripe (subscription), maybe Wise (multi-currency)",
+      "infra": "Vercel + Supabase, costi <$50/mese per 5k utenti",
+      "effort": "6-8 settimane MVP (banking + AI coaching base)"
+    }
   }
 ]
