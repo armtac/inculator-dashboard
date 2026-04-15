@@ -4607,9 +4607,64 @@
     }
   },
   {
-    "id": "trend-2026-04-12-002",
-    "title": "MicroInfluencer Connect",
-    "tagline": "Discovery e gestione micro-influencer per brand piccoli",
+    "id": "trend-2026-04-16-001",
+    "title": "AutoReview Local",
+    "tagline": "Richieste di recensione automatiche per attività locali post-servizio",
+    "abstract": "Micro-SaaS che integra con Square/Stripe e invia automaticamente richieste di recensione 24 ore dopo un servizio completato con successo. Per dentisti, idraulici, istruttori fitness, consulenti. Trigger automatico via API pagamento, template personalizzabili, focus su Google/Yelp. Semplifica la gestione della reputazione online per professionisti locali.",
+    "category": "Local Business/AI",
+    "status": "parked",
+    "created": "2026-04-16",
+    "updated": "2026-04-16",
+    "scorecard": {
+      "domanda_mercato": 9,
+      "differenziazione": 7,
+      "fattibilita_tecnica": 9,
+      "costo_infrastruttura": 9,
+      "manutenzione": 7,
+      "monetizzabilita": 9,
+      "rischio_legale": 8,
+      "totale": 58,
+      "media": 8.29,
+      "verdetto": "GO",
+      "note": "Trend scouting 2026-04-16: Review automation underserved. Pain point reale: local businesses sanno che recensioni sono cruciali ma dimenticano di chiederle."
+    },
+    "market_research": {
+      "competitor_major": [
+        "NiceJob"
+      ],
+      "gap": "Competitor costosi o over-featured per professionisti singoli. Occorre: semplice, $49-99/mese, integrazione diretta booking/payment."
+    },
+    "injection_notes": [
+      "Trend scouting 2026-04-16: Tavily identifica review automation trend",
+      "Focus su trigger automatico post-payment (timing accurato)",
+      "Template SMS/email personalizzabili per vertical"
+    ],
+    "priority": "L",
+    "strengths": [
+      "Pain point reale: recensioni cruciali per local SEO, ma richiedono tempo",
+      "Timing automatico post-service = conversion più alta",
+      "Integrazione Square/Stripe semplice (API mature)",
+      "Pricing $49-99/mese chiaro per professionisti",
+      "Low infra cost (solo API calls, webhook processing)",
+      "Mercato enorme: milioni di local service providers"
+    ],
+    "weaknesses": [
+      "NiceJob esiste ma costoso ($200+/mese)",
+      "Servono integrazioni multiple (Square, Stripe, Mindbody, Acuity)",
+      "Compliance CAN-SPAM/GDPR su email automatiche",
+      "Rischio review solicitation se troppo pushy"
+    ],
+    "direction": "GO - MVP con Square/Stripe solo. Trigger: transaction complete → email/SMS dopo 24h → landing page semplice per review Google. Pricing: $49/mese 50 clients, $99/mese unlimited. Marketing: Facebook groups professionisti locali, cold email a dentisti/personal trainer.",
+    "architecture": {
+      "frontend": "Next.js dashboard per setup campagne e analytics",
+      "backend": "Node.js + webhooks Square/Stripe + scheduled jobs",
+      "database": "Supabase (PostgreSQL) per customers e review tracking",
+      "integrations": "Square API, Stripe API, SendGrid (email), Twilio (SMS)",
+      "infra": "Vercel + Supabase, costi <$30/mese per 100 clienti",
+      "effort": "4-6 settimane MVP"
+    }
+  }
+],
     "abstract": "Piattaforma che connette brand piccoli (e-commerce, local businesses) con micro-influencer 1K-50K follower. Discovery filtrato per nicchia, engagement rate, location. Campaign tracking, automated outreach, performance analytics. Mercato underserved: Paved/Swapstack servono solo influencer grandi.",
     "category": "Marketing/Marketplace",
     "status": "parked",
@@ -4720,6 +4775,123 @@
       "integrations": "Plaid (banking), Stripe (subscription), maybe Wise (multi-currency)",
       "infra": "Vercel + Supabase, costi <$50/mese per 5k utenti",
       "effort": "6-8 settimane MVP (banking + AI coaching base)"
+    }
+  },
+  {
+    "id": "trend-2026-04-16-002",
+    "title": "SupplyWatch AI",
+    "tagline": "Alert AI per disruption supply chain per importatori PMI",
+    "abstract": "Piattaforma che monitora in tempo reale possibili disruption supply chain (scioperi, disastri naturali, congestione porti) per settori specifici come elettronica, tessile, food. Raggruppa dati da news, social, tracking marittimo e avvisa via Telegram/email i business interessati. Target: importatori/esportatori PMI con 10-50 dipendenti che non possono permettersi consulenti risk management.",
+    "category": "Supply Chain/AI",
+    "status": "parked",
+    "created": "2026-04-16",
+    "updated": "2026-04-16",
+    "scorecard": {
+      "domanda_mercato": 8,
+      "differenziazione": 8,
+      "fattibilita_tecnica": 8,
+      "costo_infrastruttura": 8,
+      "manutenzione": 7,
+      "monetizzabilita": 8,
+      "rischio_legale": 7,
+      "totale": 54,
+      "media": 7.71,
+      "verdetto": "GO",
+      "note": "Trend scouting 2026-04-16: Supply chain disruption tracking underserviced per PMI. Eventi recenti (Suez, COVID, Red Sea) hanno creato awareness alta."
+    },
+    "market_research": {
+      "competitor_major": ["Resilinc", "Everstream Analytics"],
+      "gap": "Competitor enterprise $50k+/anno, nessuno per PMI. Opportunity: $99-299/mese.",
+      "tam": "$5B supply chain risk management market 2025",
+      "cagr": "12%",
+      "barriers": "Medi - data aggregation + AI analysis NLP"
+    },
+    "injection_notes": [
+      "Trend scouting 2026-04-16: Tavily identifica supply chain monitoring come trend post-disruption events",
+      "Focus su PMI Italian/EU con importazioni da Asia",
+      "Pricing accessible vs enterprise tools"
+    ],
+    "priority": "L",
+    "strengths": [
+      "Disruption recenti hanno creato awareness massima",
+      "Mercato PMI underserved: Resilinc/Everstream solo per enterprise",
+      "AI può aggregare dati eterogenei rapidamente (news, AIS, social)",
+      "Subscription model chiaro: $149/mese per 1 settore, $249 unlimited",
+      "Alto LTV: business critical, alto switching cost"
+    ],
+    "weaknesses": [
+      "Richiede molteplici data sources (costi API MarineTraffic, NewsAPI)",
+      "False positives possono causare 'alert fatigue'",
+      "Competitor enterprise potrebbero fare down-market",
+      "Richiede expertise supply chain per validation"
+    ],
+    "direction": "GO - MVP con verticale elettronica (componenti). Aggregazione da: MarineTraffic API, NewsAPI, social listening. Dashboard con mappa rischio + alert Telegram/email. Pricing: $149/mese per 1 settore, $249/mese unlimited. Target: importatori PMI Italia con 10-50 dipendenti.",
+    "architecture": {
+      "frontend": "Next.js dashboard con risk map, alert history, filter per settore",
+      "backend": "Python/FastAPI + Celery per scheduled tasks + NLP processing",
+      "database": "PostgreSQL + Redis per caching e task queue",
+      "integrations": "MarineTraffic API, NewsAPI, GDAC, Telegram Bot API",
+      "ml": "NLP per severity classification, sentiment analysis news",
+      "infra": "Vercel + Railway, cronjobs per polling, costi <$50/mese",
+      "effort": "6-8 settimane MVP (single sector, basic alerts)"
+    }
+  },
+  {
+    "id": "trend-2026-04-16-003",
+    "title": "NicheIntel Newsletter",
+    "tagline": "Newsletter premium su nicchie Micro-SaaS profittevoli",
+    "abstract": "Newsletter settimanale premium che analizza mercati Micro-SaaS underserved, reporta metrics e casi studio di successo, identifica trend emergenti nel mondo AI/automation. Target: indie hackers, solopreneurs, makers che cercano idee validate. Contenuto data-driven con revenue reali, non opinioni.",
+    "category": "Media/Newsletter",
+    "status": "parked",
+    "created": "2026-04-16",
+    "updated": "2026-04-16",
+    "scorecard": {
+      "domanda_mercato": 8,
+      "differenziazione": 7,
+      "fattibilita_tecnica": 9,
+      "costo_infrastruttura": 9,
+      "manutenzione": 8,
+      "monetizzabilita": 8,
+      "rischio_legale": 9,
+      "totale": 58,
+      "media": 8.29,
+      "verdetto": "GO",
+      "note": "Trend scouting 2026-04-16: Newsletter model collaudato (Trends.vc, Lenny's Newsletter). Low risk, monetizzazione chiara via subscription + sponsorship."
+    },
+    "market_research": {
+      "competitor_major": ["Trends.vc", "Lenny's Newsletter", "Indie Hackers"],
+      "gap": "Trends.vc costoso ($299/anno), Indie Hackers troppo noise. Opportunity: focus specifico Micro-SaaS validated (>$1K MRR), pricing accessibile.",
+      "tam": "$1B+ newsletter economy, indie maker segment growing",
+      "cagr": "15%",
+      "barriers": "Bassi - content creation + distribution"
+    },
+    "injection_notes": [
+      "Trend scouting 2026-04-16: Tavily identifica high demand per validated micro-SaaS ideas",
+      "Focus su nicchie con revenue reali >$1K MRR, non solo idee",
+      "Data-driven: metrics reali, screenshots Stripe dashboard con permesso"
+    ],
+    "priority": "L",
+    "strengths": [
+      "Business model newsletter collaudato: sponsorship + subscription premium",
+      "MVP in 1-2 settimane (Substack/Ghost + research)",
+      "Costo infrastruttura quasi zero",
+      "Network effects: community builders diventa deal flow",
+      "Possibile expansion: database searchable, job board, community Discord"
+    ],
+    "weaknesses": [
+      "Richiede ricerca costante e accesso a dati privati (makers devono condividere)",
+      "Mercato newsletter micro-SaaS già parzialmente coperto",
+      "Crescita subscriber dipende da viralità",
+      "Responsabilità accuratezza dati revenue claims"
+    ],
+    "direction": "GO - Launch su Substack gratuito 2-3 issues → paywall. Pricing: $15/mese o $120/anno per analysis deep-dive + database accesso. Target: Indie Hackers, Twitter makers community. Sponsor: dev tools, hosting, AI APIs (OpenRouter, etc).",
+    "architecture": {
+      "frontend": "Substack/Ghost per newsletter delivery e paywall",
+      "backend": "Airtable/Notion per database research e analytics",
+      "database": "Simple static CMS con search per paying subscribers",
+      "integrations": "Stripe per payment, Beehiiv per referral tracking, Discord per community",
+      "infra": "Substack/Beehiiv managed, zero devops",
+      "effort": "1-2 settimane setup, ongoing research weekly"
     }
   }
 ]
