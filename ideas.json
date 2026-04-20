@@ -1,5 +1,164 @@
 [
   {
+    "id": "trend-2026-04-20-001",
+    "title": "ContentRepulse AI",
+    "tagline": "Un contenuto → 10 formati platform-optimized in un clic",
+    "abstract": "Micro-SaaS che trasforma automaticamente un contenuto (blog, podcast, video) in formati ottimizzati per ogni piattaforma: LinkedIn post, Twitter/X thread, Instagram carousel, TikTok script, newsletter, Substack excerpt. Usa AI per mantenere tono autore e ottimizzare lunghezze. Target: creators e piccole agenzie.",
+    "category": "Content Marketing/AI",
+    "status": "parked",
+    "priority": "L",
+    "created": "2026-04-20",
+    "updated": "2026-04-20",
+    "scorecard": {
+      "domanda_mercato": 9,
+      "differenziazione": 8,
+      "fattibilita_tecnica": 9,
+      "costo_infrastruttura": 9,
+      "manutenzione": 7,
+      "monetizzabilita": 8,
+      "rischio_legale": 8,
+      "totale": 58,
+      "media": 8.29,
+      "verdetto": "GO",
+      "note": "Trend 2026: AI content repurposing. Alta domanda creator overload, proven concept (Repurpose.io). Low infra cost, MVP 4-6 settimane."
+    },
+    "market_research": {
+      "competitor_major": ["Repurpose.io", "Hootsuite", "Buffer", "Jasper"],
+      "market_size": "$50B content marketing tools (2024)",
+      "cagr": "12%",
+      "gap": "Competitor fanno clipping senza rewriting di qualità. Opportunity: parafrasi AI che preserva voce autore."
+    },
+    "strengths": [
+      "Creator overload: pain point reale, risparmio 10+ ore/settimana",
+      "LLM APIs mature, low-cost, high-quality output",
+      "Network effect: più platform supportati = più valore",
+      "Fast MVP: 4-6 settimane con Vercel + OpenAI"
+    ],
+    "weaknesses": [
+      "Competitor possono aggiungere rewriting facilmente",
+      "Copyright concerns se output troppo simile all'originale",
+      "Platform format changes richiedono prompt updates"
+    ],
+    "direction": "GO - MVP 6 formati: LinkedIn, Twitter, Instagram, TikTok, newsletter, Substack. Input URL o testo. Freemium: 5 transformations/mese free, $19/mese unlimited. Marketing: Twitter/X, Indie Hackers, creator communities.",
+    "architecture": {
+      "frontend": "Next.js dashboard con live preview",
+      "backend": "Node.js serverless + OpenAI GPT-4o-mini",
+      "database": "Supabase per history",
+      "integrations": "YouTube transcript API, RSS parser, Whisper",
+      "infra": "Vercel + Supabase, <$30/mese"
+    },
+    "injection_notes": [
+      "Trend scouting 2026-04-20: AI content repurposing identificato come top trend",
+      "Focus su qualità rewriting > clipping automation"
+    ]
+  },
+  {
+    "id": "trend-2026-04-20-002",
+    "title": "VideoLingo AI",
+    "tagline": "Dubbing AI con lip-sync per creator che vogliono audience globale",
+    "abstract": "Strumento che doppia automaticamente video in 10+ lingue con sincronizzazione labiale realistica. Per YouTubers, course creators, aziende. Costo professionale: $500-1000/video. AI: $0.10/minuto. Target: creator con 10k+ subs che cercano espansione globale senza costi proibitivi.",
+    "category": "Video/AI",
+    "status": "parked",
+    "priority": "L",
+    "created": "2026-04-20",
+    "updated": "2026-04-20",
+    "scorecard": {
+      "domanda_mercato": 9,
+      "differenziazione": 8,
+      "fattibilita_tecnica": 7,
+      "costo_infrastruttura": 7,
+      "manutenzione": 7,
+      "monetizzabilita": 8,
+      "rischio_legale": 7,
+      "totale": 53,
+      "media": 7.57,
+      "verdetto": "GO",
+      "note": "Trend 2026: AI video localization. Mercato $5B, CAGR 15%. Pain point enorme: costo doppiaggio professionale."
+    },
+    "market_research": {
+      "competitor_major": ["Rask.ai", "HeyGen", "DubVerse"],
+      "market_size": "$5B video localization market 2026",
+      "cagr": "15%",
+      "gap": "Competitor costosi. Opportunity: pricing accessible per mid-tier creator."
+    },
+    "strengths": [
+      "Pain point enorme: localization professionale $500-1000/video",
+      "AI riduce costo del 90%",
+      "Creator economy in crescita cerca global reach",
+      "Monetizzazione chiara: pay-per-minute o subscription"
+    ],
+    "weaknesses": [
+      "Qualità AI ancora imperfetta per lingue complesse",
+      "Costo GPU per rendering video (infra heavy)",
+      "Competitor established già posizionati"
+    ],
+    "direction": "GO - MVP: 3 lingue (ES, FR, DE), lip-sync base, export 1080p. Pricing: $0.10/minuto, bundle $49/mese illimitato. Target: YouTubers 10k+ subs, course creators. Marketing: creator communities, partnership piattaforme course.",
+    "architecture": {
+      "frontend": "Next.js dashboard con upload drag-drop",
+      "backend": "Python/FastAPI + Whisper + GPT-4 + Wav2Lip",
+      "database": "Supabase per jobs queue e user credits",
+      "ml": "Whisper transcript, GPT-4 translation, Wav2Lip lip-sync",
+      "infra": "Railway con GPU instances, S3 storage, ~$100-200/mese GPU cost"
+    },
+    "injection_notes": [
+      "Trend scouting 2026-04-20: AI video localization identificato come emerging opportunity",
+      "Focus su qualità lip-sync superiore a competitor base"
+    ]
+  },
+  {
+    "id": "trend-2026-04-20-003",
+    "title": "PureMeditate",
+    "tagline": "App di meditazione minimalista: solo meditazione, niente fronzoli",
+    "abstract": "86.1% recensioni negative su app meditazione esistenti: troppo bloated, piena di feature non correlate. PureMeditate è ultra-focused: solo meditazione guidata e tracking semplice. No therap, no community, no extras. Target: utenti stanchi di Headspace/Calm troppo complessi.",
+    "category": "Wellness/Consumer",
+    "status": "parked",
+    "priority": "L",
+    "created": "2026-04-20",
+    "updated": "2026-04-20",
+    "scorecard": {
+      "domanda_mercato": 8,
+      "differenziazione": 9,
+      "fattibilita_tecnica": 9,
+      "costo_infrastruttura": 9,
+      "manutenzione": 8,
+      "monetizzabilita": 7,
+      "rischio_legale": 7,
+      "totale": 55,
+      "media": 7.86,
+      "verdetto": "GO",
+      "note": "Trend 2026: backlash contro app meditation troppo complesse. 86.1% negative reviews = opportunity per minimalist alternative."
+    },
+    "market_research": {
+      "competitor_major": ["Headspace", "Calm", "Insight Timer"],
+      "market_size": "$500M+ meditation apps market",
+      "cagr": "8%",
+      "gap": "Competitor hanno aggiunto therapy, community, minigames. Users vogliono solo meditare."
+    },
+    "strengths": [
+      "86.1% negative reviews su categoria = opportunity enormous",
+      "Ultra-focused: facile da usare, zero learning curve",
+      "Low infra cost: contenuti audio statici + tracking semplice",
+      "Differentiation chiara vs bloated competitors"
+    ],
+    "weaknesses": [
+      "Mercato saturato: difficile stand out inizialmente",
+      "Monetizzazione app wellness generalmente debole",
+      "Retention challenge: utenti abbandonano app wellness"
+    ],
+    "direction": "GO - MVP: 20 meditazioni guidate base, timer semplice, tracking giornaliero. Pricing: free base, $4.99/mese premium (statistiche, offline download). Marketing: Reddit r/meditation, App Store search optimization.",
+    "architecture": {
+      "frontend": "React Native (iOS/Android)",
+      "backend": "Firebase/Supabase per sync e analytics",
+      "database": "SQLite locale + cloud sync",
+      "integrations": "HealthKit per mindfulness minutes",
+      "infra": "Firebase free tier sufficiente per MVP"
+    },
+    "injection_notes": [
+      "Trend scouting 2026-04-20: Meditation app frustration identificato come underserved niche",
+      "Focus on 'does one thing well' philosophy vs feature creep"
+    ]
+  },
+  {
     "id": "1a2b3c4d-5e6f-7g8h-9i0j-1k2l3m4n5o6p",
     "title": "Tonight Social",
     "tagline": "App real-time per incontri social spontanei",
